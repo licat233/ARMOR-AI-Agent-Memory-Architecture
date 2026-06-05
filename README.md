@@ -1,102 +1,239 @@
-# ARMOR AI Workspace Architecture V5
+# ARMOR AI Workspace Architecture V7.1 Stable
 
 ## Version
 
-Version: V5  
+Version: V7.1 Stable  
 System: ARMOR AI Workspace  
-Primary Agent: Hermes  
-Knowledge Steward: Claudian  
-Knowledge System: Obsidian  
-Purpose: Long-term AI workspace memory architecture
+Primary Agent / Protocol: Hermes  
+Knowledge Runtime: Claudian  
+Knowledge System: Obsidian Vault  
+Purpose: Long-term, stable, auditable, controllable AI workspace memory architecture  
+Status: Stable architecture for one-time deployment and continuous long-term use  
+Primary Upgrade from V7: Architecture stability principle, low-maintenance operations, Capture Track / Authority Track, conservative retrieval, automatic lifecycle rules, review-by-exception
 
 ---
 
 # Table of Contents
 
 1. Vision
-2. First Principle: SSOT
-3. System Roles
-4. Memory Model
-5. Vault Structure
-6. Core Layer
-7. Source of Truth Map
-8. Facts Layer
-9. Rules Layer
-10. Insights Layer
-11. Research Layer
-12. Projects Layer
-13. Indexes Layer
-14. Temporary Layers
-15. Archive Layer
-16. Knowledge Triage Rules
-17. Knowledge Promotion Framework
-18. Conflict Resolution Policy
-19. Permission Model
-20. Write Speed Policy
-21. Memory Write Pipeline
-22. Agent Write Rules
-23. Retrieval Rules
-24. Knowledge Graph Metadata
-25. Changelog Requirement
-26. File Lifecycle
-27. Review and Audit
-28. Standard Templates
-29. Operating Cadence
-30. Success Criteria
-31. Ultimate Principle
+2. Architecture Stability Principle
+3. First Principle: SSOT
+4. System Roles
+5. Claudian Runtime Model
+6. Hermes Operating Protocol
+7. Memory Model
+8. Capture Track and Authority Track
+9. Vault Structure
+10. Core Layer
+11. Source of Truth System
+12. Facts Layer
+13. Rules Layer
+14. Insights Layer
+15. Research Layer
+16. Projects Layer
+17. Records Layer
+18. Indexes and Dashboards Layer
+19. Temporary Layers
+20. Proposals Layer
+21. Review Queues Layer
+22. Archive Layer
+23. Knowledge Triage Rules
+24. Knowledge Promotion Framework
+25. Conflict Resolution Policy
+26. Permission Model
+27. Write Speed Policy
+28. Memory Write Pipeline
+29. Agent Write Rules
+30. Retrieval Runtime Architecture
+31. Retrieval Ranking and Scoring
+32. Context Packing Policy
+33. Retrieval Filter Presets
+34. Knowledge Graph Metadata
+35. Schema Validation Layer
+36. Changelog Requirement
+37. Naming Convention
+38. File Lifecycle
+39. Automatic Lifecycle Rules
+40. Review and Audit
+41. Low-Maintenance Operations
+42. Knowledge Debt Dashboard
+43. Memory Evaluation Metrics
+44. Security, Privacy, and Retention Policy
+45. Backup and Recovery Policy
+46. Standard Templates
+47. Claudian Skills and Workflows
+48. Automation and Enforcement
+49. Human Review UX
+50. Failure Modes and Recovery
+51. Operating Cadence
+52. Migration / Deployment Plan
+53. Success Criteria
+54. Ultimate Principle
 
 ---
 
 # 1. Vision
 
-目标不是构建一个能记住所有内容的 AI。
+The goal is not to build an AI that remembers everything.
 
-目标是构建一个长期稳定、可治理、可扩展、可审计、可执行的 AI 工作系统。
+The goal is to build a long-term AI workspace that remains stable, auditable, controllable, useful, and low-maintenance over time.
 
-系统必须保证：
+The workspace must always know:
 
-- 永远知道事实在哪里
-- 永远知道规则在哪里
-- 永远知道经验在哪里
-- 永远知道研究是否过期
-- 永远知道项目是否结束
-- 永远知道谁可以修改什么
-- 永远知道知识如何晋升
-- 永远知道冲突如何解决
-- 永远知道什么是唯一权威版本
+- where current truth lives
+- where rules live
+- where raw evidence lives
+- where research lives
+- whether research is stale
+- which files are authoritative
+- which files are only drafts
+- which files are only records
+- which content can be retrieved by default
+- which content must be excluded from default retrieval
+- which changes require human approval
+- which changes can be made automatically
+- how knowledge is promoted
+- how conflicts are resolved
+- how memory decays, archives, or expires
+- why a memory was used in an answer
+- whether the memory system is improving or degrading
 
-AI 可以无限生成。
+AI can generate endlessly.
 
-知识库必须持续收敛。
+The knowledge base must converge.
+
+V7.1 Stable is designed around five principles:
+
+```text
+One-time deployment
+Stable architecture
+Low-maintenance operations
+Conservative retrieval
+Human approval only for high-authority changes
+```
 
 ---
 
-# 2. First Principle: SSOT
+# 2. Architecture Stability Principle
 
-SSOT = Single Source of Truth.
+This architecture is designed to be deployed once and used continuously without structural redesign.
 
-所有正式知识只能存在一个权威版本。
+Top-level layers, memory roles, permission classes, retrieval defaults, and lifecycle rules are considered stable architecture. They should not be changed unless the fundamental purpose of the workspace changes.
 
-允许：
+Future changes should be limited to:
 
-- 引用
-- 双链
-- 聚合视图
-- Dataview
-- 索引页
-- Dashboard
-- 摘要型入口
+- adding files within existing layers
+- adding domain-specific subfolders
+- updating templates
+- improving automation
+- refining schemas
+- tuning review cadence
+- improving dashboards
+- improving retrieval implementation
 
-禁止：
+Future changes should not require:
 
-- 内容复制
-- 多版本事实
-- 重复知识
-- 平行真相
-- 未声明来源的结论
-- 已失效知识继续参与默认检索
+- changing top-level folders
+- merging memory layers
+- redefining Records as Facts
+- allowing Drafts as current truth
+- moving Archive back into default retrieval
+- letting agent output silently become authoritative
 
-错误示例：
+The system must prefer progressive usage over structural migration.
+
+## 2.1 Frozen Architecture Boundary
+
+Frozen:
+
+```text
+00-Core/
+01-Facts/
+02-Rules/
+03-Insights/
+04-Research/
+05-Projects/
+06-Records/
+70-Schemas/
+80-Indexes/
+81-Dashboards/
+90-Drafts/
+91-Inbox/
+92-Logs/
+93-Proposals/
+94-Review-Queues/
+99-Archive/
+```
+
+Also frozen:
+
+- memory layer definitions
+- SSOT principle
+- Records vs Facts separation
+- permission classes
+- default retrieval exclusions
+- Capture Track / Authority Track
+- automatic lifecycle rules
+- proposal requirement for high-authority changes
+
+Expandable:
+
+- domain-specific folders
+- product folders
+- customer folders
+- project folders
+- rule categories
+- research categories
+- templates
+- schema details
+- automation scripts
+- dashboards
+
+Principle:
+
+```text
+Architecture layer is stable.
+Domain layer is extensible.
+Content layer evolves continuously.
+```
+
+---
+
+# 3. First Principle: SSOT
+
+SSOT means Single Source of Truth.
+
+Every formal piece of knowledge must have exactly one authoritative location.
+
+Allowed:
+
+- references
+- backlinks
+- index views
+- dashboards
+- Dataview queries
+- summaries that point to authority
+- proposals
+- changelogs
+- timelines
+- Git history
+- append-only source records
+- superseded records
+
+Forbidden:
+
+- duplicated authority
+- parallel truths
+- multiple current versions
+- unmarked outdated facts
+- final-final files
+- using meeting notes as customer current state
+- using research as fact
+- using cases as rules
+- using archive as current truth
+- using drafts as approved memory
+
+Wrong:
 
 ```text
 Product-A-v1.md
@@ -105,320 +242,703 @@ Product-A-final.md
 Product-A-final-final.md
 ```
 
-正确示例：
+Correct:
 
 ```text
 Product-A.md
 ```
 
-所有正式更新都发生在同一个权威文件中。
-
-如果需要保留历史变化，使用：
+Historical changes must be preserved through:
 
 - changelog
 - timeline
 - Git history
-- append-only historical notes
+- source records
+- append-only history
+- proposal records
+- superseded markers
 
-不要用多个平行文件保存多个版本。
-
----
-
-# 3. System Roles
-
-## 3.1 Obsidian
-
-角色：Knowledge System
-
-职责：
-
-- 长期知识存储
-- 知识治理
-- 知识演化
-- 知识检索
-- 知识审计
-- 关系图谱维护
-
-原则：
-
-Vault 是唯一长期记忆。
-
-Obsidian 不只是笔记库。
-
-Obsidian 是 AI workspace 的知识操作系统。
+Do not create multiple authority files for convenience.
 
 ---
 
-## 3.2 Hermes
+# 4. System Roles
 
-角色：Execution Agent
+## 4.1 Obsidian
 
-职责：
+Role: Knowledge System
 
-- 检索
-- 分析
-- 写作
-- 自动化
-- 项目执行
-- 研究
-- 草稿生成
-- 初步分类建议
+Obsidian is the long-term knowledge operating system.
 
-原则：
+Responsibilities:
 
-Hermes 负责生产内容。
+- durable knowledge storage
+- knowledge governance
+- relationship graph
+- audit trail
+- human review interface
+- evidence storage
+- authoritative memory storage
+- lifecycle management
 
-Hermes 不定义真相。
+Principle:
 
-Hermes 不拥有长期记忆。
+```text
+Vault is the only long-term memory.
+```
 
-Hermes 不直接修改核心资产。
+Obsidian is not just a notes app.
 
-所有长期知识必须来自 Vault 检索。
+It is the AI workspace knowledge operating system.
 
-Hermes 可以写入低风险区域。
+## 4.2 Claudian
 
-Hermes 修改高风险知识时，只能生成修改建议。
+Role: Obsidian Agent Runtime
+
+Claudian is the runtime that allows AI agents to operate inside Obsidian.
+
+Capabilities may include:
+
+- file read
+- file write
+- file edit
+- file search
+- chat sidebar
+- inline edit
+- slash commands
+- skills
+- `@mention` Vault files
+- `@mention` subagents
+- `@mention` MCP servers
+- plan mode
+- instruction mode
+- bash
+- workflows
+- external file access
+
+Principle:
+
+```text
+Capability does not equal permission.
+```
+
+Claudian may technically allow writing files.
+
+Hermes may still be forbidden from modifying certain files by the Permission Model.
+
+Claudian is not:
+
+- long-term memory
+- source of truth
+- final reviewer
+- governance layer
+- automatic SSOT enforcement
+
+Claudian provides capability.
+
+Hermes protocol and Vault governance define permission.
+
+## 4.3 Hermes
+
+Role: Primary AI Workspace Agent / Operating Protocol
+
+Hermes can:
+
+- retrieve
+- analyze
+- summarize
+- draft
+- classify
+- propose
+- write low-risk notes
+- append records
+- generate review candidates
+- detect conflicts
+- create proposals
+- assist project closeout
+- assist memory evaluation
+- assist schema validation
+
+Hermes must:
+
+- respect SSOT
+- classify knowledge before writing
+- check Source of Truth System before formal updates
+- respect Permission Model
+- create proposals for Class A assets
+- avoid silent promotion
+- avoid treating Records as Facts
+- avoid treating Research as Facts
+- avoid treating Cases as Rules
+- avoid default retrieval from Drafts, Logs, Inbox, Raw Research, or Archive
+- cite sources when required
+- mark stale or uncertain memory
+- reduce authority when unsure
+
+Principle:
+
+```text
+Hermes may capture, classify, summarize, archive, and propose.
+Hermes may not silently convert uncertain information into truth.
+```
+
+## 4.4 Human Owner / Reviewer
+
+Role: Final Authority for high-authority changes
+
+The Human Owner approves changes that affect:
+
+- current truth
+- system behavior
+- customer current state
+- brand facts
+- product facts
+- approved rules
+- security posture
+- permission policy
+- conflict resolution
+
+Principle:
+
+```text
+Human approval defines truth for high-risk knowledge.
+```
+
+Agent output is not truth until reviewed or explicitly confirmed.
+
+## 4.5 Knowledge Steward
+
+Role: Optional Knowledge Operations Owner
+
+In V7.1 Stable, this role should be minimized.
+
+Responsibilities, if assigned:
+
+- monitor knowledge debt
+- review stale queues
+- process proposals
+- clean old drafts
+- inspect schema failures
+- check archive leakage
+- assist project closeout
+
+If no dedicated Knowledge Steward exists, Hermes should automate most operational preparation, and the Human Owner should only review high-authority items.
 
 ---
 
-## 3.3 Claudian
+# 5. Claudian Runtime Model
 
-角色：Knowledge Steward
+Claudian is the runtime layer.
 
-职责：
+Hermes is the protocol layer.
 
-- 分类
-- 去重
-- 重构
-- 双链建设
-- 知识审核
-- 知识晋升
-- 冲突解决
-- SSOT 维护
-- 过期知识处理
-- 项目收尾萃取
+The Vault is the memory layer.
 
-原则：
+Human review is the authority layer.
 
-Claudian 负责治理知识。
+```text
+Runtime capability
+↓
+Hermes protocol
+↓
+Permission model
+↓
+Vault write path
+↓
+Human approval where required
+```
 
-Claudian 不负责业务执行。
+## 5.1 Runtime Boundary
 
-Claudian 是知识系统的守门人。
+Claudian does not automatically:
+
+- determine truth
+- maintain SSOT
+- solve conflicts
+- approve facts
+- distinguish raw evidence from current truth
+- determine research freshness
+- enforce retention policy
+
+These must be defined by architecture and enforced by workflow, scripts, schemas, or review.
+
+## 5.2 Plan Mode Policy
+
+Hermes must use Plan Mode or equivalent proposal workflow when working with:
+
+- Core Memory
+- Source of Truth System
+- Permission Policy
+- Retrieval Rules
+- Context Packing Policy
+- Security Policy
+- Brand Facts
+- Product Facts
+- Customer current profile
+- Approved Rules
+- Schema updates
+- Reviewed Research promotion
+- Learning to Rule promotion
+- Archive restoration
+
+Plan workflow:
+
+```text
+Explore
+↓
+Identify target files
+↓
+Check Source of Truth System
+↓
+Check Permission Class
+↓
+Generate plan
+↓
+Generate proposal
+↓
+Human approval
+↓
+Apply or reject
+↓
+Update changelog
+↓
+Update indexes if needed
+```
+
+## 5.3 `@mention` Policy
+
+For formal memory changes, Hermes should explicitly reference relevant authority files.
+
+Class A changes should reference:
+
+```text
+@Core-Memory.md
+@Source-of-Truth-Map.md
+@Permission-Policy.md
+@Relevant-SSOT-File.md
+```
+
+Customer current state changes should reference:
+
+```text
+@Customer/profile.md
+@Relevant record
+@Relevant timeline entry
+@Proposal file
+```
+
+Rule changes should reference:
+
+```text
+@Relevant rule
+@Supporting facts
+@Supporting cases or learnings
+@Proposal file
+```
+
+Research promotion should reference:
+
+```text
+@Raw research file
+@Reviewed source summary
+@Relevant facts or rules
+@Proposal file
+```
 
 ---
 
-# 4. Memory Model
+# 6. Hermes Operating Protocol
 
-系统采用四层记忆模型。
+Hermes follows the same sequence for every task.
+
+## 6.1 Start of Task
+
+Hermes determines:
+
+```text
+Is this execution only?
+Is this retrieval?
+Is this knowledge creation?
+Is this knowledge update?
+Is this high-risk modification?
+Is this research?
+Is this project work?
+Is this source record ingestion?
+Is this audit or evaluation?
+```
+
+If the task is temporary execution, no long-term memory is written.
+
+If long-term memory is involved, Hermes enters the Memory Write Pipeline.
+
+## 6.2 Before Retrieval
+
+Hermes determines which layers are relevant:
+
+```text
+Core?
+Facts?
+Rules?
+Insights?
+Reviewed Research?
+Active Project?
+Records / evidence?
+Archive / history?
+Logs / debug?
+```
+
+Default retrieval excludes:
+
+- Archive
+- Logs
+- Drafts
+- Inbox
+- Raw Research
+- Proposals
+- Review Queues
+- Deprecated files
+- Superseded files
+- Records unless evidence is needed
+
+## 6.3 Before Writing
+
+Hermes must determine:
+
+```text
+What type of knowledge is this?
+Where is the SSOT?
+Is this raw evidence or interpreted knowledge?
+What is the permission class?
+Does this need source?
+Does this need review_date?
+Does this need expires_at?
+Does this need changelog?
+Can Hermes write directly?
+Should Hermes create a proposal?
+```
+
+## 6.4 After Writing
+
+Hermes must add appropriate metadata:
+
+- type
+- memory_layer
+- status
+- authority
+- source
+- updated
+- write_policy
+- sensitivity where needed
+- review_date or expires_at where needed
+- related links where useful
+- changelog where required
+
+Hermes must avoid creating duplicate authority files.
+
+Unclear content goes to Inbox.
+
+High-risk updates become proposals.
+
+## 6.5 Before Answering with Memory
+
+Hermes must check:
+
+```text
+Did I use SSOT where available?
+Did I avoid Drafts, Logs, Raw Research, and Archive as current truth?
+Did I distinguish fact from research?
+Did I distinguish record from current state?
+Is any memory stale?
+Do I need to cite memory sources?
+```
+
+For high-risk answers, Hermes should report:
+
+- authority files used
+- evidence records used
+- whether anything is stale or uncertain
+- whether human confirmation is needed
 
 ---
 
-## 4.1 Layer 1 — Working Memory
+# 7. Memory Model
 
-生命周期：单任务。
+The system uses five memory layers.
 
-来源：
+## 7.1 Layer 1 — Working Memory
 
-- 当前会话
-- 当前项目
-- 当前上下文
-- 当前检索结果
-- 当前用户输入
+Lifecycle: single task
 
-特点：
+Sources:
 
-- 临时存在
-- 任务结束后销毁
-- 不自动成为长期知识
-- 不自动参与未来检索
+- current user request
+- current conversation
+- current retrieval results
+- current project context
 
-禁止：
+Properties:
 
-- 未审核长期保存
-- 直接写入核心知识
-- 把临时推理当成事实
+- temporary
+- not automatically stored
+- not authoritative
+- destroyed or ignored after task unless explicitly written
 
----
+Forbidden:
 
-## 4.2 Layer 2A — Facts Memory
+- treating temporary reasoning as long-term fact
+- silently writing to Core
+- silently updating authoritative memory
 
-存放：
+## 7.2 Layer 2A — Facts Memory
 
-- 品牌事实
-- 产品事实
-- 客户事实
-- 当前状态
-- 已确认参数
-- 已确认联系方式
-- 已确认业务信息
+Stores confirmed truth.
 
-特点：
+Examples:
 
-- 唯一正确答案
-- 有权威来源
-- 可被审计
-- 可被更新
+- brand facts
+- product facts
+- customer current state
+- confirmed decisions
+- current parameters
+- current business information
 
-Facts 分为两类：
+Facts are what is true.
+
+Facts are not:
+
+- raw records
+- drafts
+- research
+- cases
+- rules
+
+Facts are divided into:
 
 ### Current Facts
 
-当前事实。
+Current, active truth.
 
-允许更新。
+Examples:
 
-示例：
+- current product pricing
+- current brand positioning
+- current customer objective
+- current service scope
 
-- 当前产品价格
-- 当前品牌定位
-- 当前客户目标
-- 当前客户联系人
-- 当前服务范围
+Current Facts may be updated, but history must be preserved.
 
 ### Historical Facts
 
-历史事实。
+Confirmed past truth.
 
-默认 append-only。
+Examples:
 
-禁止覆盖历史。
+- customer objective in 2025
+- old pricing
+- past decision
+- completed phase result
 
-示例：
+Historical Facts are append-only by default.
 
-- 客户 2025 年的目标
-- 某次会议中的决策
-- 某个历史报价
-- 某个项目阶段结果
+## 7.3 Layer 2B — Rules Memory
 
-原则：
+Stores reusable execution standards.
 
-当前状态可以覆盖。
+Examples:
 
-历史事实只能追加、补充或标记纠正。
+- SOPs
+- SEO rules
+- Social rules
+- Agent rules
+- content standards
+- automation standards
 
----
+Rules are how things should be done.
 
-## 4.3 Layer 2B — Rules Memory
+Rules are not facts.
 
-存放：
+Rules are not cases.
 
-- SOP
-- SEO 规则
-- Social 规则
-- Agent 规则
-- 工作流
-- 内容标准
-- 审核标准
-- 执行规范
+Rules require review.
 
-特点：
+## 7.4 Layer 2C — Insights Memory
 
-- 描述应该如何做
-- 具有复用价值
-- 需要版本治理
-- 修改必须审核
+Stores validated experience.
 
-Rules 不是事实。
+Includes:
 
-Rules 不是案例。
+- cases
+- learnings
+- patterns
+- postmortems
 
-Rules 是未来执行的标准。
-
----
-
-## 4.4 Layer 2C — Insights Memory
-
-存放：
-
-- Learnings
-- Cases
-- Patterns
-- Postmortems
-- Repeated observations
-
-特点：
-
-- 经验知识
-- 不是事实
-- 不是规则
-- 必须经过验证
-- 可以晋升为 Rule
-
-Insights 分为：
+Definitions:
 
 ```text
-Cases = 发生了什么
-Learnings = 为什么有效或失败
-Patterns = 多次出现的现象
+Case = what happened
+Learning = what was learned and when it applies
+Pattern = repeated observation
+Postmortem = structured analysis of important success or failure
 ```
 
-原则：
+A single event is not a rule.
 
-一次事件不是规则。
+A single success is not a learning.
 
-一次成功不是经验。
+Repeated evidence or human confirmation is required for promotion.
 
-多次验证后才能成为 Learning。
+## 7.5 Layer 3 — Research Memory
 
-稳定可复用后才能成为 Rule。
+Stores external, uncertain, or time-sensitive knowledge.
+
+Examples:
+
+- market research
+- competitor research
+- platform rule observations
+- SERP analysis
+- industry trends
+- technical research
+
+Research must have:
+
+- source
+- confidence
+- review_date or expires_at
+
+Research can support judgment.
+
+Research does not define current truth.
+
+## 7.6 Layer 4 — Records Memory
+
+Stores raw evidence.
+
+Examples:
+
+- meeting notes
+- transcripts
+- customer emails
+- raw feedback
+- imported documents
+- screenshots
+- attachments
+- signed approvals
+- raw interview notes
+
+Records are evidence.
+
+Records are not current truth by default.
+
+Records can support Facts, Decisions, Cases, Learnings, or Proposals.
+
+## 7.7 Layer 5 — Archive Memory
+
+Stores historical, inactive, deprecated, or superseded material.
+
+Archive is not current truth.
+
+Archive is excluded from default retrieval.
+
+Archive can be used only for:
+
+- history
+- audit
+- recovery
+- comparison
+- conflict investigation
 
 ---
 
-## 4.5 Layer 3 — Research Memory
+# 8. Capture Track and Authority Track
 
-存放：
+V7.1 Stable uses a two-track operating model.
 
-- 市场研究
-- 竞品研究
-- 临时分析
-- 外部资料
-- 行业趋势
-- SERP 分析
-- 内容机会
-- 技术调研
+## 8.1 Capture Track
 
-特点：
+Purpose: capture information freely without polluting truth.
 
-- 未成为正式知识
-- 可能过期
-- 需要来源
-- 需要 review_date 或 expires_at
-- 默认低于 Facts 和 Rules 的权威等级
+Includes:
 
-Research 可以支持判断。
+```text
+90-Drafts/
+91-Inbox/
+92-Logs/
+04-Research/00-Inbox/
+05-Projects/
+06-Records/
+93-Proposals/
+94-Review-Queues/
+```
 
-Research 不直接定义真相。
+Properties:
+
+- Hermes can write freely or append
+- low authority
+- not current truth
+- not included in default authoritative retrieval
+- may expire, degrade, or archive automatically
+- may be promoted later
+
+Principle:
+
+```text
+Capture does not equal authority.
+```
+
+## 8.2 Authority Track
+
+Purpose: preserve stable, high-quality memory.
+
+Includes:
+
+```text
+00-Core/
+01-Facts/
+02-Rules/
+03-Insights/Learnings/
+04-Research/01-Reviewed/
+```
+
+Properties:
+
+- small and stable
+- source-backed
+- reviewed where needed
+- participates in default retrieval
+- modified slowly
+- protected by permission model
+
+Principle:
+
+```text
+High-authority memory must be small, stable, source-backed, and rarely changed.
+```
+
+## 8.3 Review by Exception
+
+Most captured information remains low-authority unless explicitly promoted.
+
+Human review is required only when a change affects:
+
+- current truth
+- approved rules
+- system behavior
+- customer current state
+- product facts
+- brand facts
+- security posture
+- permission model
+- retrieval behavior
+- conflict resolution
+
+This keeps the system low-maintenance.
 
 ---
 
-## 4.6 Layer 4 — Archive Memory
+# 9. Vault Structure
 
-存放：
-
-- 历史项目
-- 历史研究
-- 历史案例
-- 失效规则
-- 旧版本材料
-- 关闭的客户记录
-- 废弃方案
-
-特点：
-
-- 默认不参与检索
-- 只在历史追溯时使用
-- 可被引用，但不能作为当前事实
-- 必须标记 archived 或 deprecated
-
-Archive 是历史记录。
-
-Archive 不是当前知识。
-
----
-
-# 5. Vault Structure
+The top-level structure is frozen.
 
 ```text
 Vault/
@@ -429,204 +949,252 @@ Vault/
 03-Insights/
 04-Research/
 05-Projects/
+06-Records/
 
+70-Schemas/
 80-Indexes/
+81-Dashboards/
+
 90-Drafts/
 91-Inbox/
 92-Logs/
+93-Proposals/
+94-Review-Queues/
+
 99-Archive/
 ```
 
-原则：
+Layer meanings:
 
-- 00 到 05 是正式工作与知识层
-- 80 是视图与索引层
-- 90 到 92 是临时层
-- 99 是历史层
+```text
+00-06: formal memory, work, knowledge, and evidence
+70: schema and validation definitions
+80-81: indexes and dashboards
+90-94: temporary, operational, and review layers
+99: historical archive
+```
+
+Key rule:
+
+```text
+Meeting notes, emails, transcripts, and raw feedback belong in 06-Records, not 01-Facts.
+```
 
 ---
 
-# 6. Core Layer
+# 10. Core Layer
 
-位置：
+Location:
 
 ```text
 00-Core/
 ```
 
-角色：系统宪法。
+Role: system constitution
 
-内容：
+Contains:
 
-- 系统原则
-- Agent 行为规范
-- 决策原则
-- 权限原则
-- SSOT 原则
-- 知识晋升原则
-- 冲突处理原则
-- Source of Truth Map
+- system principles
+- SSOT principle
+- Hermes behavior rules
+- permission model
+- retrieval rules
+- context packing rules
+- knowledge triage rules
+- conflict resolution policy
+- security and retention policy
+- lifecycle policy
 
-限制：
+Core should be small, stable, and rarely changed.
 
-- 控制在 3000 字以内
-- 只保留系统级原则
-- 不保存具体品牌细节
-- 不保存产品参数
-- 不保存客户事实
-- 不保存操作细节
-- 不保存研究结论
+Core should not contain:
 
-Core Memory 是系统宪法。
+- product details
+- brand details
+- customer facts
+- research conclusions
+- project notes
+- raw records
 
-不是百科全书。
-
----
-
-## 6.1 Recommended Core Files
+## 10.1 Recommended Core Files
 
 ```text
 00-Core/
   Core-Memory.md
+  Hermes-Operating-Protocol.md
   Source-of-Truth-Map.md
+  Permission-Policy.md
+  Retrieval-Rules.md
+  Context-Packing-Policy.md
   Knowledge-Triage-Rules.md
   Conflict-Resolution-Policy.md
-  Agent-Behavior-Rules.md
-  Permission-Policy.md
+  Security-and-Retention-Policy.md
+  Lifecycle-Policy.md
 ```
+
+Optional later files:
+
+```text
+  Claudian-Runtime-Policy.md
+  Schema-Validation-Policy.md
+  Backup-and-Recovery-Policy.md
+  Automation-Enforcement-Policy.md
+```
+
+Do not split Core excessively unless operational complexity requires it.
 
 ---
 
-# 7. Source of Truth Map
+# 11. Source of Truth System
 
-位置：
+The Source of Truth System defines where each type of knowledge lives.
+
+It includes:
+
+```text
+1. Human-readable Source-of-Truth-Map.md
+2. Optional machine-readable registry
+3. Indexes generated from metadata
+4. Duplicate and conflict queues
+```
+
+## 11.1 Source of Truth Map
+
+Location:
 
 ```text
 00-Core/Source-of-Truth-Map.md
 ```
 
-作用：
-
-明确每类知识的唯一权威位置。
-
-示例：
-
-```markdown
-# Source of Truth Map
+Example:
 
 | Knowledge | SSOT Location | Editable By | Review Required |
 |---|---|---|---|
-| Core principles | 00-Core/Core-Memory.md | Claudian | Yes |
-| Brand positioning | 01-Facts/Brand/Positioning.md | Claudian | Yes |
-| Brand voice | 01-Facts/Brand/Tone-of-Voice.md | Claudian | Yes |
-| Product facts | 01-Facts/Products/ | Claudian | Yes |
-| Customer current state | 01-Facts/Customers/{customer}/profile.md | Claudian | Yes |
-| Customer history | 01-Facts/Customers/{customer}/timeline/ | Hermes append, Claudian review | Monthly |
-| SEO rules | 02-Rules/SEO/ | Claudian | Yes |
-| Social rules | 02-Rules/Social/ | Claudian | Yes |
-| SOPs | 02-Rules/SOP/ | Claudian | Yes |
-| Agent rules | 02-Rules/Agents/ | Claudian | Yes |
-| Cases | 03-Insights/Cases/ | Hermes draft, Claudian review | Yes |
-| Learnings | 03-Insights/Learnings/ | Claudian | Yes |
-| Research | 04-Research/ | Hermes allowed | Review required |
-| Projects | 05-Projects/ | Hermes allowed | Closeout required |
-| Drafts | 90-Drafts/ | Hermes allowed | No |
-| Inbox | 91-Inbox/ | Hermes allowed | Triage required |
-| Logs | 92-Logs/ | Hermes allowed | No |
-| Archive | 99-Archive/ | Claudian | No |
+| Core principles | `00-Core/Core-Memory.md` | Proposal only | Yes |
+| Hermes behavior rules | `00-Core/Hermes-Operating-Protocol.md` | Proposal only | Yes |
+| Retrieval rules | `00-Core/Retrieval-Rules.md` | Proposal only | Yes |
+| Brand positioning | `01-Facts/Brand/Positioning.md` | Proposal only | Yes |
+| Product facts | `01-Facts/Products/` | Proposal only | Yes |
+| Customer current profile | `01-Facts/Customers/{customer}/profile.md` | Proposal only | Yes |
+| Customer timeline | `01-Facts/Customers/{customer}/timeline/` | Hermes append | Review by exception |
+| Decisions | `01-Facts/Decisions/` | Proposal or confirmed write | Yes |
+| Approved rules | `02-Rules/` | Proposal only | Yes |
+| Cases | `03-Insights/Cases/` | Hermes create | Review by exception |
+| Learnings | `03-Insights/Learnings/` | Proposal for approval | Yes |
+| Research inbox | `04-Research/00-Inbox/` | Hermes write | No |
+| Reviewed research | `04-Research/01-Reviewed/` | Proposal only | Yes |
+| Projects | `05-Projects/` | Hermes write | Closeout by lifecycle |
+| Records | `06-Records/` | Hermes append | No by default |
+| Drafts | `90-Drafts/` | Hermes write | No |
+| Inbox | `91-Inbox/` | Hermes write | No |
+| Logs | `92-Logs/` | Hermes write | No |
+| Proposals | `93-Proposals/` | Hermes write | Human decision |
+| Review queues | `94-Review-Queues/` | Hermes write | Review by exception |
+| Archive | `99-Archive/` | Archive workflow | No default retrieval |
+
+## 11.2 Source of Truth Registry
+
+Optional machine-readable registry:
+
+```text
+00-Core/Source-of-Truth-Registry/
+  Brand.yml
+  Products.yml
+  Customers.yml
+  Rules.yml
+  Research.yml
+  Records.yml
+  Projects.yml
 ```
 
-原则：
+Example:
 
-当不知道知识应该写在哪里时，先查 Source of Truth Map。
+```yaml
+knowledge_domain: products
+ssot_root: 01-Facts/Products/
+file_pattern: "{Product-Name}.md"
+permission_class: A
+write_policy: proposal_only
+required_schema: product.schema.yml
+required_review: true
+default_retrieval: true
+archive_retrieval: false
+```
 
-如果 Map 没有定义，写入 Inbox，等待 Triage。
+If the Map and Registry conflict, create a conflict proposal.
+
+If no SSOT is defined, write to Inbox and create a triage note.
 
 ---
 
-# 8. Facts Layer
+# 12. Facts Layer
 
-位置：
+Location:
 
 ```text
 01-Facts/
 ```
 
-包含：
+Purpose: confirmed truth
+
+Recommended structure:
 
 ```text
 01-Facts/
   Brand/
   Products/
   Customers/
+  Decisions/
 ```
 
-作用：
+Facts are what is true.
 
-保存已确认事实。
+Facts are not raw records, research, rules, or drafts.
 
-Facts 是“是什么”。
+## 12.1 Brand
 
-不是“怎么做”。
-
-不是“为什么”。
-
----
-
-## 8.1 Brand
-
-位置：
+Location:
 
 ```text
 01-Facts/Brand/
 ```
 
-存放：
+Stores:
 
-- 品牌定位
-- 品牌价值观
-- 品牌语调
-- 品牌视觉规则
-- 品牌叙事
-- 品牌禁用表达
-- 品牌受众定义
+- brand positioning
+- brand values
+- tone of voice
+- audience definition
+- messaging
+- visual guidelines
+- prohibited claims
 
-原则：
-
-Brand 是品牌事实的 SSOT。
-
-Core Memory 只引用 Brand，不复制 Brand。
-
-默认只读。
-
-修改必须审核。
-
-推荐结构：
+Recommended files:
 
 ```text
 Brand/
   Positioning.md
   Tone-of-Voice.md
   Audience.md
-  Visual-Guidelines.md
   Messaging.md
+  Visual-Guidelines.md
 ```
 
----
+Brand facts are Class A.
 
-## 8.2 Products
+Hermes may only propose changes.
 
-位置：
+## 12.2 Products
+
+Location:
 
 ```text
 01-Facts/Products/
 ```
 
-规则：
+One product, one authority file.
 
-一个产品一个权威文件。
-
-示例：
+Example:
 
 ```text
 Products/
@@ -635,179 +1203,134 @@ Products/
   Hermes-Agent.md
 ```
 
-禁止：
+Stores:
 
-```text
-Armor-SEO-v2.md
-Armor-SEO-new.md
-Armor-SEO-final.md
-```
+- positioning
+- features
+- current pricing
+- current packages
+- target customers
+- constraints
+- claims
+- related rules
+- related cases
 
-产品文件保存：
+Product facts are Class A.
 
-- 产品定位
-- 核心功能
-- 当前价格
-- 当前套餐
-- 当前卖点
-- 当前限制
-- 目标客户
-- 相关规则
-- 相关案例
+No `v2`, `new`, `final`, or duplicate authority files.
 
-产品历史变化写入 changelog。
+## 12.3 Customers
 
----
-
-## 8.3 Customers
-
-位置：
+Location:
 
 ```text
 01-Facts/Customers/
 ```
 
-推荐结构：
+Recommended structure:
 
 ```text
 Customers/
   Acme/
     profile.md
     timeline/
-      2025.md
       2026.md
-    meetings/
-      2026-01-10.md
-      2026-03-15.md
-    feedback/
-      2026-Q1.md
-      2026-Q2.md
     assets/
 ```
 
----
+`profile.md` stores current customer state:
 
-### profile.md
+- industry
+- business model
+- current goals
+- current pain points
+- current cooperation status
+- current owner
+- current risk
+- current opportunity
+- current service scope
 
-作用：
+Customer profile is Class B with proposal requirement for current-state changes.
 
-保存客户当前状态。
+Meeting notes and emails do not live here.
 
-允许更新。
-
-内容：
-
-- 行业
-- 商业模式
-- 联系方式
-- 当前目标
-- 当前痛点
-- 当前合作状态
-- 当前负责人
-- 当前风险
-- 当前机会
-- 当前服务范围
-
-原则：
-
-profile.md 代表“现在”。
-
-历史变化必须同步记录到 timeline。
-
----
-
-### timeline/
-
-作用：
-
-保存客户历史变化。
-
-规则：append-only。
-
-按年度拆分。
-
-示例：
+They live in:
 
 ```text
-timeline/
-  2025.md
-  2026.md
-  2027.md
+06-Records/Customers/{customer}/
 ```
 
-记录：
+## 12.4 Timeline
 
-- 决策
-- 合作事件
-- 需求变化
-- 预算变化
-- 关键风险
-- 关键里程碑
-- 重要结论
-
-禁止：
-
-- 删除历史
-- 覆盖历史
-- 把当前判断伪装成历史事实
-
-允许：
-
-- 补充 correction
-- 标记 obsolete
-- 引用新的 SSOT
-
----
-
-### meetings/
-
-作用：
-
-保存独立会议记录。
-
-示例：
+Location:
 
 ```text
-meetings/
-  2026-01-10.md
-  2026-03-15.md
+01-Facts/Customers/{customer}/timeline/
 ```
 
-会议记录是原始记录。
+Purpose: append-only history
 
-会议记录不是客户当前状态。
+Records:
 
-如果会议产生新的当前事实，必须更新 profile.md。
+- decisions
+- milestones
+- scope changes
+- budget changes
+- status changes
+- important risks
+- important conclusions
 
----
+Timeline append can be fast, but should cite source.
 
-### feedback/
+Timeline is historical.
 
-作用：
+It does not override current profile unless profile is updated through proper workflow.
 
-保存周期性反馈。
+## 12.5 Decisions
 
-示例：
+Location:
 
 ```text
-feedback/
-  2026-Q1.md
-  2026-Q2.md
+01-Facts/Decisions/
 ```
 
-反馈可以成为 Cases 或 Learnings 的来源。
+Purpose: confirmed decisions
+
+Naming:
+
+```text
+YYYY-MM-DD-Decision-Name.md
+```
+
+Required content:
+
+- date
+- context
+- options considered
+- decision
+- decided by
+- reason
+- impacted files
+- source
+- follow-up
+
+Decision is not the same as meeting note.
+
+A meeting note may support a decision.
 
 ---
 
-# 9. Rules Layer
+# 13. Rules Layer
 
-位置：
+Location:
 
 ```text
 02-Rules/
 ```
 
-包含：
+Purpose: reusable execution standards
+
+Recommended structure:
 
 ```text
 02-Rules/
@@ -820,93 +1343,59 @@ feedback/
   Automation/
 ```
 
-作用：
+Rules describe how work should be done.
 
-保存可复用执行标准。
+Rules are Class A or high-control Class B.
 
-Rules 是“应该如何做”。
+Hermes may propose changes but should not silently modify approved rules.
 
-不是“发生过什么”。
+## 13.1 Rule Requirements
 
-不是“某次为什么成功”。
+Each approved rule should include:
 
----
-
-## 9.1 Rule Requirements
-
-每条 Rule 必须包含：
-
-- 适用范围
-- 执行步骤
-- 判断标准
-- 禁止事项
-- 例外情况
-- 相关事实
-- 相关案例
-- review_date
+- purpose
+- scope
+- trigger/input condition
+- steps
+- output standard
+- quality standard
+- exceptions
+- prohibited actions
 - owner
+- source
+- review_date
 - changelog
 
-Rule 修改必须审核。
+## 13.2 Rule Qualification Checklist
 
-过期 Rule 必须标记 deprecated 或 archived。
+A rule must be:
 
----
-
-## 9.2 Rule Template
-
-```markdown
----
-type: rule
-memory_layer: rules
-status: active
-authority: ssot
-owner:
-created:
-updated:
-review_date:
-expires_at:
-source:
-confidence: high
-write_policy: review_required
-related:
-tags:
----
-
-# Rule Name
-
-## Purpose
-
-## Applies To
-
-## Rule
-
-## Procedure
-
-## Do
-
-## Do Not
-
-## Exceptions
-
-## Related Facts
-
-## Related Cases
-
-## Changelog
+```text
+repeatable
+clear in trigger
+clear in output
+clear in exceptions
+supported by source, decision, case, or learning
+owned
+reviewable
+approved
 ```
 
+If not, it remains Draft, Case, Learning, or Proposal.
+
 ---
 
-# 10. Insights Layer
+# 14. Insights Layer
 
-位置：
+Location:
 
 ```text
 03-Insights/
 ```
 
-包含：
+Purpose: experience memory
+
+Recommended structure:
 
 ```text
 03-Insights/
@@ -916,103 +1405,77 @@ tags:
   Postmortems/
 ```
 
-作用：
+Insights are what the system has learned from experience.
 
-保存经验知识。
+Insights are not current facts.
 
-Insights 是“我们从事情中学到了什么”。
+Insights are not rules unless promoted.
 
-不是事实库。
+## 14.1 Cases
 
-不是规则库。
+Cases record what happened.
 
----
+A case should include:
 
-## 10.1 Cases
+- background
+- participants
+- action taken
+- result
+- evidence
+- related project
+- related customer
 
-位置：
+Cases may be created by Hermes.
 
-```text
-03-Insights/Cases/
-```
+Cases do not automatically become Learnings.
 
-记录：
+## 14.2 Learnings
 
-- 发生了什么
-- 谁参与
-- 背景是什么
-- 采取了什么行动
-- 结果是什么
-- 可观察证据是什么
+Learnings explain what seems to work or fail, and under what conditions.
 
-原则：
+A learning should include:
 
-案例不是规则。
+- observation
+- evidence
+- conditions
+- limitations
+- applicability
+- confidence
+- related cases
+- review_date
 
-案例不是事实。
+Learning approval requires review.
 
-案例只是事件与结果的记录。
+## 14.3 Patterns
 
-案例可以支持 Learning。
+Patterns are repeated observations across cases, projects, or customers.
 
----
+Patterns may support Learnings.
 
-## 10.2 Learnings
+## 14.4 Postmortems
 
-位置：
+Postmortems analyze important failures, incidents, or major successes.
 
-```text
-03-Insights/Learnings/
-```
+Postmortems may produce:
 
-记录：
-
-- 为什么有效
-- 为什么失败
-- 在什么条件下成立
-- 需要什么证据
-- 适用边界是什么
-- 是否可复用
-
-Learning 必须经过验证。
-
-一次观察不能成为 Learning。
-
-推荐文件：
-
-```text
-Learnings/
-  SEO-Learnings.md
-  Content-Learnings.md
-  Sales-Learnings.md
-  Automation-Learnings.md
-  Client-Learnings.md
-```
+- cases
+- learnings
+- rule proposals
+- process changes
 
 ---
 
-## 10.3 Pattern Qualification
+# 15. Research Layer
 
-一个观察晋升为 Learning 前，至少满足以下条件之一：
-
-- 多个项目重复出现
-- 多个客户重复出现
-- 有明确数据支持
-- 有人工确认
-- 有失败案例对照
-- 被 Rule 使用过并证明有效
-
----
-
-# 11. Research Layer
-
-位置：
+Location:
 
 ```text
 04-Research/
 ```
 
-结构：
+Purpose: external or uncertain knowledge
+
+Structure:
 
 ```text
 04-Research/
@@ -1023,184 +1486,142 @@ Learnings/
   99-Archive/
 ```
 
----
+## 15.1 Research Inbox
 
-## 11.1 Research Inbox
-
-位置：
+Location:
 
 ```text
 04-Research/00-Inbox/
 ```
 
-Hermes 可直接写入。
+Hermes may write freely.
 
-特点：
+Properties:
 
-- 未验证
-- 未审核
-- 不作为正式知识
-- 默认低可信度
-- 必须有来源
+- low authority
+- unreviewed
+- requires source
+- not default retrieval
+- expires or archives automatically
 
----
+## 15.2 Reviewed Research
 
-## 11.2 Reviewed Research
-
-位置：
+Location:
 
 ```text
 04-Research/01-Reviewed/
 ```
 
-特点：
+Properties:
 
-- 已人工审核
-- 允许检索
-- 仍不等于事实
-- 必须有 review_date
-- 必须有 expires_at 或 next_review
+- reviewed
+- source-backed
+- has review_date
+- has expires_at or next_review
+- can support answers
+- still not equal to fact
 
----
+## 15.3 Reference
 
-## 11.3 Reference
-
-位置：
+Location:
 
 ```text
 04-Research/80-Reference/
 ```
 
-存放长期参考资料。
+Stores relatively stable external background:
 
-示例：
+- terminology
+- long-term frameworks
+- evergreen references
+- technical background
 
-- 行业术语
-- 技术背景
-- 不频繁变化的外部资料
-- 长期有效的分析框架
+Reference should still have review_date.
 
-Reference 仍需要 review_date。
+## 15.4 Research Review Queue
 
----
-
-## 11.4 Research Review Queue
-
-位置：
+Location:
 
 ```text
 04-Research/90-Review-Queue/
 ```
 
-Research 默认 90 天后进入 Review Queue。
+Used for research that may be stale.
 
-进入条件：
+## 15.5 Research Archive
 
-- review_date 到期
-- expires_at 到期
-- 90 天未被引用
-- 来源失效
-- 出现更新资料
-- 被 agent 标记 uncertain
-
----
-
-## 11.5 Research Archive
-
-位置：
+Location:
 
 ```text
 04-Research/99-Archive/
 ```
 
-存放：
+Stores:
 
-- 过期研究
-- 被替代研究
-- 无效市场资料
-- 旧竞品资料
-- 失效 SERP 观察
+- outdated research
+- replaced competitor notes
+- old SERP analysis
+- invalidated market observations
 
-默认不参与检索。
+Archive is excluded from default retrieval.
 
----
+## 15.6 Research Freshness Classes
 
-## 11.6 Expiration Rule
+Research should use freshness classes instead of one universal timeline.
 
-Research 不直接自动归档。
-
-Research 默认 90 天后进入 Review Queue。
-
-满足以下条件之一才归档：
-
-- expires_at 已过
-- 90 天未被引用
-- owner 未续期
-- 被 newer research 替代
-- 明确标记为 outdated
-- 来源已经失效
-- 结论被正式 Facts 或 Rules 否定
+```yaml
+freshness_class:
+  volatile_30d: pricing, platform rules, competitor offers, SERP data
+  normal_90d: market research, tactical analysis, tool comparisons
+  stable_180d: frameworks, strategy references, durable industry analysis
+  evergreen_365d: terminology, foundational concepts, historical context
+```
 
 ---
 
-# 12. Projects Layer
+# 16. Projects Layer
 
-位置：
+Location:
 
 ```text
 05-Projects/
 ```
 
-结构：
+Purpose: active workspaces
+
+Projects can contain:
+
+- briefs
+- plans
+- notes
+- research
+- drafts
+- deliverables
+- working decisions
+- project-specific context
+
+Recommended structure:
 
 ```text
 05-Projects/
   Project-A/
-  Project-B/
-  Project-C/
+    brief.md
+    plan.md
+    research.md
+    notes/
+    drafts/
+    deliverables/
+    decisions.md
+    closeout.md
 ```
 
-项目区允许：
+Projects are not permanent knowledge by default.
 
-- 自由写作
-- 自由实验
-- 自由研究
-- 临时分析
-- 任务计划
-- 输出草稿
-- 客户交付材料
+Project closeout extracts reusable knowledge into proper layers.
 
-原则：
+## 16.1 Project Closeout
 
-Projects 是工作区。
-
-不是长期知识库。
-
-项目结束后必须 closeout。
-
----
-
-## 12.1 Project Structure
-
-推荐结构：
-
-```text
-Project-A/
-  brief.md
-  plan.md
-  research.md
-  drafts/
-  deliverables/
-  notes/
-  decisions.md
-  closeout.md
-```
-
----
-
-## 12.2 Project Closeout
-
-项目结束时执行：
+When a project ends:
 
 ```text
 Project ends
@@ -1209,741 +1630,849 @@ Closeout review
 ↓
 Extract knowledge
 ↓
-Promote to correct layer
+Promote to Facts / Rules / Cases / Learnings / Records / Archive
 ↓
 Archive project
 ```
 
-必须萃取：
+Extract:
 
-- 新事实 → Facts
-- 客户变化 → Customer profile / timeline
-- 事件记录 → Cases
-- 可复用经验 → Learnings
-- 可复用流程 → Rules
-- 原始项目材料 → Archive
-
-禁止项目结束后继续作为默认检索来源。
+- new facts → Facts proposal
+- customer changes → Customer profile proposal or timeline append
+- raw materials → Records
+- events → Cases
+- reusable lessons → Learnings
+- reusable process → Rule proposal
+- inactive project files → Archive
 
 ---
 
-# 13. Indexes Layer
+# 17. Records Layer
 
-位置：
+Location:
+
+```text
+06-Records/
+```
+
+Purpose: raw evidence
+
+Structure:
+
+```text
+06-Records/
+  Customers/
+    Acme/
+      Meetings/
+      Emails/
+      Calls/
+      Feedback/
+      Attachments/
+  Internal/
+    Meetings/
+    Decisions-Raw/
+    Strategy-Notes/
+  Sources/
+    Web/
+    PDFs/
+    Screenshots/
+    Imports/
+```
+
+Records are append-only by default.
+
+Records require sensitivity metadata.
+
+Records do not equal current truth.
+
+Records can support:
+
+- Facts
+- Decisions
+- Cases
+- Learnings
+- Proposals
+- Conflict resolution
+
+## 17.1 Records Principles
+
+Forbidden:
+
+- treating a single quote as customer profile
+- treating meeting discussion as decision
+- treating email claim as product fact
+- rewriting records silently
+- using Records as default current truth
+
+Allowed:
+
+- append record
+- add correction note
+- cite record as evidence
+- create promotion proposal
+- link record to timeline
+
+## 17.2 Record Promotion
+
+Possible paths:
+
+```text
+Meeting note → Decision proposal
+Meeting note → Customer profile proposal
+Email → Timeline append
+Feedback → Case
+Repeated feedback → Learning
+Transcript → Project note
+Raw source → Research
+Signed approval → Decision / Fact evidence
+```
+
+Promotion requires triage.
+
+---
+
+# 18. Indexes and Dashboards Layer
+
+## 18.1 Indexes
+
+Location:
 
 ```text
 80-Indexes/
 ```
 
-作用：
+Purpose: navigation and aggregation
 
-提供聚合视图。
-
-允许使用：
-
-- Dataview
-- 手动索引
-- 双链索引
-- Dashboard
-- Review Queue
-
-Indexes 可以引用内容。
-
-Indexes 不复制权威内容。
-
-推荐文件：
+Recommended files:
 
 ```text
 80-Indexes/
   Products.md
   Customers.md
   Active-Projects.md
-  SEO.md
   Rules.md
   Learnings.md
+  Records.md
+  Research.md
   Review-Queue.md
-  Expiring-Research.md
-  Orphan-Notes.md
   Duplicate-Candidates.md
   Deprecated-Knowledge.md
 ```
 
-原则：
+Indexes point to truth.
 
-Index 是地图。
+Indexes do not become truth.
 
-不是事实本身。
+## 18.2 Dashboards
+
+Location:
+
+```text
+81-Dashboards/
+```
+
+Purpose: operational visibility
+
+Recommended dashboards:
+
+```text
+81-Dashboards/
+  Knowledge-Debt-Dashboard.md
+  Memory-Evaluation-Dashboard.md
+  Proposal-Dashboard.md
+  Research-Freshness-Dashboard.md
+  Project-Closeout-Dashboard.md
+  Security-Retention-Dashboard.md
+```
+
+Dashboards should be generated where possible.
+
+Dashboards are not authority.
 
 ---
 
-# 14. Temporary Layers
+# 19. Temporary Layers
 
-## 14.1 Drafts
+## 19.1 Drafts
 
-位置：
+Location:
 
 ```text
 90-Drafts/
 ```
 
-作用：保存草稿。
+Purpose: working drafts
 
-特点：
+Properties:
 
-- 完全开放
-- Hermes 可写入
-- 不参与默认检索
-- 可被删除
-- 可被晋升
+- open write
+- no authority
+- excluded from default retrieval
+- can be deleted or archived
+- can be promoted only through triage
 
-草稿不是知识。
+## 19.2 Inbox
 
-草稿只是候选内容。
-
----
-
-## 14.2 Inbox
-
-位置：
+Location:
 
 ```text
 91-Inbox/
 ```
 
-作用：保存未分类内容。
+Purpose: unclassified content
 
-特点：
+Properties:
 
-- 允许快速写入
-- 等待 Triage
-- 不作为正式知识
-- 每周清理
+- open write
+- no authority
+- temporary
+- automatically triaged or archived
 
-进入 Inbox 的内容必须在 Review 中被处理为：
+Inbox outcomes:
 
-- 删除
-- 归档
-- 转成 Draft
-- 转成 Research
-- 转成 Project
-- 晋升到正式知识层
+- delete
+- archive
+- draft
+- research
+- record
+- project
+- proposal
+- formal knowledge after review
 
----
+## 19.3 Logs
 
-## 14.3 Logs
-
-位置：
+Location:
 
 ```text
 92-Logs/
 ```
 
-作用：保存 agent 日志。
+Purpose: operational trace
 
-记录：
+Stores:
 
-- Task
-- Error
-- Debug
-- Tool result
-- Automation failure
-- Execution trace
-- Batch operation summary
+- task logs
+- errors
+- automation failures
+- execution summaries
+- debug traces
 
-原则：
+Logs are excluded from default retrieval.
 
-Logs 默认不参与知识检索。
-
-Logs 不能直接成为长期知识。
-
-但 Claudian 可从 Logs 中提取 recurring failure pattern，整理为：
-
-- Automation Learning
-- SOP update
-- Agent Rule update
-
-禁止直接把原始 Logs 作为正式知识。
+Logs can support postmortems or automation learnings.
 
 ---
 
-# 15. Archive Layer
+# 20. Proposals Layer
 
-位置：
+Location:
+
+```text
+93-Proposals/
+```
+
+Purpose: reviewable change requests
+
+Structure:
+
+```text
+93-Proposals/
+  Core/
+  Facts/
+  Rules/
+  Customers/
+  Research/
+  Records/
+  Conflicts/
+  Promotions/
+  Archive/
+  Schemas/
+  Security/
+```
+
+Proposals are not truth.
+
+Proposals are pending suggestions.
+
+## 20.1 When to Create Proposal
+
+Required for:
+
+- Core changes
+- Source of Truth System changes
+- Permission Policy changes
+- Retrieval Rules changes
+- Context Packing Policy changes
+- Security Policy changes
+- Schema changes
+- Brand facts
+- Product facts
+- Customer current profile
+- Approved Rules
+- Learning to Rule promotion
+- Research to Reviewed Research promotion
+- Conflict resolution
+- duplicate authority merge
+- Archive restoration
+- marking formal knowledge deprecated or superseded
+
+## 20.2 Proposal Lifecycle
+
+```text
+Drafted
+↓
+Pending Review
+↓
+Approved / Rejected / Needs Revision / Expired
+↓
+Applied if approved
+↓
+Changelog updated
+↓
+Indexes updated if needed
+↓
+Proposal archived
+```
+
+## 20.3 Proposal Requirements
+
+Each proposal should include:
+
+- target_file
+- proposal_type
+- proposed_change
+- reason
+- source_evidence
+- risk
+- affected_files
+- suggested_changelog_entry
+- rollback_plan for high-risk updates
+- reviewer
+- decision
+
+---
+
+# 21. Review Queues Layer
+
+Location:
+
+```text
+94-Review-Queues/
+```
+
+Purpose: operational review lists
+
+Recommended files:
+
+```text
+94-Review-Queues/
+  Review-Queue.md
+  Proposal-Queue.md
+  Conflict-Queue.md
+  Records-Triage.md
+  Expiring-Research.md
+  Duplicate-Candidates.md
+  Orphan-Notes.md
+  Schema-Failures.md
+  Project-Closeout-Queue.md
+  Security-Review.md
+```
+
+V7.1 Stable uses review by exception.
+
+Queues should not become large manual obligations.
+
+Hermes should generate queue entries, summaries, and recommended actions.
+
+Human review focuses only on high-authority impact.
+
+---
+
+# 22. Archive Layer
+
+Location:
 
 ```text
 99-Archive/
 ```
 
-包含：
+Purpose: historical storage
 
-- 历史项目
-- 历史研究
-- 历史规则
-- 历史案例
-- 失效材料
-- 关闭客户
-- 废弃方案
+Stores:
 
-原则：
+- completed projects
+- outdated research
+- deprecated rules
+- superseded files
+- closed customer records
+- rejected or expired proposals
+- old drafts
+- old logs
+- invalidated knowledge
 
-Archive 默认不参与检索。
+Archive is excluded from default retrieval.
 
-Archive 只用于历史追溯。
+Archive may be used for:
 
-Archive 中的内容不能作为当前事实。
+- historical tracing
+- audit
+- recovery
+- conflict analysis
 
-如果 Archive 中的信息重新变得有用，必须重新 Review 后再恢复。
-
----
-
-# 16. Knowledge Triage Rules
-
-位置：
-
-```text
-00-Core/Knowledge-Triage-Rules.md
-```
-
-所有写入前必须先判断知识类型。
+If archived content becomes useful again, it must be reviewed before restoration.
 
 ---
 
-## 16.1 Step 1 — Classify
+# 23. Knowledge Triage Rules
 
-判断内容属于哪一类：
+All write operations must classify knowledge first.
+
+## 23.1 Classification
 
 ```text
 Current truth → Facts
-Historical event → Timeline / Cases
+Historical confirmed event → Timeline
+Raw evidence → Records
+Confirmed decision → Decisions
 How-to instruction → Rules
 Repeated verified pattern → Learnings
+One-off event with result → Case
 External uncertain info → Research
-Work-in-progress → Projects / Drafts
+Work in progress → Project / Draft
 System principle → Core
+High-risk update → Proposal
 Unclear content → Inbox
 ```
 
----
+## 23.2 Check SSOT
 
-## 16.2 Step 2 — Check SSOT
-
-写入前必须判断：
-
-是否已有权威版本？
-
-如果有：
-
-- 更新原文件
-- 添加 changelog
-- 关联来源
-- 不创建平行版本
-
-如果没有：
-
-- 根据 Source of Truth Map 创建新文件
-- 添加完整 metadata
-- 设置 owner 和 review_date
-
----
-
-## 16.3 Step 3 — Check Permission
-
-判断目标位置属于哪一类权限：
-
-- Class A：只读，必须审核
-- Class B：可新增，需规范
-- Class C：完全开放
-
-如果是 Class A：
-
-Hermes 只能生成修改建议。
-
-不能直接覆盖。
-
----
-
-## 16.4 Step 4 — Write or Propose
-
-根据权限执行：
+Before writing formal knowledge:
 
 ```text
-Fast-write area → 直接写入
-Review-required area → 生成修改建议
-Unknown area → 写入 Inbox
+Is there an existing authority file?
+If yes, do not create parallel truth.
+If no, use Source of Truth System.
+If unknown, write to Inbox.
+```
+
+## 23.3 Check Permission
+
+```text
+Class A → proposal only
+Class B → create/append, proposal for key changes
+Class C → open write
+Class R → append-only evidence
+```
+
+## 23.4 Write or Propose
+
+```text
+Fast-write area → write directly
+Records area → append with metadata
+Controlled area → create proposal
+Unknown area → Inbox
 ```
 
 ---
 
-# 17. Knowledge Promotion Framework
+# 24. Knowledge Promotion Framework
 
-知识必须晋升。
+Knowledge may be promoted, but only through correct paths.
 
-但晋升不是单一路径。
-
-错误模型：
+Wrong model:
 
 ```text
-Draft
-↓
-Research
-↓
-Learning
-↓
-Rule
-↓
-Core Memory
+Draft → Research → Learning → Rule → Core
 ```
 
-正确模型：
+Correct model:
 
 ```text
-Draft / Inbox / Project
+Draft / Inbox / Project / Record
 ↓
 Triage
 ↓
-Facts / Rules / Cases / Research / Projects
+Facts / Rules / Cases / Research / Records / Projects / Proposal
 ↓
-Validated Learning
+Validated Learning where appropriate
 ↓
-Reusable Rule
+Reusable Rule where appropriate
 ↓
-Core Memory, only if system-level and stable
+Core only if system-level and stable
 ```
 
----
+## 24.1 Draft to Facts
 
-## 17.1 Draft → Facts
+Requires:
 
-适用于：
+- source
+- owner
+- no SSOT conflict
+- approval if high-risk
 
-- 已确认产品信息
-- 已确认品牌信息
-- 已确认客户当前状态
+## 24.2 Record to Facts
 
-要求：
+Requires:
 
-- 有来源
-- 有 owner
-- 有 review
-- 确认无现有 SSOT 冲突
+- Record remains append-only
+- Fact update through proposal where required
+- source link to Record
+- changelog or timeline entry
 
----
+## 24.3 Draft to Research
 
-## 17.2 Draft → Research
+Requires:
 
-适用于：
+- source
+- confidence
+- review_date
+- expires_at or freshness class
 
-- 外部资料
-- 市场观察
-- 竞品研究
-- 未验证假设
+## 24.4 Project to Case
 
-要求：
+Requires:
 
-- 有 source
-- 有 confidence
-- 有 review_date
-- 有 expires_at
+- completed project
+- clear action
+- clear result
+- evidence
 
----
+## 24.5 Case to Learning
 
-## 17.3 Project → Case
+Requires at least one:
 
-适用于：
+- multiple supporting cases
+- multiple customers
+- clear data
+- human confirmation
+- failure comparison
+- repeated successful use
 
-- 完成项目
-- 明确行动和结果
-- 有可追溯证据
+## 24.6 Learning to Rule
 
----
+Requires:
 
-## 17.4 Case → Learning
+- repeatability
+- clear trigger
+- clear steps
+- clear output standard
+- exceptions
+- approval
 
-适用于：
+## 24.7 Rule to Core
 
-- 多个案例支持
-- 有明确复用价值
-- 有边界条件
-- 有人工确认
+Allowed only if:
 
----
-
-## 17.5 Learning → Rule
-
-适用于：
-
-- 可稳定复用
-- 可指导未来执行
-- 有清晰步骤
-- 有适用范围
-- 有例外情况
-
----
-
-## 17.6 Rule → Core Memory
-
-适用于：
-
-- 系统级原则
-- 长期稳定
-- 跨项目适用
-- 跨 agent 适用
-- 高度抽象
-- 不依赖具体业务细节
-
-Core Memory 只能收录原则。
-
-不能收录细节。
+- system-level
+- stable
+- cross-project
+- cross-agent
+- highly abstract
+- not business-detail-specific
+- approved
 
 ---
 
-# 18. Conflict Resolution Policy
+# 25. Conflict Resolution Policy
 
-位置：
+Conflicts are expected.
+
+The system must not hide them.
+
+## 25.1 Authority Priority
+
+Default priority:
 
 ```text
-00-Core/Conflict-Resolution-Policy.md
+1. Core Memory, only for system principles
+2. Approved Rules, only for execution standards
+3. Domain Facts SSOT
+4. Historical confirmed facts
+5. Source Records
+6. Approved Learnings
+7. Reviewed Research
+8. Active project notes
+9. Raw Research
+10. Proposals
+11. Drafts / Inbox
+12. Logs
+13. Archive, only for historical tracing
 ```
 
-SSOT 的难点不是只有一个文件。
+Core does not override product, brand, or customer facts.
 
-SSOT 的难点是冲突时如何判断。
+Facts SSOT wins for domain truth.
 
----
+Records support facts but do not override approved facts by default.
 
-## 18.1 Authority Priority
+## 25.2 Conflict Handling
 
-当两个来源冲突时，按以下优先级判断：
+When conflict is found:
+
+1. Do not delete original evidence
+2. Find relevant SSOT
+3. Identify conflicting sources
+4. Create conflict proposal
+5. Recommend resolution
+6. Mark uncertain content
+7. Add changelog after approval
+8. Mark lower-authority content outdated or superseded where appropriate
+
+## 25.3 Conflict Note Location
 
 ```text
-1. Core Memory
-2. Approved Rules
-3. Approved Facts SSOT
-4. Customer profile current state
-5. Timeline / meeting notes
-6. Reviewed Research
-7. Project notes
-8. Drafts / Inbox
-9. Logs
+93-Proposals/Conflicts/
 ```
 
-说明：
-
-Core Memory 只对系统原则有最高权威。
-
-Core Memory 不覆盖具体品牌、产品、客户事实。
-
-具体事实仍以对应 Facts SSOT 为准。
-
----
-
-## 18.2 Conflict Handling
-
-如果发现冲突：
-
-1. 不直接删除任何原始记录
-2. 找到对应 SSOT 文件
-3. 判断冲突来源
-4. 更新当前结论
-5. 添加 source
-6. 添加 changelog
-7. 必要时创建 conflict note
-8. 标记低权威内容为 outdated 或 superseded
-
----
-
-## 18.3 Conflict Note
-
-位置：
+or:
 
 ```text
-91-Inbox/Conflicts/
-```
-
-或：
-
-```text
-80-Indexes/Conflict-Queue.md
-```
-
-格式：
-
-```markdown
----
-type: conflict
-status: open
-owner:
-created:
-related:
----
-
-# Conflict Title
-
-## Conflict
-
-## Source A
-
-## Source B
-
-## Current SSOT
-
-## Proposed Resolution
-
-## Decision
-
-## Changelog
+94-Review-Queues/Conflict-Queue.md
 ```
 
 ---
 
-# 19. Permission Model
+# 26. Permission Model
 
-系统采用三类权限。
+The system uses four permission classes.
 
----
+## 26.1 Class A — Core Assets
 
-## 19.1 Class A — Core Assets
-
-包含：
+Includes:
 
 - Core Memory
-- Source of Truth Map
-- Brand
-- Products
-- Rules
+- Source of Truth System
+- Brand Facts
+- Product Facts
+- Approved Rules
 - Agent behavior rules
-- Permission policy
+- Permission Policy
+- Retrieval Rules
+- Context Packing Policy
+- Schema Policy
+- Security Policy
 
-权限：
-
-- 默认只读
-- Hermes 不能直接覆盖
-- 修改必须审核
-- 必须有 changelog
-- 必须有 source
-- 必须有 owner
-
-Hermes 行为：
+Policy:
 
 ```text
-Generate proposal only.
-Do not overwrite.
+read by default
+proposal only for changes
+human approval required
+changelog required
+source required
 ```
 
----
+Hermes must not overwrite Class A files directly.
 
-## 19.2 Class B — Knowledge Assets
+## 26.2 Class B — Knowledge Assets
 
-包含：
+Includes:
 
-- Customers
-- Cases
-- Learnings
-- Research
-- Projects
-- Reviewed notes
+- customer files
+- timelines
+- decisions
+- cases
+- learnings
+- reviewed notes
+- research
+- projects
 
-权限：
-
-- 允许新增
-- 遵循结构规范
-- 关键字段修改需审核
-- Learnings 晋升需审核
-- Customer profile 修改需审核
-- Timeline append 可快速写入
-
-Hermes 行为：
+Policy:
 
 ```text
-May create.
-May append.
-Need review for current-state changes.
+Hermes may create or append
+key current-state changes require proposal
+learning approval requires review
+customer profile changes require review
 ```
 
----
+## 26.3 Class C — Temporary Assets
 
-## 19.3 Class C — Temporary Assets
+Includes:
 
-包含：
+- drafts
+- inbox
+- logs
+- proposals
+- review queues
+- project working drafts
+- research inbox
 
-- Drafts
-- Inbox
-- Logs
-- Project working drafts
-- Research inbox
-
-权限：
-
-- 完全开放
-- Hermes 可直接写入
-- 不参与正式检索
-- 必须定期清理
-
-Hermes 行为：
+Policy:
 
 ```text
-Free write allowed.
-No authority.
+open write
+low authority
+excluded from default retrieval
+subject to lifecycle cleanup
 ```
 
----
+## 26.4 Class R — Records Assets
 
-# 20. Write Speed Policy
+Includes:
 
-为了避免治理过重，系统区分 Fast Path 和 Controlled Path。
+- meetings
+- calls
+- emails
+- feedback
+- transcripts
+- imports
+- source materials
 
----
+Policy:
 
-## 20.1 Fast Path
+```text
+append-only
+correction by new note
+not current truth by default
+evidence role
+sensitive data policy applies
+```
 
-允许快速写入：
+## 26.5 Emergency Override
 
-- Drafts
-- Inbox
-- Logs
-- Project working notes
-- Meeting notes
-- Timeline append
-- Research inbox
+Emergency override may apply only to limited Class B current workflow updates.
 
-特点：
+It must not apply to:
 
-- 写入快
-- 权威低
-- 后续需要 Triage
-- 不自动成为正式知识
-
----
-
-## 20.2 Controlled Path
-
-必须审核：
-
-- Core Memory
+- Core
 - Brand
-- Products
-- Rules
-- Customer profile
-- Learnings
-- Reviewed Research
-- Source of Truth Map
+- Product facts
+- Approved Rules
+- Security Policy
 - Permission Policy
 
-特点：
+Emergency writes must include:
 
-- 写入慢
-- 权威高
-- 必须有来源
-- 必须有 changelog
-- 必须有 owner
+- `status: needs_review`
+- source
+- reason
+- timestamp
+- review deadline
 
 ---
 
-# 21. Memory Write Pipeline
+# 27. Write Speed Policy
 
-禁止直接写入核心知识。
+The system separates speed from authority.
 
-统一流程：
+## 27.1 Fast Path
+
+Allowed:
+
+- Drafts
+- Inbox
+- Logs
+- project notes
+- research inbox
+- proposals
+
+Properties:
+
+- fast
+- low authority
+- no default retrieval
+- lifecycle cleanup
+
+## 27.2 Records Path
+
+Allowed:
+
+- meeting notes
+- emails
+- calls
+- transcripts
+- raw feedback
+- imported documents
+
+Properties:
+
+- append-only
+- evidence role
+- not current truth
+- can trigger proposal
+
+## 27.3 Controlled Path
+
+Requires approval:
+
+- Core
+- Brand
+- Products
+- Rules
+- Customer profile current state
+- Learnings approval
+- Reviewed Research
+- Source of Truth System
+- Security Policy
+- Permission Policy
+- Retrieval Policy
+
+Properties:
+
+- slow
+- high authority
+- source required
+- changelog required
+- proposal required
+
+---
+
+# 28. Memory Write Pipeline
+
+Formal memory must flow through a controlled pipeline.
 
 ```text
-Hermes
+Hermes through Claudian runtime
 ↓
-Draft / Inbox / Project / Research Inbox
+Draft / Inbox / Project / Research Inbox / Record / Proposal
 ↓
 Triage
 ↓
-Review
+Review where required
 ↓
 Promote
 ↓
 Merge into SSOT
 ↓
 Changelog
+↓
+Index / dashboard update where needed
 ```
 
----
+## 28.1 Create
 
-## 21.1 Stage 1 — Create
+Hermes creates content in allowed write areas.
 
-Hermes 输出内容。
+## 28.2 Triage
 
-可进入：
+Hermes classifies knowledge and recommends destination.
 
-- Drafts
-- Inbox
-- Projects
-- Research Inbox
-- Meeting Notes
-- Logs
+## 28.3 Review
 
----
+Only required for high-authority impact.
 
-## 21.2 Stage 2 — Triage
+## 28.4 Promote
 
-Claudian 判断：
+Content moves to the correct formal layer.
 
-- 这是事实？
-- 这是规则？
-- 这是经验？
-- 这是案例？
-- 这是研究？
-- 这是项目材料？
-- 是否已有 SSOT？
-- 是否重复？
-- 是否过期？
-- 是否需要审核？
+## 28.5 Merge
+
+If SSOT exists:
+
+- update target authority file only after permission is satisfied
+- add changelog
+- cite source
+- archive proposal
+- update index if needed
 
 ---
 
-## 21.3 Stage 3 — Review
+# 29. Agent Write Rules
 
-Claudian 审核：
+Hermes must follow these rules.
 
-- 是否准确
-- 是否重复
-- 是否已有权威版本
-- 是否有来源
-- 是否有 owner
-- 是否需要过期时间
-- 是否违反 SSOT
-- 是否应该归档
-
----
-
-## 21.4 Stage 4 — Promote
-
-符合条件后晋升到：
-
-- Facts
-- Rules
-- Insights
-- Research Reviewed
-- Indexes
-- Archive
-
----
-
-## 21.5 Stage 5 — Merge
-
-如果目标是已有 SSOT：
-
-- 更新原文件
-- 不创建新版本
-- 添加 changelog
-- 添加 related
-- 添加 source
-- 更新 updated
-- 更新 review_date
-
----
-
-# 22. Agent Write Rules
-
-Hermes 写入前必须执行以下判断。
-
----
-
-## 22.1 Step 1 — What is this?
+## 29.1 Determine Type
 
 ```text
 Fact?
@@ -1951,174 +2480,508 @@ Rule?
 Learning?
 Case?
 Research?
+Record?
 Project material?
 Draft?
 Log?
+Proposal?
 ```
 
----
+## 29.2 Determine SSOT
 
-## 22.2 Step 2 — Is there an existing SSOT?
+If authority exists, do not create another authority file.
 
-如果有：
+## 29.3 Determine Permission
 
-- 不创建新文件
-- 生成更新建议
-- 引用原文件
-- 等待审核
+Class A → proposal only  
+Class B → create/append with constraints  
+Class C → open write  
+Class R → append-only
 
-如果没有：
+## 29.4 Determine Expiration
 
-- 根据 Source of Truth Map 创建
-- 添加 metadata
-- 标记 status
+Must have review_date or expires_at:
 
----
+- research
+- market data
+- platform rules
+- pricing
+- competitor information
+- volatile product facts
+- approved rules
+- learnings
 
-## 22.3 Step 3 — Is it a Core Asset?
+## 29.5 Determine Source Requirement
 
-如果是：
+Source required for:
 
-- 不自动覆盖
-- 只生成 proposal
-- 标明 changed sections
-- 标明 reason
-- 标明 source
+- facts
+- rules
+- research
+- records
+- learnings
+- decisions
+- proposals
+- customer profile changes
+- product changes
+- brand changes
 
----
+No-source content goes to Draft or Inbox.
 
-## 22.4 Step 4 — Does it need expiration?
+## 29.6 Determine Sensitivity
 
-以下内容必须有 expires_at 或 review_date：
+Sensitive content includes:
 
-- Research
-- SEO 资料
-- 竞品资料
-- 市场趋势
-- 技术工具信息
-- 平台规则
-- 价格信息
-- 外部资料
+- credentials
+- API keys
+- private customer data
+- personal identifiers
+- financial information
+- legal information
+- confidential strategy
 
----
-
-## 22.5 Step 5 — Does it need source?
-
-以下内容必须有 source：
-
-- Facts
-- Rules
-- Research
-- Learnings
-- Customer profile changes
-- Product changes
-- Brand changes
-
-没有 source 的内容只能进入 Draft 或 Inbox。
+Sensitive content must follow Security and Retention Policy.
 
 ---
 
-# 23. Retrieval Rules
+# 30. Retrieval Runtime Architecture
 
-任务开始时，优先加载：
+Retrieval must be conservative by default.
+
+The system optimizes for reliable memory, not maximum recall.
+
+## 30.1 Retrieval Modes
+
+```yaml
+retrieval_modes:
+  - exact_ssot_lookup
+  - source_of_truth_lookup
+  - metadata_filter_search
+  - semantic_search
+  - backlink_expansion
+  - recency_boosted_search
+  - authority_boosted_search
+  - project_context_search
+  - evidence_trace_search
+  - historical_trace_search
+  - conflict_search
+  - debug_log_search
+```
+
+## 30.2 Default Retrieval Flow
 
 ```text
-1. Core Memory
-2. Source of Truth Map
-3. Relevant Facts
-4. Relevant Rules
-5. Relevant Learnings
-6. Relevant Reviewed Research
-7. Active Project context
+1. Identify task type
+2. Select retrieval preset
+3. Check Source of Truth System
+4. Exact lookup for known SSOT
+5. Metadata-filtered search
+6. Semantic search only within allowed layers
+7. Apply ranking and exclusions
+8. Pack context
+9. Answer or act
+10. Report sources for high-risk answers
 ```
 
-然后按需检索。
+## 30.3 Writing Retrieval Flow
 
-禁止：
-
-- 加载整个 Vault
-- 默认检索 Archive
-- 默认检索 Logs
-- 把 Draft 当成事实
-- 把 Research 当成事实
-- 把 Case 当成规则
-- 把 Meeting Note 当成 Customer Current State
-
----
-
-## 23.1 Retrieval Priority
-
-检索优先级：
+Before formal write:
 
 ```text
-1. Core system principles
-2. Facts SSOT
-3. Approved Rules
-4. Customer current profile
-5. Active project files
-6. Learnings
-7. Cases
-8. Reviewed Research
-9. Raw Research
-10. Drafts
-11. Archive
-12. Logs
+1. Load Core principle if relevant
+2. Load Source of Truth Map
+3. Load Permission Policy
+4. Load relevant schema
+5. Load target SSOT
+6. Load active proposal if exists
+7. Load evidence records only as needed
+8. Write proposal or allowed update
 ```
 
-Archive、Logs、Drafts 只有在明确需要时才检索。
+## 30.4 Evidence Retrieval Flow
+
+When verifying fact origin:
+
+```text
+1. Load current SSOT
+2. Load changelog
+3. Follow source links
+4. Load relevant Records
+5. Check timestamps
+6. Check newer conflicting evidence
+7. Return current fact and evidence trail
+```
+
+## 30.5 Historical Retrieval Flow
+
+```text
+1. Load timeline
+2. Load records
+3. Load archive only if required
+4. Load superseded files if relevant
+5. Mark output historical
+6. Do not update current truth without proposal
+```
 
 ---
 
-# 24. Knowledge Graph Metadata
+# 31. Retrieval Ranking and Scoring
 
-所有正式知识统一 Frontmatter。
+Ranking should not depend only on semantic similarity.
+
+## 31.1 Recommended Formula
+
+```text
+final_score =
+  semantic_relevance
++ authority_weight
++ ssot_weight
++ task_match_weight
++ source_quality_weight
++ freshness_weight
++ project_relevance_weight
++ backlink_weight
+- stale_penalty
+- draft_penalty
+- archive_penalty
+- deprecated_penalty
+- conflict_penalty
+- security_penalty
+```
+
+## 31.2 Simple Stable Priority
+
+For early and low-maintenance operation, use:
+
+```text
+Exact SSOT
+> Approved Rules
+> Current Facts
+> Active Project Context
+> Approved Learnings
+> Reviewed Research
+> Records only when evidence is needed
+> Drafts / Inbox / Logs / Archive excluded
+```
+
+## 31.3 Authority Weights
+
+```yaml
+authority_weight:
+  ssot: 100
+  approved: 80
+  reference: 50
+  provisional: 25
+  raw: 15
+  none: 0
+```
+
+## 31.4 Layer Weights
+
+```yaml
+layer_weight:
+  core: 100
+  facts: 95
+  rules: 90
+  insights_approved: 65
+  research_reviewed: 50
+  projects_active: 45
+  records_evidence_only: 35
+  research_raw: 20
+  proposals: 10
+  drafts: -50
+  logs: -70
+  archive: -80
+```
+
+## 31.5 Default Exclusion
+
+Exclude by default:
+
+```text
+status: archived
+status: deprecated
+status: superseded
+status: rejected
+memory_layer: draft
+memory_layer: inbox
+memory_layer: logs
+memory_layer: proposal
+memory_layer: archive
+raw research
+records unless evidence mode
+```
 
 ---
 
-## 24.1 Standard Metadata
+# 32. Context Packing Policy
+
+Context packing determines what memory enters the model context.
+
+## 32.1 Context Tiers
+
+```text
+Tier 0: User request and task instruction
+Tier 1: Exact SSOT files
+Tier 2: Relevant approved rules
+Tier 3: Relevant current facts
+Tier 4: Active project context
+Tier 5: Approved learnings
+Tier 6: Reviewed research summaries
+Tier 7: Source records / evidence excerpts
+Tier 8: Raw research / drafts / archive only when explicitly needed
+```
+
+## 32.2 Packing Rules
+
+Hermes should not load the entire Vault.
+
+Default loading:
+
+```text
+1. Minimal Core principles
+2. Exact relevant SSOT
+3. Relevant approved rules
+4. Active project context if applicable
+5. Evidence only when needed
+```
+
+## 32.3 Summarize vs Load
+
+Load full text:
+
+- target SSOT file
+- short approved rule
+- active proposal
+- customer profile
+- project brief
+
+Summarize:
+
+- long research
+- long transcripts
+- large project histories
+- archived material
+- logs
+
+Load pointer only:
+
+- unrelated indexes
+- old drafts
+- superseded files
+- low-quality raw research
+
+## 32.4 Context Budget
+
+Recommended:
+
+```yaml
+context_budget:
+  task_instruction: 10%
+  exact_ssot: 30%
+  rules: 20%
+  project_context: 15%
+  evidence: 15%
+  research_or_insights: 10%
+```
+
+High-risk write tasks may increase SSOT and evidence.
+
+Research tasks may increase reviewed research but must not treat research as fact.
+
+---
+
+# 33. Retrieval Filter Presets
+
+## 33.1 Default Execution Retrieval
+
+Include:
+
+```yaml
+memory_layer:
+  - core
+  - facts
+  - rules
+  - insights_approved
+  - research_reviewed
+  - projects_active_when_relevant
+status:
+  - active
+  - approved
+authority:
+  - ssot
+  - approved
+  - reference
+```
+
+Exclude:
+
+```yaml
+memory_layer:
+  - draft
+  - inbox
+  - logs
+  - proposal
+  - archive
+  - records_unless_evidence
+  - research_raw
+status:
+  - draft
+  - archived
+  - deprecated
+  - superseded
+  - rejected
+  - expired
+```
+
+## 33.2 Writing Retrieval
+
+Must include:
+
+```text
+Core principle if relevant
+Source-of-Truth-Map
+Permission-Policy
+Relevant schema
+Relevant SSOT file
+Relevant proposal if exists
+```
+
+Optional:
+
+```text
+Relevant Records
+Timeline
+Changelog
+```
+
+## 33.3 Research Retrieval
+
+Priority:
+
+```text
+Reviewed Research
+Reference
+Current Facts
+Approved Rules
+Raw Research with low-authority warning
+External sources
+```
+
+## 33.4 Evidence Retrieval
+
+Include:
+
+```text
+Facts SSOT
+Changelog
+Decisions
+Records
+Timeline
+Approved source references
+```
+
+Output must distinguish:
+
+```text
+Current fact
+Supporting evidence
+Historical note
+Unresolved conflict
+```
+
+## 33.5 Historical Retrieval
+
+Include:
+
+```text
+Archive
+Timeline
+Records
+Old projects
+Superseded files
+```
+
+All output must be marked historical.
+
+## 33.6 Debug Retrieval
+
+Include:
+
+```text
+Logs
+Automation notes
+Error reports
+Related SOPs
+```
+
+Logs are diagnostic only.
+
+---
+
+# 34. Knowledge Graph Metadata
+
+Metadata enables retrieval, audit, lifecycle, and automation.
+
+## 34.1 Minimal Required Metadata
+
+For formal files:
 
 ```yaml
 type:
 memory_layer:
 status:
 authority:
-owner:
-created:
-updated:
-review_date:
-expires_at:
 source:
-confidence:
+updated:
 write_policy:
-related:
-tags:
 ```
 
----
+## 34.2 Extended Metadata
 
-## 24.2 Field Definitions
+Use when applicable:
+
+```yaml
+owner:
+created:
+review_date:
+expires_at:
+confidence:
+source_quality:
+approved_by:
+reviewer:
+last_verified:
+retrieval_scope:
+sensitivity:
+retention_until:
+schema:
+related:
+tags:
+canonical_id:
+superseded_by:
+```
+
+## 34.3 Field Definitions
 
 ### type
-
-文档类型。
-
-示例：
 
 ```yaml
 type: product
 type: customer_profile
+type: decision
 type: rule
 type: case
 type: learning
 type: research
 type: project
+type: record
+type: proposal
 type: index
+type: dashboard
 type: log
 ```
 
 ### memory_layer
-
-所属记忆层。
 
 ```yaml
 memory_layer: core
@@ -2127,15 +2990,15 @@ memory_layer: rules
 memory_layer: insights
 memory_layer: research
 memory_layer: projects
+memory_layer: records
 memory_layer: draft
 memory_layer: inbox
 memory_layer: logs
+memory_layer: proposal
 memory_layer: archive
 ```
 
 ### status
-
-生命周期状态。
 
 ```yaml
 status: draft
@@ -2144,11 +3007,14 @@ status: needs_review
 status: deprecated
 status: archived
 status: superseded
+status: pending
+status: approved
+status: rejected
+status: applied
+status: expired
 ```
 
 ### authority
-
-权威等级。
 
 ```yaml
 authority: ssot
@@ -2156,55 +3022,52 @@ authority: approved
 authority: reference
 authority: provisional
 authority: raw
+authority: none
 ```
 
-### owner
-
-负责人。
+### source_quality
 
 ```yaml
-owner: claudian
-owner: armor
-owner: hermes
-```
-
-### source
-
-来源。
-
-```yaml
-source:
-  - user-confirmed
-  - meeting/2026-03-15
-  - project/project-a
-  - research/competitor-analysis
-```
-
-### confidence
-
-可信度。
-
-```yaml
-confidence: high
-confidence: medium
-confidence: low
-confidence: unknown
+source_quality: user_confirmed
+source_quality: primary_source
+source_quality: internal_record
+source_quality: external_official
+source_quality: external_secondary
+source_quality: ai_generated
+source_quality: unknown
 ```
 
 ### write_policy
-
-写入权限。
 
 ```yaml
 write_policy: review_required
 write_policy: append_only
 write_policy: open
 write_policy: read_only
+write_policy: proposal_only
 ```
 
----
+### sensitivity
 
-## 24.3 Example Metadata
+```yaml
+sensitivity: public
+sensitivity: internal
+sensitivity: confidential
+sensitivity: restricted
+sensitivity: secret
+```
+
+### retrieval_scope
+
+```yaml
+retrieval_scope: default
+retrieval_scope: evidence_only
+retrieval_scope: historical_only
+retrieval_scope: debug_only
+retrieval_scope: excluded
+```
+
+## 34.4 Example Metadata
 
 ```yaml
 ---
@@ -2212,668 +3075,1055 @@ type: product
 memory_layer: facts
 status: active
 authority: ssot
-owner: claudian
+owner: human
 created: 2026-01-01
 updated: 2026-06-05
 review_date: 2026-12-01
-expires_at:
 source:
   - founder-confirmed
+source_quality: user_confirmed
 confidence: high
 write_policy: review_required
+approved_by: human
+sensitivity: internal
+retrieval_scope: default
+schema: product.schema.yml
 related:
-  - rule/seo-content
-  - customer/acme
+  - 02-Rules/SEO/SEO-Content-Rule.md
+  - 03-Insights/Cases/Example-Case.md
 tags:
-  - seo
   - product
 ---
 ```
 
 ---
 
-# 25. Changelog Requirement
+# 35. Schema Validation Layer
 
-所有 Class A 文件必须有 Changelog。
+Location:
 
-推荐格式：
-
-```markdown
-## Changelog
-
-| Date | Change | Source | Approved By |
-|---|---|---|---|
-| 2026-06-05 | Updated product positioning | Founder note | Claudian |
+```text
+70-Schemas/
 ```
 
-Class B 文件建议有 Changelog。
+Purpose: make governance checkable
 
-Class C 文件不要求。
+Recommended schemas:
 
----
+```text
+70-Schemas/
+  product.schema.yml
+  customer_profile.schema.yml
+  rule.schema.yml
+  learning.schema.yml
+  research.schema.yml
+  record.schema.yml
+  decision.schema.yml
+  proposal.schema.yml
+  project_closeout.schema.yml
+```
 
-# 26. File Lifecycle
+## 35.1 Validation Checks
 
-所有正式知识都必须有生命周期状态。
+Check for:
 
----
+- missing required metadata
+- missing source
+- missing owner where required
+- invalid authority
+- invalid memory_layer
+- Class A change without proposal
+- Class A file without changelog
+- research without freshness class or review_date
+- rule without exceptions
+- learning without evidence
+- record without sensitivity
+- superseded file without superseded_by
+- archived file in default retrieval
+- customer profile modified without proposal
+- product file modified without proposal
 
-## 26.1 draft
+## 35.2 Failure Handling
 
-草稿。
+```text
+Class A schema failure → block direct write and create proposal
+Class B schema failure → allow draft or needs_review
+Class C schema failure → allow write and add cleanup queue
+Class R schema failure → allow append if urgent and mark needs_metadata
+```
 
-不参与正式检索。
-
----
-
-## 26.2 active
-
-当前有效。
-
-可参与检索。
-
----
-
-## 26.3 needs_review
-
-需要审核。
-
-可以谨慎检索，但不能作为最终权威。
-
----
-
-## 26.4 deprecated
-
-已废弃。
-
-默认不参与检索。
-
-可以用于历史解释。
-
----
-
-## 26.5 archived
-
-已归档。
-
-默认不参与检索。
-
----
-
-## 26.6 superseded
-
-已被替代。
-
-必须指向替代文件。
-
-示例：
+## 35.3 Example Product Schema
 
 ```yaml
-status: superseded
-superseded_by: 01-Facts/Products/Armor-SEO.md
+schema: product
+required:
+  - type
+  - memory_layer
+  - status
+  - authority
+  - updated
+  - source
+  - source_quality
+  - write_policy
+  - review_date
+  - approved_by
+rules:
+  type: product
+  memory_layer: facts
+  authority: ssot
+  write_policy: review_required
+  changelog_required: true
 ```
 
 ---
 
-# 27. Review and Audit
+# 36. Changelog Requirement
 
-## 27.1 Knowledge Review
+All Class A files require changelog.
 
-每月执行 Knowledge Review。
-
-检查：
-
-- 重复文件
-- 孤立文档
-- 未分类内容
-- 失效研究
-- needs_review 文件
-- Inbox 堆积
-- Drafts 堆积
-- 缺少 metadata 的正式文件
-- 过期 review_date
-- 失效 source
-
-输出：
-
-```text
-80-Indexes/Review-Queue.md
-```
-
----
-
-## 27.2 Knowledge Audit
-
-每季度执行 Knowledge Audit。
-
-检查：
-
-- SSOT 完整性
-- Core Memory 体积
-- Rule 有效性
-- Learning 时效性
-- Metadata 完整性
-- Graph 连接质量
-- Research 过期情况
-- Archive 是否误参与检索
-- Projects 是否完成 closeout
-- Source of Truth Map 是否完整
-
-输出：
-
-```text
-80-Indexes/Quarterly-Audit.md
-```
-
----
-
-## 27.3 Review Queues
-
-推荐维护以下队列：
-
-```text
-80-Indexes/Review-Queue.md
-80-Indexes/Expiring-Research.md
-80-Indexes/Needs-Source.md
-80-Indexes/Needs-Owner.md
-80-Indexes/Duplicate-Candidates.md
-80-Indexes/Orphan-Notes.md
-80-Indexes/Conflict-Queue.md
-80-Indexes/Deprecated-Knowledge.md
-```
-
----
-
-# 28. Standard Templates
-
-## 28.1 Product Template
+Recommended format:
 
 ```markdown
----
-type: product
-memory_layer: facts
-status: active
-authority: ssot
-owner: claudian
-created:
-updated:
-review_date:
-expires_at:
-source:
-confidence: high
-write_policy: review_required
-related:
-tags:
----
-
-# Product Name
-
-## Positioning
-
-## Target Customer
-
-## Core Features
-
-## Current Offer
-
-## Pricing
-
-## Use Cases
-
-## Limitations
-
-## Related Rules
-
-## Related Cases
-
 ## Changelog
 
-| Date | Change | Source | Approved By |
-|---|---|---|---|
+| Date | Change | Source | Proposal | Approved By |
+|---|---|---|---|---|
+| 2026-06-05 | Updated product positioning | Founder note | 93-Proposals/Facts/... | Human |
+```
+
+Class B files should have changelog when they affect future behavior or current state.
+
+Class R uses correction log or append-only notes.
+
+Class C does not require changelog.
+
+---
+
+# 37. Naming Convention
+
+Consistent naming prevents duplication.
+
+## 37.1 General Rules
+
+- use clear names
+- avoid `final`, `new`, `copy`, `v2`
+- dates use `YYYY-MM-DD`
+- one authority entity, one file
+- historical change uses changelog or timeline
+- raw records use date and source
+
+## 37.2 Naming Patterns
+
+```text
+Products: Product-Name.md
+Brand: Positioning.md / Tone-of-Voice.md
+Customer profile: profile.md
+Timeline: YYYY.md
+Meeting records: YYYY-MM-DD-Customer-Topic.md
+Email records: YYYY-MM-DD-From-To-Topic.md
+Call records: YYYY-MM-DD-Customer-Topic.md
+Decisions: YYYY-MM-DD-Decision-Name.md
+Rules: Domain-Rule-Name.md
+Research: YYYY-MM-DD-Topic.md
+Cases: YYYY-MM-DD-Case-Name.md
+Learnings: Domain-Learnings.md
+Projects: YYYY-Client-Project-Name/
+Proposals: YYYY-MM-DD-Target-Change.md
+Logs: YYYY-MM-DD-Agent-Task.md
 ```
 
 ---
 
-## 28.2 Customer Profile Template
+# 38. File Lifecycle
+
+All formal memory must have lifecycle status.
+
+## 38.1 draft
+
+Unapproved working material.
+
+Excluded from default retrieval.
+
+## 38.2 active
+
+Current and usable.
+
+Can participate in default retrieval if allowed by layer.
+
+## 38.3 needs_review
+
+May be useful but not final.
+
+Use cautiously.
+
+## 38.4 deprecated
+
+No longer recommended.
+
+Excluded from default retrieval.
+
+## 38.5 archived
+
+Historical only.
+
+Excluded from default retrieval.
+
+## 38.6 superseded
+
+Replaced by another file.
+
+Must include:
+
+```yaml
+superseded_by:
+superseded_reason:
+superseded_date:
+```
+
+## 38.7 expired
+
+Automatically expired due to lifecycle rules.
+
+Excluded from default retrieval.
+
+---
+
+# 39. Automatic Lifecycle Rules
+
+V7.1 Stable reduces maintenance through automatic lifecycle rules.
+
+## 39.1 Drafts
+
+```text
+30 days unused → stale
+90 days unused → archive candidate
+180 days unused → archive automatically unless pinned
+```
+
+## 39.2 Inbox
+
+```text
+14 days unclassified → Hermes auto-classifies if possible
+30 days unresolved → move to 99-Archive/Unsorted/ or keep as low-authority archived note
+```
+
+## 39.3 Raw Research
+
+```text
+volatile_30d → review after 30 days
+normal_90d → review after 90 days
+stable_180d → review after 180 days
+evergreen_365d → review after 365 days
+```
+
+If not promoted or renewed:
+
+```text
+stale → archive after additional 90 days
+```
+
+## 39.4 Projects
+
+```text
+30 days no activity → inactive
+90 days no activity → closeout candidate
+180 days no activity → archive unless pinned active
+```
+
+## 39.5 Logs
+
+```text
+30 days active diagnostic value
+90 days archive or delete unless linked to incident
+```
+
+## 39.6 Proposals
+
+```text
+30 days pending → reminder
+90 days pending → auto-expired unless marked critical
+Expired proposals do not participate in default retrieval
+```
+
+## 39.7 Records
+
+Records are append-only and retained according to Security and Retention Policy.
+
+Records do not automatically promote to Facts.
+
+---
+
+# 40. Review and Audit
+
+V7.1 Stable uses low-frequency, high-impact review.
+
+## 40.1 Review by Exception
+
+Review only items that affect:
+
+- current truth
+- customer current state
+- product facts
+- brand facts
+- approved rules
+- Core principles
+- security posture
+- permission model
+- retrieval behavior
+- major conflicts
+
+## 40.2 Monthly Knowledge Review
+
+Optional but recommended.
+
+Check:
+
+- pending high-risk proposals
+- conflict queue
+- stale research with high usage
+- project closeout candidates
+- duplicate authority candidates
+- schema failures in Class A or high-risk Class B
+
+Output:
+
+```text
+94-Review-Queues/Monthly-Review-Queue.md
+```
+
+## 40.3 Quarterly Architecture Audit
+
+Should not redesign architecture.
+
+Check:
+
+- SSOT integrity
+- archive leakage
+- retrieval contamination
+- permission violations
+- stale high-authority knowledge
+- schema pass rate
+- security retention issues
+
+Output:
+
+```text
+81-Dashboards/Quarterly-Audit.md
+```
+
+---
+
+# 41. Low-Maintenance Operations
+
+The system is optimized to avoid constant manual maintenance.
+
+## 41.1 Human Review Scope
+
+Humans only need to review:
+
+```text
+1. Does this change current truth?
+2. Does this change future behavior?
+3. Does this affect customer/product/brand/security?
+4. Does this resolve a conflict?
+5. Should this low-authority memory be promoted?
+```
+
+Humans should not manually manage every draft, log, raw research note, or record.
+
+## 41.2 Hermes Responsibilities
+
+Hermes should automatically:
+
+- classify new content
+- write records
+- create drafts
+- generate proposals
+- detect duplicate candidates
+- detect stale research
+- detect schema failures
+- generate review summaries
+- recommend archive actions
+- summarize project closeout candidates
+
+## 41.3 Low-Maintenance Rule
+
+```text
+Do not ask for human review unless the change affects authority.
+```
+
+---
+
+# 42. Knowledge Debt Dashboard
+
+Location:
+
+```text
+81-Dashboards/Knowledge-Debt-Dashboard.md
+```
+
+Tracks:
+
+- Inbox count
+- drafts older than 30 days
+- stale research
+- missing source
+- missing owner in formal files
+- schema failures
+- open conflicts
+- pending proposals
+- expired proposals
+- projects without closeout
+- records awaiting promotion
+- superseded files missing pointer
+- archive leakage
+- sensitive records without retention metadata
+
+Knowledge debt must be visible.
+
+Invisible debt eventually pollutes retrieval.
+
+---
+
+# 43. Memory Evaluation Metrics
+
+Location:
+
+```text
+81-Dashboards/Memory-Evaluation-Dashboard.md
+```
+
+Core metrics:
+
+```text
+Memory Precision
+Memory Recall
+Stale Knowledge Rate
+Duplicate Knowledge Rate
+Proposal Aging
+Review Debt
+Retrieval Contamination Rate
+Answer Attribution Rate
+SSOT Lookup Success Rate
+Schema Pass Rate
+Records Promotion Rate
+Archive Leakage Rate
+```
+
+## 43.1 Definitions
+
+Memory Precision: retrieved memory that was relevant and usable.
+
+Memory Recall: needed memory successfully found.
+
+Stale Knowledge Rate: answers using expired or outdated memory.
+
+Duplicate Knowledge Rate: same knowledge appearing as multiple authority candidates.
+
+Retrieval Contamination Rate: Drafts, Raw Research, Logs, Records, or Archive used as current truth incorrectly.
+
+Answer Attribution Rate: high-risk answers that report memory sources.
+
+SSOT Lookup Success Rate: ability to find authoritative truth when needed.
+
+Archive Leakage Rate: archived material appearing in default retrieval.
+
+## 43.2 Low-Maintenance Evaluation
+
+If full metrics are too heavy, track only:
+
+```text
+SSOT Lookup Success
+Retrieval Contamination
+Stale High-Authority Knowledge
+Pending High-Risk Proposals
+Archive Leakage
+```
+
+---
+
+# 44. Security, Privacy, and Retention Policy
+
+Location:
+
+```text
+00-Core/Security-and-Retention-Policy.md
+```
+
+## 44.1 Sensitive Data
+
+Sensitive data includes:
+
+- credentials
+- API keys
+- passwords
+- private customer information
+- personal identifiers
+- financial information
+- legal information
+- confidential strategy
+- regulated information
+
+## 44.2 Rules
+
+- Do not store secrets in normal notes.
+- Do not store raw credentials in Vault.
+- Sensitive records require `sensitivity` metadata.
+- Sensitive records require `retention_until` where applicable.
+- Sensitive records should be excluded from default retrieval unless needed.
+- Logs containing sensitive data must be redacted or restricted.
+
+## 44.3 Retention
+
+Retention should be defined by sensitivity:
+
+```yaml
+public: normal lifecycle
+internal: normal lifecycle
+confidential: review retention annually
+restricted: explicit retention_until required
+secret: do not store in normal Vault
+```
+
+## 44.4 Deletion vs Archive
+
+Archive preserves historical context.
+
+Deletion removes data.
+
+Sensitive data may require deletion instead of archive.
+
+---
+
+# 45. Backup and Recovery Policy
+
+Location:
+
+```text
+00-Core/Backup-and-Recovery-Policy.md
+```
+
+Recommended:
+
+- Git version history for text files
+- regular Vault backup
+- encrypted backup for sensitive data
+- test restore process
+- preserve changelog and proposal history
+
+Minimum recovery requirements:
+
+```text
+Can restore Core
+Can restore Facts
+Can restore Rules
+Can restore Records
+Can restore Archive
+Can inspect history of Class A changes
+```
+
+---
+
+# 46. Standard Templates
+
+Templates should live in:
+
+```text
+70-Schemas/Templates/
+```
+
+or:
+
+```text
+00-Core/Templates/
+```
+
+Recommended templates:
+
+- Product Fact Template
+- Customer Profile Template
+- Decision Template
+- Rule Template
+- Case Template
+- Learning Template
+- Research Template
+- Record Template
+- Proposal Template
+- Conflict Note Template
+- Project Closeout Template
+
+## 46.1 Proposal Template
 
 ```markdown
 ---
-type: customer_profile
-memory_layer: facts
-status: active
-authority: ssot
-owner: claudian
-created:
-updated:
-review_date:
-expires_at:
+type: proposal
+memory_layer: proposal
+status: pending
+authority: none
 source:
-confidence:
-write_policy: review_required
-related:
-tags:
+updated:
+write_policy: open
+proposal_type:
+target_file:
+risk:
 ---
 
-# Customer Name
+# Proposal: {Title}
 
-## Current Status
+## Target File
 
-## Industry
+## Proposed Change
 
-## Business Model
+## Reason
 
-## Contacts
+## Source Evidence
 
-## Current Goals
+## Risk
 
-## Current Pain Points
+## Affected Files
 
-## Current Services
+## Suggested Changelog Entry
 
-## Risks
+## Rollback Plan
 
-## Opportunities
+## Reviewer Decision
 
-## Related Timeline
-
-## Related Meetings
-
-## Changelog
-
-| Date | Change | Source | Approved By |
-|---|---|---|---|
+- [ ] Approved
+- [ ] Rejected
+- [ ] Needs Revision
+- [ ] Expired
 ```
 
----
-
-## 28.3 Meeting Note Template
+## 46.2 Record Template
 
 ```markdown
 ---
-type: meeting_note
-memory_layer: facts
+type: record
+memory_layer: records
 status: active
 authority: raw
-owner: hermes
+source:
+source_quality: internal_record
 created:
 updated:
-review_date:
-expires_at:
-source:
-confidence: medium
 write_policy: append_only
-related:
-tags:
+sensitivity: internal
+retrieval_scope: evidence_only
 ---
 
-# Meeting Title
+# {Date} {Source} {Topic}
 
-## Date
+## Summary
 
-## Attendees
+## Raw Notes / Evidence
 
-## Context
+## Potential Follow-up
 
-## Discussion
+## Possible Promotions
 
-## Decisions
-
-## Action Items
-
-## Potential Fact Updates
-
-## Potential Learnings
+- [ ] Decision proposal
+- [ ] Customer profile proposal
+- [ ] Timeline append
+- [ ] Case
+- [ ] Learning candidate
+- [ ] Research
 ```
 
----
-
-## 28.4 Research Template
-
-```markdown
----
-type: research
-memory_layer: research
-status: needs_review
-authority: provisional
-owner: hermes
-created:
-updated:
-review_date:
-expires_at:
-source:
-confidence:
-write_policy: open
-related:
-tags:
----
-
-# Research Title
-
-## Question
-
-## Context
-
-## Sources
-
-## Findings
-
-## Analysis
-
-## Limitations
-
-## Expiration Risk
-
-## Recommended Next Step
-```
-
----
-
-## 28.5 Case Template
-
-```markdown
----
-type: case
-memory_layer: insights
-status: active
-authority: approved
-owner:
-created:
-updated:
-review_date:
-expires_at:
-source:
-confidence:
-write_policy: review_required
-related:
-tags:
----
-
-# Case Title
-
-## Background
-
-## What Happened
-
-## Actions Taken
-
-## Result
-
-## Evidence
-
-## Related Facts
-
-## Related Research
-
-## Possible Learning
-```
-
----
-
-## 28.6 Learning Template
-
-```markdown
----
-type: learning
-memory_layer: insights
-status: active
-authority: approved
-owner: claudian
-created:
-updated:
-review_date:
-expires_at:
-source:
-confidence:
-write_policy: review_required
-related:
-tags:
----
-
-# Learning Title
-
-## Claim
-
-## Why It Matters
-
-## Evidence
-
-## Conditions Where It Applies
-
-## Conditions Where It Does Not Apply
-
-## Related Cases
-
-## Related Rules
-
-## Should This Become a Rule?
-```
-
----
-
-## 28.7 Rule Template
+## 46.3 Rule Template
 
 ```markdown
 ---
 type: rule
 memory_layer: rules
 status: active
-authority: ssot
-owner: claudian
-created:
+authority: approved
+source:
+source_quality:
+owner:
 updated:
 review_date:
-expires_at:
-source:
-confidence: high
 write_policy: review_required
-related:
-tags:
+retrieval_scope: default
 ---
 
-# Rule Name
+# Rule: {Name}
 
 ## Purpose
 
-## Applies To
+## Scope
 
-## Rule
+## Trigger / Input
 
-## Procedure
+## Steps
 
-## Do
+## Output Standard
 
-## Do Not
+## Quality Standard
 
 ## Exceptions
 
+## Prohibited Actions
+
 ## Related Facts
 
-## Related Cases
+## Related Cases / Learnings
 
 ## Changelog
-
-| Date | Change | Source | Approved By |
-|---|---|---|---|
 ```
 
 ---
 
-## 28.8 Project Closeout Template
+# 47. Claudian Skills and Workflows
 
-```markdown
+Recommended skills:
+
+```text
+/triage-note
+/create-record
+/create-proposal
+/check-ssot
+/check-permission
+/promote-record
+/closeout-project
+/check-schema
+/check-stale-research
+/detect-duplicates
+/generate-review-summary
+/archive-expired
+```
+
+## 47.1 Skill Rules
+
+Skills must respect:
+
+- Permission Model
+- SSOT System
+- default retrieval exclusions
+- schema validation
+- security policy
+- lifecycle rules
+
+Skills may automate operations.
+
+Skills may not bypass authority.
+
 ---
-type: project_closeout
-memory_layer: projects
-status: needs_review
-authority: provisional
-owner:
-created:
-updated:
-review_date:
-expires_at:
-source:
-confidence:
-write_policy: review_required
-related:
-tags:
----
 
-# Project Closeout
+# 48. Automation and Enforcement
 
-## Project Summary
+Automation should enforce architecture without requiring daily manual review.
 
-## Goals
+Recommended automation:
 
-## Work Completed
+- metadata validation
+- stale research detection
+- archive leakage detection
+- duplicate authority detection
+- schema failure queue
+- proposal aging
+- project inactivity detection
+- log retention cleanup
+- draft expiration
+- inbox auto-triage
 
-## Results
+## 48.1 Enforcement Priority
 
-## Decisions Made
+Highest priority:
 
-## New Facts to Promote
-
-## Cases to Create
-
-## Learnings to Extract
-
-## Rules to Update
-
-## Materials to Archive
-
-## Final Status
+```text
+Prevent Class A direct writes
+Prevent Archive in default retrieval
+Prevent Draft/Inbox/Logs as current truth
+Prevent Records as current facts
+Prevent missing source in Facts/Rules/Research
+Prevent sensitive data leakage
 ```
 
 ---
 
-# 29. Operating Cadence
+# 49. Human Review UX
 
-## Daily
+Human review should be simple.
 
-Hermes may write to:
+Each review item should ask:
 
-- Drafts
-- Inbox
-- Project notes
-- Research inbox
-- Logs
+```text
+Approve?
+Reject?
+Needs revision?
+Expire?
+```
 
-Hermes should not modify:
+Review cards should show:
 
-- Core
-- Brand
-- Products
-- Rules
+- proposed change
+- target file
+- current authority
+- source evidence
+- risk
+- affected files
+- Hermes recommendation
 
----
+The reviewer should not need to inspect the entire Vault.
 
-## Weekly
-
-Claudian reviews:
-
-- Inbox
-- Drafts
-- Research inbox
-- Active project notes
-- Conflict queue
-
-Actions:
-
-- delete noise
-- classify useful notes
-- merge duplicates
-- promote valid knowledge
-- archive low-value material
+Hermes should prepare the context.
 
 ---
 
-## Monthly
+# 50. Failure Modes and Recovery
 
-Run Knowledge Review.
+## 50.1 Failure: Proposal Backlog
 
-Check:
+Cause: too many review requirements.
 
-- review queues
-- orphan notes
-- duplicate candidates
-- expiring research
-- missing metadata
-- open conflicts
+Recovery:
+
+- expire old proposals
+- review only high-authority items
+- auto-archive low-risk suggestions
+- merge duplicate proposals
+
+## 50.2 Failure: Records Never Promoted
+
+Cause: capture without triage.
+
+Recovery:
+
+- promote only high-impact records
+- use timeline append for minor history
+- leave most records as evidence
+
+## 50.3 Failure: Drafts Pollute Retrieval
+
+Cause: Drafts included in search.
+
+Recovery:
+
+- enforce retrieval_scope exclusion
+- archive old drafts
+- audit retrieval preset
+
+## 50.4 Failure: Research Becomes Fact
+
+Cause: answers cite research as current truth.
+
+Recovery:
+
+- require distinction between Facts and Research
+- move unreviewed research out of default retrieval
+- add freshness class
+
+## 50.5 Failure: Archive Leakage
+
+Cause: archived content appears in default retrieval.
+
+Recovery:
+
+- set retrieval_scope: historical_only
+- add archive penalty
+- validate search filters
+
+## 50.6 Failure: Schema Ignored
+
+Cause: schema too heavy.
+
+Recovery:
+
+- enforce minimal metadata first
+- apply strict schema only to Class A
+- queue failures instead of blocking low-risk writes
+
+## 50.7 Failure: Architecture Drift
+
+Cause: ad-hoc folders and new layers.
+
+Recovery:
+
+- freeze top-level structure
+- route new domains into existing layers
+- create proposal for architecture-level changes
 
 ---
 
-## Quarterly
+# 51. Operating Cadence
 
-Run Knowledge Audit.
+V7.1 Stable minimizes operational burden.
+
+## 51.1 Daily
+
+No required daily review.
+
+Hermes may write:
+
+- records
+- drafts
+- project notes
+- logs
+- proposals
+
+## 51.2 Weekly
+
+Optional 15-30 minutes if active usage is high.
+
+Review:
+
+- high-risk proposals
+- major conflicts
+- customer current-state changes
+- product or rule change proposals
+
+## 51.3 Monthly
+
+Recommended 30-60 minutes.
+
+Review:
+
+- stale high-value research
+- project closeout candidates
+- duplicate authority candidates
+- Class A schema failures
+- security review queue
+
+## 51.4 Quarterly
+
+Recommended architecture health check.
+
+Do not redesign structure unless necessary.
 
 Check:
 
 - SSOT integrity
-- rule validity
-- Core Memory size
-- archive boundaries
-- project closeouts
-- metadata completeness
-- graph quality
+- retrieval contamination
+- archive leakage
+- permission violations
+- high-authority stale knowledge
 
 ---
 
-# 30. Success Criteria
+# 52. Migration / Deployment Plan
 
-系统运行 12 个月后，必须能够在 30 秒内定位：
+V7.1 Stable is intended for one-time deployment.
 
-- 品牌定位
-- 产品参数
-- 客户当前状态
-- 客户历史变化
-- SEO 规范
-- Social 规范
-- SOP
-- Agent 行为规则
-- 核心经验
-- 项目记录
-- 研究来源
-- 失效知识
-- 当前权威版本
+## 52.1 Initial Deployment
 
-必须能够明确回答：
+Create full folder structure:
 
 ```text
-什么是事实？
-什么是规则？
-什么是经验？
-什么是研究？
-什么是草稿？
-什么已经失效？
-什么是当前版本？
-谁可以修改？
-来源是什么？
-何时需要复审？
+00-Core/
+01-Facts/
+02-Rules/
+03-Insights/
+04-Research/
+05-Projects/
+06-Records/
+70-Schemas/
+80-Indexes/
+81-Dashboards/
+90-Drafts/
+91-Inbox/
+92-Logs/
+93-Proposals/
+94-Review-Queues/
+99-Archive/
 ```
 
-如果不能回答，说明知识治理失败。
+Create Core files:
+
+```text
+Core-Memory.md
+Hermes-Operating-Protocol.md
+Source-of-Truth-Map.md
+Permission-Policy.md
+Retrieval-Rules.md
+Context-Packing-Policy.md
+Knowledge-Triage-Rules.md
+Conflict-Resolution-Policy.md
+Security-and-Retention-Policy.md
+Lifecycle-Policy.md
+```
+
+Create minimum templates:
+
+```text
+Record Template
+Proposal Template
+Rule Template
+Customer Profile Template
+Product Template
+Research Template
+Project Closeout Template
+```
+
+## 52.2 Initial Enforcement
+
+Immediately enforce:
+
+- no Drafts in default retrieval
+- no Archive in default retrieval
+- Records are evidence only
+- Class A proposal only
+- basic metadata on formal files
+- source required for Facts / Rules / Research / Records / Proposals
+
+## 52.3 No Future Redeployment
+
+Future work should only:
+
+- add files
+- add subfolders
+- refine templates
+- improve automation
+- tune schemas
+- improve dashboards
+
+Do not change top-level architecture unless workspace purpose changes fundamentally.
 
 ---
 
-# 31. Ultimate Principle
+# 53. Success Criteria
 
-事实只有一个版本。
+The system succeeds if:
 
-规则只有一个来源。
+- current truth is easy to find
+- source evidence can be traced
+- Drafts do not become truth
+- Records do not become current facts by accident
+- Research does not become fact by accident
+- Archive does not pollute default retrieval
+- AI can write freely in low-authority areas
+- AI cannot silently modify high-authority truth
+- human review is needed only for important changes
+- project knowledge is extracted or archived
+- stale memory is degraded or archived automatically
+- the architecture does not require structural redesign over time
 
-经验必须经过验证。
+---
 
-研究必须允许过期。
+# 54. Ultimate Principle
 
-项目必须允许结束。
+The workspace does not optimize for remembering everything.
 
-历史必须可以追溯。
+It optimizes for preserving only governed, source-backed, reviewable, and useful memory.
 
-冲突必须可以解决。
+AI may generate, classify, summarize, capture, archive, and propose.
 
-权限必须可以执行。
+AI may not silently convert uncertain information into facts, rules, or core memory.
 
-核心记忆必须持续精简。
+Truth is defined by SSOT files.
 
-AI 可以无限生成。
+Evidence is preserved in Records.
 
-知识库必须持续收敛。
+Authority is controlled by Permission Model.
+
+Retrieval is conservative by default.
+
+Unreviewed memory expires, degrades, or archives automatically.
+
+Only changes that affect current truth or future behavior require human approval.
+
+The architecture is deployed once.
+
+The content evolves continuously.
+
+The system must remain stable, auditable, controllable, and low-maintenance.
+
