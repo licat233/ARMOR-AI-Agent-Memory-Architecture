@@ -76,6 +76,27 @@ Authoritative memory
 Facts / rules / truth / validated insights / reviewed research
 ```
 
+### Agent Runtime Integration
+
+This project separates memory governance from agent execution.
+
+ARMOR and PAMA define where memory belongs, what authority it has, how it is promoted, and what must be excluded from default truth retrieval. Runtime tools such as Claudian, Claude Code, Codex, Opencode, MCP servers, embeddings, and local indexes may help agents operate on a Vault, but they do not become sources of truth.
+
+Use the Claudian execution guides when you want an Obsidian-based agent runtime to read, search, draft, edit, and log work inside a governed Vault:
+
+| Guide | Use Case |
+| --- | --- |
+| [Claudian ARMOR Execution Guide](enterprise/Claudian_ARMOR_Execution_Guide.md) | Enterprise Vault execution, proposal-based authority changes, records, facts, rules, and multi-agent handoff |
+| [Claudian PAMA Execution Guide](personal/Claudian_PAMA_Execution_Guide.md) | Personal Vault execution, user sovereignty, working memory, review gates, and slow promotion into durable truth |
+
+Runtime principle:
+
+```text
+Tools provide capability.
+The architecture defines permission.
+The Vault remains the durable memory system.
+```
+
 ### Quick Start
 
 1. Choose the architecture branch that matches your use case: [Enterprise](enterprise/README.md) or [Personal](personal/README.md).
@@ -97,6 +118,7 @@ Facts / rules / truth / validated insights / reviewed research
 | [ARMOR Root-Cause Fix Protocol](enterprise/Root_Cause_Fix_Protocol.md) | Mandatory protocol for fixing errors at their source layer |
 | [ARMOR Runtime Memory Policy](enterprise/Runtime_Memory_Policy.md) | Enterprise policy for keeping runtime memory low-authority and temporary |
 | [Hermes Adaptation Guide](enterprise/hermes_adaptation_guide.md) | How to adapt Hermes-style agents to ARMOR |
+| [Claudian ARMOR Execution Guide](enterprise/Claudian_ARMOR_Execution_Guide.md) | How to use Claudian as an ARMOR executor through ARMOR-native file handoff |
 | [Personal README](personal/README.md) | PAMA overview, personal vault layers, promotion rules |
 | [PAMA V5.1 Stable](personal/PAMA%20V5.1%20Stable.md) | Full personal architecture specification |
 | [PAMA Constitution](personal/PAMA%20Constitution%20v1.0.md) | Highest-level personal architecture charter |
@@ -105,6 +127,7 @@ Facts / rules / truth / validated insights / reviewed research
 | [PAMA Memory Write Router](personal/PAMA_Memory_Write_Router.md) | Mandatory routing rules for user-requested permanent memory |
 | [PAMA Root-Cause Fix Protocol](personal/PAMA_Root_Cause_Fix_Protocol.md) | Mandatory protocol for fixing errors at their source layer |
 | [PAMA Runtime Memory Policy](personal/PAMA_Runtime_Memory_Policy.md) | Personal policy for keeping runtime memory temporary and low-authority |
+| [Claudian PAMA Execution Guide](personal/Claudian_PAMA_Execution_Guide.md) | How to use Claudian as a PAMA executor through PAMA-native file handoff |
 
 ### Ultimate Principle
 
@@ -181,6 +204,27 @@ PAMA 面向单个个人用户。它关注现实追踪、注意力审计、决策
 事实 / 规则 / 真理 / 已验证洞察 / 已审查研究
 ```
 
+### 智能体运行时集成
+
+本项目将记忆治理和智能体执行能力分离。
+
+ARMOR 与 PAMA 定义记忆应该存在哪里、具有什么权威、如何晋升，以及哪些内容不得进入默认真相检索。Claudian、Claude Code、Codex、Opencode、MCP servers、Embedding 和本地索引等运行时工具可以帮助智能体操作 Vault，但它们本身不是事实源。
+
+当你希望用 Obsidian 内的智能体运行时读、查、起草、编辑和记录受治理 Vault 中的工作时，可以使用 Claudian 执行指南：
+
+| 指南 | 适用场景 |
+| --- | --- |
+| [Claudian ARMOR 执行指南](enterprise/Claudian_ARMOR_Execution_Guide.md) | 企业 Vault 执行、提案式权威变更、记录、事实、规则和多智能体文件交接 |
+| [Claudian PAMA 执行指南](personal/Claudian_PAMA_Execution_Guide.md) | 个人 Vault 执行、用户主权、工作记忆、复盘门禁和长期真理慢晋升 |
+
+运行时原则：
+
+```text
+工具提供能力。
+架构定义权限。
+Vault 保持为持久记忆系统。
+```
+
 ### 快速开始
 
 1. 根据使用场景选择架构分支：[企业版](enterprise/README.md) 或 [个人版](personal/README.md)。
@@ -202,6 +246,7 @@ PAMA 面向单个个人用户。它关注现实追踪、注意力审计、决策
 | [ARMOR Root-Cause Fix Protocol](enterprise/Root_Cause_Fix_Protocol.md) | 错误必须在源头层级修复的强制协议 |
 | [ARMOR Runtime Memory Policy](enterprise/Runtime_Memory_Policy.md) | 运行时 memory 必须保持低权威和临时性的企业策略 |
 | [Hermes 适配指南](enterprise/hermes_adaptation_guide.md) | Hermes 类智能体如何接入 ARMOR |
+| [Claudian ARMOR 执行指南](enterprise/Claudian_ARMOR_Execution_Guide.md) | 如何通过 ARMOR 原生文件交接让 Claudian 成为 Vault 执行器 |
 | [个人版 README](personal/README.md) | PAMA 总览、个人 Vault 层级、记忆晋升规则 |
 | [PAMA V5.1 Stable](personal/PAMA%20V5.1%20Stable.md) | 个人版完整架构规范 |
 | [PAMA 宪法](personal/PAMA%20Constitution%20v1.0.md) | 个人版最高治理章程 |
@@ -210,6 +255,7 @@ PAMA 面向单个个人用户。它关注现实追踪、注意力审计、决策
 | [PAMA Memory Write Router](personal/PAMA_Memory_Write_Router.md) | 用户明确要求长期记忆时的强制写入路由规则 |
 | [PAMA Root-Cause Fix Protocol](personal/PAMA_Root_Cause_Fix_Protocol.md) | 错误必须在源头层级修复的强制协议 |
 | [PAMA Runtime Memory Policy](personal/PAMA_Runtime_Memory_Policy.md) | 运行时 memory 必须保持临时和低权威的个人策略 |
+| [Claudian PAMA 执行指南](personal/Claudian_PAMA_Execution_Guide.md) | 如何通过 PAMA 原生文件交接让 Claudian 成为个人 Vault 执行器 |
 
 ### 终极原则
 

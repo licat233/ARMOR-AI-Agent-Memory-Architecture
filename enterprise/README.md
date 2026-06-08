@@ -127,6 +127,22 @@ Vault/
 
 The top-level structure is frozen. Add domain-specific folders inside the layers instead of changing the layer map.
 
+### Claudian Execution Layer
+
+ARMOR can be operated by an Obsidian runtime such as Claudian, but Claudian is an executor, not an authority layer.
+
+Use Claudian to read, search, draft, append records, create proposals, update allowed project files, and write execution logs. Do not use Claudian to bypass Class A protections, silently update Facts or Rules, treat Records as current Facts, or let runtime memory become durable business memory.
+
+Recommended relationship:
+
+```text
+ARMOR defines permission.
+Claudian executes allowed Vault operations.
+Human review approves authority-changing proposals.
+```
+
+See [Claudian ARMOR Execution Guide](Claudian_ARMOR_Execution_Guide.md) for the ARMOR-native handoff locations, permission matrix, executor protocol, request template, and execution log template.
+
 ### Lifecycle Rules
 
 | Content | Stale After | Archive or Expire After |
@@ -159,6 +175,7 @@ The top-level structure is frozen. Add domain-specific folders inside the layers
 | [Root-Cause Fix Protocol](Root_Cause_Fix_Protocol.md) | Mandatory protocol for fixing errors at their source layer |
 | [Runtime Memory Policy](Runtime_Memory_Policy.md) | Enterprise policy for keeping runtime memory low-authority and temporary |
 | [Hermes Adaptation Guide](hermes_adaptation_guide.md) | Practical runtime adaptation guide for Hermes-style agents |
+| [Claudian ARMOR Execution Guide](Claudian_ARMOR_Execution_Guide.md) | How to use Claudian as an ARMOR executor through ARMOR-native file handoff |
 
 ### Ultimate Principle
 
@@ -286,6 +303,22 @@ Vault/
 
 顶层结构属于冻结边界。请在各层内部增加领域子目录，而不是改变顶层层级图。
 
+### Claudian 执行层
+
+ARMOR 可以由 Claudian 这类 Obsidian 运行时操作，但 Claudian 是执行器，不是权威层。
+
+可以用 Claudian 读取、搜索、起草、追加记录、创建提案、更新允许修改的项目文件和写执行日志。不得用 Claudian 绕过 Class A 保护、静默更新 Facts 或 Rules、把 Records 当当前事实，或让 runtime memory 变成持久业务记忆。
+
+推荐关系：
+
+```text
+ARMOR 定义权限。
+Claudian 执行被允许的 Vault 操作。
+人类复核批准改变权威状态的提案。
+```
+
+详见 [Claudian ARMOR 执行指南](Claudian_ARMOR_Execution_Guide.md)，其中包含 ARMOR 原生文件交接位置、权限矩阵、执行器协议、请求模板和执行日志模板。
+
 ### 生命周期规则
 
 | 内容 | 标记陈旧时间 | 归档或失效时间 |
@@ -318,6 +351,7 @@ Vault/
 | [Root-Cause Fix Protocol](Root_Cause_Fix_Protocol.md) | 错误必须在源头层级修复的强制协议 |
 | [Runtime Memory Policy](Runtime_Memory_Policy.md) | 运行时 memory 必须保持低权威和临时性的企业策略 |
 | [Hermes Adaptation Guide](hermes_adaptation_guide.md) | Hermes 类智能体运行时适配指南 |
+| [Claudian ARMOR 执行指南](Claudian_ARMOR_Execution_Guide.md) | 如何通过 ARMOR 原生文件交接让 Claudian 成为 Vault 执行器 |
 
 ### 终极原则
 

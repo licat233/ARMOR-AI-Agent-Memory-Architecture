@@ -53,6 +53,22 @@ Vault/
 
 Top-level folders are part of the architecture boundary. Add subfolders inside layers when needed, but do not let an AI agent redesign the top-level map without explicit user approval.
 
+### Claudian Execution Layer
+
+PAMA can be operated by an Obsidian runtime such as Claudian, but Claudian is an executor, not a personal truth authority.
+
+Use Claudian to read, search, create working notes, append reality evidence, create decision records, prepare review items, and write completion logs. Do not use Claudian to promote passing thoughts into `05-Truth/`, treat `06-Meta/` as reality, treat `08-Working-Memory/` as durable truth, or override user sovereignty.
+
+Recommended relationship:
+
+```text
+PAMA defines memory governance.
+Claudian executes allowed Vault operations.
+The user decides what becomes durable personal truth.
+```
+
+See [Claudian PAMA Execution Guide](Claudian_PAMA_Execution_Guide.md) for the PAMA-native handoff locations, permission matrix, executor protocol, request template, and execution log template.
+
 ### Layer Map
 
 | Directory | Cognitive Layer | Governance Role | Default Retrieval |
@@ -79,6 +95,7 @@ Top-level folders are part of the architecture boundary. Add subfolders inside l
 | [PAMA Memory Write Router](PAMA_Memory_Write_Router.md) | Mandatory routing rules for user-requested permanent memory |
 | [PAMA Root-Cause Fix Protocol](PAMA_Root_Cause_Fix_Protocol.md) | Mandatory protocol for fixing errors at their source layer |
 | [PAMA Runtime Memory Policy](PAMA_Runtime_Memory_Policy.md) | Personal policy for keeping runtime memory temporary and low-authority |
+| [Claudian PAMA Execution Guide](Claudian_PAMA_Execution_Guide.md) | How to use Claudian as a PAMA executor through PAMA-native file handoff |
 
 Governance priority:
 
@@ -179,6 +196,22 @@ Vault/
 
 顶层目录属于架构边界。需要扩展时应在各层内部增加子目录，不应让 AI 智能体在没有用户明确授权的情况下重设计顶层结构。
 
+### Claudian 执行层
+
+PAMA 可以由 Claudian 这类 Obsidian 运行时操作，但 Claudian 是执行器，不是个人真理权威。
+
+可以用 Claudian 读取、搜索、创建工作笔记、追加现实证据、创建决策记录、准备复盘项和写完成日志。不得用 Claudian 把转瞬即逝的想法晋升进 `05-Truth/`，不得把 `06-Meta/` 当现实，不得把 `08-Working-Memory/` 当长期真理，也不得覆盖用户主权。
+
+推荐关系：
+
+```text
+PAMA 定义记忆治理。
+Claudian 执行被允许的 Vault 操作。
+用户决定什么成为长期个人真理。
+```
+
+详见 [Claudian PAMA 执行指南](Claudian_PAMA_Execution_Guide.md)，其中包含 PAMA 原生文件交接位置、权限矩阵、执行器协议、请求模板和执行日志模板。
+
 ### 层级映射
 
 | 目录 | 认知层级 | 治理角色 | 默认检索 |
@@ -205,6 +238,7 @@ Vault/
 | [PAMA Memory Write Router](PAMA_Memory_Write_Router.md) | 用户明确要求长期记忆时的强制写入路由规则 |
 | [PAMA Root-Cause Fix Protocol](PAMA_Root_Cause_Fix_Protocol.md) | 错误必须在源头层级修复的强制协议 |
 | [PAMA Runtime Memory Policy](PAMA_Runtime_Memory_Policy.md) | 运行时 memory 必须保持临时和低权威的个人策略 |
+| [Claudian PAMA 执行指南](Claudian_PAMA_Execution_Guide.md) | 如何通过 PAMA 原生文件交接让 Claudian 成为个人 Vault 执行器 |
 
 治理优先级：
 
