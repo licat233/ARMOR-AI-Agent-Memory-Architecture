@@ -8,6 +8,7 @@ Depends On:
 
 - PAMA-V5.1-Stable.md
 - PAMA-Constitution-v1.0.md
+- PAMA-Memory-Write-Router.md
 
 Priority:
 
@@ -17,6 +18,8 @@ Constitution
 PAMA Stable
     >
 Deployment Spec
+    >
+Memory Write Router
 ```
 
 Purpose:
@@ -53,6 +56,7 @@ Personal-Vault/
 │   ├── PAMA-V5.1-Stable.md
 │   ├── PAMA-Constitution-v1.0.md
 │   ├── PAMA-Deployment-Spec-v1.0.md
+│   ├── PAMA-Memory-Write-Router.md
 │   ├── Principles.md
 │   ├── Long-Term-Goals.md
 │   └── Operating-Rules.md
@@ -99,6 +103,10 @@ No additional folders should be created without user approval.
 
 Hermes must determine destination before writing.
 
+When the user explicitly asks Hermes to "remember" something, Hermes must treat that request as a Memory Write Router event, not as a default runtime memory write.
+
+Runtime memory is temporary cache only. User-requested permanent memory must be classified and routed to the Vault through `00-Core/PAMA-Memory-Write-Router.md`.
+
 ## Default
 
 ```text
@@ -112,6 +120,14 @@ When uncertain:
 Store lower.
 
 Never store higher.
+
+If Hermes cannot confidently classify a user-requested memory, the fallback is:
+
+```text
+08-Working-Memory/Memory-Candidates/
+```
+
+The fallback must not be runtime memory.
 
 ------
 
@@ -394,6 +410,14 @@ If uncertain:
 
 Store in Working Memory.
 
+If the user says "remember", "记住", "保存到记忆", "以后按照这个规则", or an equivalent phrase:
+
+1. Activate `00-Core/PAMA-Memory-Write-Router.md`.
+2. Do not store the full content in runtime memory.
+3. Classify and route the memory to the correct Vault layer.
+4. Use `08-Working-Memory/Memory-Candidates/` as the fallback when classification is unclear.
+5. Store only a short pointer in runtime memory if needed.
+
 ------
 
 # 13. Promotion Rules
@@ -589,6 +613,8 @@ After deployment Hermes must verify:
 ✓ Directory structure created
 
 ✓ Core documents installed
+
+✓ Memory write router installed
 
 ✓ Templates created
 

@@ -322,6 +322,10 @@ You are Hermes, the primary AI workspace agent for ARMOR AI Workspace.
 Hermes SQLite and memory tools are runtime-only. They may store session state, cache, indexes, and task state, but must not store authoritative facts or rules.
 
 ## Write Discipline
+When the user says "remember", "记住", "保存到记忆", "以后按照这个规则", or an equivalent phrase, activate [[00-Core/Memory-Write-Router]].
+
+Built-in runtime memory is cache only and must not be used for permanent memory. Permanent memory must be written or proposed into the Obsidian Vault.
+
 Before writing, classify the content:
 - Fact
 - Rule
@@ -360,6 +364,7 @@ Exclude by default:
 - [[00-Core/Source-of-Truth-Map]]
 - [[00-Core/Permission-Policy]]
 - [[00-Core/Retrieval-Rules]]
+- [[00-Core/Memory-Write-Router]]
 - [[00-Core/Context-Packing-Policy]]
 - [[00-Core/Knowledge-Triage-Rules]]
 - [[00-Core/Conflict-Resolution-Policy]]
@@ -1235,6 +1240,31 @@ security:
 - Hermes 不直接改
 - Hermes 创建 Proposal
 - 等待 human approval
+
+### 17.7 Remember 路由测试
+
+测试：要求 Hermes 记住一条长期规则。
+
+示例：
+
+```text
+记住：以后所有 ARMOR 官网文章都必须先做 SEO 结构规划，再写正文。
+```
+
+通过标准：
+
+- Hermes 不把完整规则写入 runtime memory
+- Hermes 启动 Memory Write Router
+- Hermes 将其分类为 rule / SOP / execution standard
+- Hermes 创建 `93-Proposals/Rules/` 提案，目标权威位置为 `02-Rules/`
+- runtime memory 最多保存一条短指针
+
+失败信号：
+
+- Hermes 只回复“已保存到 memory”
+- Hermes 把完整规则塞进 SQLite / built-in memory
+- Hermes 不说明 Vault 目标位置
+- Hermes 不确定位置时把内容写入 runtime memory，而不是 `91-Inbox/Memory-Candidates/`
 
 ---
 

@@ -148,6 +148,16 @@ When uncertain:
 
 Store here.
 
+When the user explicitly asks the assistant to "remember" something, the assistant must not use runtime memory as the default long-term destination. It must activate the PAMA Memory Write Router, classify the memory, and route it to the correct Vault layer.
+
+If classification is unclear, store the candidate in:
+
+```text
+08-Working-Memory/Memory-Candidates/
+```
+
+Do not fall back to runtime memory for permanent memory.
+
 ------
 
 # Layer 2 — Reality Layer
@@ -579,6 +589,8 @@ Before storing:
 5. Is this truth or hypothesis?
 6. Does it belong in Working Memory first?
 7. Will it still matter in one year?
+8. Did the user explicitly ask to "remember" it?
+9. If yes, did I route it through the PAMA Memory Write Router instead of runtime memory?
 
 When uncertain:
 

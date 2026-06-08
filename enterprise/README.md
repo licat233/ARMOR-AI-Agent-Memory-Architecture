@@ -142,7 +142,7 @@ The top-level structure is frozen. Add domain-specific folders inside the layers
 ### Quick Start
 
 1. Create the frozen vault structure above.
-2. Set up core files such as `Core-Memory.md`, `Hermes-Operating-Protocol.md`, `Source-of-Truth-Map.md`, `Permission-Policy.md`, `Retrieval-Rules.md`, `Lifecycle-Policy.md`, and `Governance-Patch-V715.md`.
+2. Set up core files such as `Core-Memory.md`, `Hermes-Operating-Protocol.md`, `Source-of-Truth-Map.md`, `Permission-Policy.md`, `Retrieval-Rules.md`, `Memory-Write-Router.md`, `Lifecycle-Policy.md`, and `Governance-Patch-V715.md`.
 3. Configure the AI agent's long-term memory path to this vault.
 4. Keep SQLite, embeddings, and runtime indexes as runtime-only infrastructure. They must not become the durable source of business truth.
 5. Create templates for records, proposals, rules, research, and reviewed insights under `70-Schemas/`.
@@ -154,6 +154,7 @@ The top-level structure is frozen. Add domain-specific folders inside the layers
 | --- | --- |
 | [V7.1 Stable](V7_1_Stable.md) | Full enterprise architecture specification |
 | [V7.1.5 Governance Patch](V7_1_5_Governance_Patch.md) | Source confidence, write-quality gates, fact creation rules |
+| [Memory Write Router](Memory_Write_Router.md) | Mandatory routing rules for user-requested permanent memory |
 | [Hermes Adaptation Guide](hermes_adaptation_guide.md) | Practical runtime adaptation guide for Hermes-style agents |
 
 ### Ultimate Principle
@@ -297,7 +298,7 @@ Vault/
 ### 快速开始
 
 1. 创建上方冻结 Vault 结构。
-2. 建立核心文件，例如 `Core-Memory.md`、`Hermes-Operating-Protocol.md`、`Source-of-Truth-Map.md`、`Permission-Policy.md`、`Retrieval-Rules.md`、`Lifecycle-Policy.md` 和 `Governance-Patch-V715.md`。
+2. 建立核心文件，例如 `Core-Memory.md`、`Hermes-Operating-Protocol.md`、`Source-of-Truth-Map.md`、`Permission-Policy.md`、`Retrieval-Rules.md`、`Memory-Write-Router.md`、`Lifecycle-Policy.md` 和 `Governance-Patch-V715.md`。
 3. 将 AI 智能体的长期记忆路径指向该 Vault。
 4. SQLite、Embedding 和运行时索引只能作为运行基础设施，不能成为持久业务真相来源。
 5. 在 `70-Schemas/` 下创建记录、提案、规则、研究和已验证洞察模板。
@@ -309,6 +310,7 @@ Vault/
 | --- | --- |
 | [V7.1 Stable](V7_1_Stable.md) | 企业版完整架构规范 |
 | [V7.1.5 Governance Patch](V7_1_5_Governance_Patch.md) | 来源置信度、写入质量门禁、事实创建规则 |
+| [Memory Write Router](Memory_Write_Router.md) | 用户明确要求长期记忆时的强制写入路由规则 |
 | [Hermes Adaptation Guide](hermes_adaptation_guide.md) | Hermes 类智能体运行时适配指南 |
 
 ### 终极原则

@@ -75,11 +75,12 @@ Top-level folders are part of the architecture boundary. Add subfolders inside l
 | [PAMA Constitution v1.0](PAMA%20Constitution%20v1.0.md) | Supreme charter; defines user sovereignty and the AI's right to challenge false narratives |
 | [PAMA V5.1 Stable](PAMA%20V5.1%20Stable.md) | Full personal memory architecture and layer model |
 | [PAMA Deployment Spec v1.0](PAMA-Deployment-Spec-v1.0.md.md) | Physical Markdown/Obsidian implementation rules, metadata, confidence fields |
+| [PAMA Memory Write Router](PAMA_Memory_Write_Router.md) | Mandatory routing rules for user-requested permanent memory |
 
 Governance priority:
 
 ```text
-Constitution > PAMA Stable Architecture > Deployment Spec > Runtime behavior
+Constitution > PAMA Stable Architecture > Deployment Spec > Memory Write Router > Runtime behavior
 ```
 
 ### Memory Promotion Pipeline
@@ -197,11 +198,12 @@ Vault/
 | [PAMA Constitution v1.0](PAMA%20Constitution%20v1.0.md) | 最高章程；定义用户主权，以及 AI 挑战虚假叙事的权力 |
 | [PAMA V5.1 Stable](PAMA%20V5.1%20Stable.md) | 个人记忆完整架构与层级模型 |
 | [PAMA Deployment Spec v1.0](PAMA-Deployment-Spec-v1.0.md.md) | Markdown / Obsidian 落地规则、元数据和置信度字段 |
+| [PAMA Memory Write Router](PAMA_Memory_Write_Router.md) | 用户明确要求长期记忆时的强制写入路由规则 |
 
 治理优先级：
 
 ```text
-Constitution > PAMA Stable Architecture > Deployment Spec > Runtime behavior
+Constitution > PAMA Stable Architecture > Deployment Spec > Memory Write Router > Runtime behavior
 ```
 
 ### 记忆晋升流水线

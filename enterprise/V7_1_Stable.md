@@ -2422,6 +2422,10 @@ Properties:
 
 Formal memory must flow through a controlled pipeline.
 
+When the user explicitly asks Hermes to "remember" something, Hermes must treat that request as a Memory Write Router event, not as a default runtime memory write.
+
+Runtime memory is cache only. User-requested permanent memory must be classified and routed to the Vault through `00-Core/Memory-Write-Router.md`.
+
 ```text
 Hermes through Claudian runtime
 ↓
@@ -2443,6 +2447,21 @@ Index / dashboard update where needed
 ## 28.1 Create
 
 Hermes creates content in allowed write areas.
+
+For user-triggered memory requests, Hermes must first classify the candidate and select one of:
+
+- runtime-only
+- Vault capture
+- Vault authority
+- proposal-required
+
+If Hermes cannot confidently classify the memory, the fallback is:
+
+```text
+91-Inbox/Memory-Candidates/
+```
+
+The fallback must not be runtime memory.
 
 ## 28.2 Triage
 
@@ -4035,6 +4054,7 @@ Hermes-Operating-Protocol.md
 Source-of-Truth-Map.md
 Permission-Policy.md
 Retrieval-Rules.md
+Memory-Write-Router.md
 Context-Packing-Policy.md
 Knowledge-Triage-Rules.md
 Conflict-Resolution-Policy.md
@@ -4126,4 +4146,3 @@ The architecture is deployed once.
 The content evolves continuously.
 
 The system must remain stable, auditable, controllable, and low-maintenance.
-
