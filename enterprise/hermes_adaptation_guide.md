@@ -1,6 +1,6 @@
 # Hermes 适配 ARMOR AI Workspace V7.1 Stable 记忆架构完整指南
 
-> 适用对象：Hermes 主代理、Claudian Runtime、Obsidian Vault、以及围绕 Vault 运行的自动化脚本和技能。
+> 适用对象：Hermes 主代理、可信智能体运行时、Obsidian Vault、以及围绕 Vault 运行的自动化脚本和技能。
 >
 > 核心目标：让 Hermes 既能高效工作，又不会把临时上下文、SQLite 记忆、Draft、Raw Research、Records 或 Archive 错误提升为长期事实。
 
@@ -90,22 +90,22 @@ Hermes 不可以：
 - 把 SQLite 里的记忆当权威
 - 直接把不确定信息写进 Facts / Rules / Core
 
-### 2.3 Claudian Runtime
+### 2.3 Agent Runtime
 
-Claudian 是能力层。
+智能体运行时是能力层。
 
 它可以提供：
 
 - 文件读写
 - 搜索
 - 计划模式
-- slash commands
-- skills
-- bash
+- 命令
+- 技能
+- 终端
 - MCP
-- subagents
+- 子代理
 
-但能力不等于权限。即使 Claudian 技术上能写文件，Hermes 也必须按 Permission Model 判断是否允许写。
+但能力不等于权限。即使运行时技术上能写文件，Hermes 也必须按 Permission Model 判断是否允许写。
 
 ### 2.4 SQLite / Hermes 默认 memory store
 

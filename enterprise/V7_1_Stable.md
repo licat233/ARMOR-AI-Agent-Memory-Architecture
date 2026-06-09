@@ -5,7 +5,7 @@
 Version: V7.1 Stable  
 System: ARMOR AI Workspace  
 Primary Agent / Protocol: Hermes  
-Knowledge Runtime: Claudian  
+Knowledge Runtime: Trusted agent runtime with direct Vault file access  
 Knowledge System: Obsidian Vault  
 Purpose: Long-term, stable, auditable, controllable AI workspace memory architecture  
 Status: Stable architecture for one-time deployment and continuous long-term use  
@@ -19,7 +19,7 @@ Primary Upgrade from V7: Architecture stability principle, low-maintenance opera
 2. Architecture Stability Principle
 3. First Principle: SSOT
 4. System Roles
-5. Claudian Runtime Model
+5. Agent Runtime Model
 6. Hermes Operating Protocol
 7. Memory Model
 8. Capture Track and Authority Track
@@ -61,7 +61,7 @@ Primary Upgrade from V7: Architecture stability principle, low-maintenance opera
 44. Security, Privacy, and Retention Policy
 45. Backup and Recovery Policy
 46. Standard Templates
-47. Claudian Skills and Workflows
+47. Agent Skills and Workflows
 48. Automation and Enforcement
 49. Human Review UX
 50. Failure Modes and Recovery
@@ -295,11 +295,11 @@ Obsidian is not just a notes app.
 
 It is the AI workspace knowledge operating system.
 
-## 4.2 Claudian
+## 4.2 Agent Runtime
 
-Role: Obsidian Agent Runtime
+Role: Agent Runtime
 
-Claudian is the runtime that allows AI agents to operate inside Obsidian.
+The agent runtime is the capability layer that allows AI agents to operate on the Vault.
 
 Capabilities may include:
 
@@ -326,11 +326,11 @@ Principle:
 Capability does not equal permission.
 ```
 
-Claudian may technically allow writing files.
+The agent runtime may technically allow writing files.
 
 Hermes may still be forbidden from modifying certain files by the Permission Model.
 
-Claudian is not:
+The agent runtime is not:
 
 - long-term memory
 - source of truth
@@ -338,7 +338,7 @@ Claudian is not:
 - governance layer
 - automatic SSOT enforcement
 
-Claudian provides capability.
+The agent runtime provides capability.
 
 Hermes protocol and Vault governance define permission.
 
@@ -430,9 +430,9 @@ If no dedicated Knowledge Steward exists, Hermes should automate most operationa
 
 ---
 
-# 5. Claudian Runtime Model
+# 5. Agent Runtime Model
 
-Claudian is the runtime layer.
+The agent runtime is the capability layer.
 
 Hermes is the protocol layer.
 
@@ -454,7 +454,7 @@ Human approval where required
 
 ## 5.1 Runtime Boundary
 
-Claudian does not automatically:
+The agent runtime does not automatically:
 
 - determine truth
 - maintain SSOT
@@ -1039,7 +1039,7 @@ Core should not contain:
 Optional later files:
 
 ```text
-  Claudian-Runtime-Policy.md
+  Agent-Runtime-Policy.md
   Schema-Validation-Policy.md
   Backup-and-Recovery-Policy.md
   Automation-Enforcement-Policy.md
@@ -2437,7 +2437,7 @@ When the user reports an error or asks Hermes to fix a mistake, Hermes must not 
 Runtime memory restrictions are governed by `00-Core/Runtime-Memory-Policy.md`.
 
 ```text
-Hermes through Claudian runtime
+Hermes through trusted agent runtime
 ↓
 Draft / Inbox / Project / Research Inbox / Record / Proposal
 ↓
@@ -3824,7 +3824,7 @@ retrieval_scope: default
 
 ---
 
-# 47. Claudian Skills and Workflows
+# 47. Agent Skills and Workflows
 
 Recommended skills:
 

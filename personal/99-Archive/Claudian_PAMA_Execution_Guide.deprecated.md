@@ -1,5 +1,7 @@
 # Claudian PAMA Execution Guide
 
+> Deprecated: Claudian is no longer part of the default ARMOR/PAMA runtime path. External agents such as Hermes should operate the Vault directly while following routers, permission policy, retrieval rules, and proposal workflow.
+
 > How to use Claudian as a PAMA Personal Vault executor while preserving user sovereignty, evidence-first memory, and slow promotion into personal truth.
 > 如何将 Claudian 作为 PAMA 个人 Vault 的执行器，同时保留用户主权、证据优先和个人真理慢晋升机制。
 

@@ -1,5 +1,7 @@
 # Claudian ARMOR Execution Guide
 
+> Deprecated: Claudian is no longer part of the default ARMOR/PAMA runtime path. External agents such as Hermes should operate the Vault directly while following routers, permission policy, retrieval rules, and proposal workflow.
+
 > How to use Claudian as an ARMOR Enterprise Vault executor without requiring native Hermes support.
 > 如何将 Claudian 作为 ARMOR Enterprise Vault 的执行器，而不要求 Claudian 原生支持 Hermes。
 

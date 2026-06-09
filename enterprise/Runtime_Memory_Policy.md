@@ -5,7 +5,7 @@
 
 Version: 1.0
 Status: Stable
-Applies To: Hermes, Claudian Runtime, ARMOR Enterprise AI Workspace
+Applies To: Hermes, trusted agent runtimes, ARMOR Enterprise AI Workspace
 Depends On: V7.1 Stable + Root-Cause Fix Protocol + Memory Write Router
 
 ---
