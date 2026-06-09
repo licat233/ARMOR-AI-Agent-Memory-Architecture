@@ -174,8 +174,7 @@ See [Hermes Adaptation Guide](hermes_adaptation_guide.md) for the ARMOR-native h
 | [Memory Write Router](Memory_Write_Router.md) | Mandatory routing rules for user-requested permanent memory |
 | [Root-Cause Fix Protocol](Root_Cause_Fix_Protocol.md) | Mandatory protocol for fixing errors at their source layer |
 | [Runtime Memory Policy](Runtime_Memory_Policy.md) | Enterprise policy for keeping runtime memory low-authority and temporary |
-| [Hermes Adaptation Guide](hermes_adaptation_guide.md) | Practical runtime adaptation guide for Hermes-style agents |
-|| [Hermes Adaptation Guide](hermes_adaptation_guide.md) | How to use a trusted agent runtime as an ARMOR executor through ARMOR-native file handoff |
+| [Hermes Adaptation Guide](hermes_adaptation_guide.md) | Practical guide for using Hermes or another trusted agent runtime as an ARMOR executor |
 
 ### Ultimate Principle
 
