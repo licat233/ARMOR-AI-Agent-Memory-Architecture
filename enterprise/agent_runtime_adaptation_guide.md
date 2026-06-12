@@ -122,6 +122,8 @@ memory:
 
 If a runtime supports only one memory provider, choose the Vault as the long-term memory location and keep any database-like store as cache only.
 
+If a runtime does not support a formal Vault memory provider, direct file read/search/write/patch access is sufficient. The important requirement is not a specific memory-provider API. The important requirement is that the runtime treats the Vault as durable memory and treats its own databases, embeddings, summaries, and indexes as temporary infrastructure.
+
 ---
 
 ## 4. Startup Instruction Template
@@ -143,6 +145,7 @@ Before persistent writes:
 5. Search existing SSOT files before creating or updating authority files.
 6. Write low-authority capture directly only where allowed.
 7. Create a proposal for high-authority or conflicting changes.
+8. In shared Vault deployments, follow `00-Core/Multi-Agent-Shared-Vault-Governance.md`.
 
 Never treat drafts, inbox notes, raw records, logs, proposals, archives, runtime memory, or raw research as current truth by default.
 ```
@@ -193,6 +196,16 @@ Allowed direct writes:
 - review queue entries
 - proposals
 
+In shared Vault deployments, direct writes should use agent-specific namespaces where applicable:
+
+```text
+91-Inbox/{agent-name}/
+92-Logs/{agent-name}/
+93-Proposals/{agent-name}/
+```
+
+Every runtime should have a stable `agent_name`. New files created by an agent should include `author_agent: {agent-name}` in frontmatter unless the target file format forbids frontmatter.
+
 Proposal or explicit human approval required:
 
 - `00-Core/`
@@ -217,7 +230,7 @@ Hermes may use Hindsight, SQLite, or built-in memory for runtime continuity, but
 
 ### Claude Code / Opencode
 
-Use direct file read/search/write/patch tools against the Vault. Do not create hidden memory stores that override the Vault. Log significant actions to `92-Logs/` and create proposals for authority-changing edits.
+Use direct file read/search/write/patch tools against the Vault. Do not create hidden memory stores that override the Vault. Log significant actions to `92-Logs/{agent-name}/` and create proposals for authority-changing edits under `93-Proposals/{agent-name}/` in shared Vault deployments.
 
 ### Codex
 
@@ -239,6 +252,16 @@ Shared Vault:
 The Codex reference should record the Vault path, role boundaries, default retrieval rules, write classes, and required routers. The Codex skill should tell future Codex sessions when to activate the ARMOR workflow and which core Vault files to read first.
 
 Codex should treat its own local memory database, session history, logs, embeddings, and indexes as temporary runtime infrastructure. They may store task continuity or short pointers, but they must not store authoritative facts, rules, product truth, customer state, or architecture decisions as long-term memory.
+
+In shared Vault deployments, Codex should use:
+
+```text
+91-Inbox/Codex/
+92-Logs/Codex/
+93-Proposals/Codex/
+```
+
+Codex-created Vault files should use `author_agent: Codex` when frontmatter is appropriate.
 
 For shared Vault deployments, add the Vault path as a trusted Codex project when the user wants Codex to work there regularly:
 
