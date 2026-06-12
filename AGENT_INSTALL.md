@@ -114,7 +114,7 @@ Copy these repository files into the target Vault if missing:
 
 | Source | Destination |
 | --- | --- |
-| `enterprise/V7_1_Stable.md` | `00-Core/ARMOR-V7.1-Stable.md` |
+| `enterprise/V7_2_Stable.md` | `00-Core/ARMOR-V7.2-Stable.md` |
 | `enterprise/V7_1_5_Governance_Patch.md` | `00-Core/ARMOR-Governance-Patch-V7.1.5.md` |
 | `enterprise/Prompt_Intake_Router.md` | `00-Core/Prompt-Intake-Router.md` |
 | `enterprise/Memory_Write_Router.md` | `00-Core/Memory-Write-Router.md` |
@@ -140,7 +140,7 @@ If missing, create these small placeholder files:
 00-Core/Installed-Memory-Architecture.md
 ```
 
-Each placeholder should state that it must follow ARMOR V7.1 and the governance patch.
+Each placeholder should state that it must follow ARMOR V7.2 and the governance patch.
 
 ---
 
@@ -199,7 +199,8 @@ The log should include:
 
 ```yaml
 architecture: ARMOR
-version: V7.1 + V7.1.5
+project_version: v1.0.0
+version: V7.2 Stable
 installed_at: YYYY-MM-DD
 source_repository: AI-Agent-Memory-Architecture
 target_vault: /absolute/path

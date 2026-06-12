@@ -1,16 +1,16 @@
 # ARMOR AI Memory Architecture V7.1.5 Governance Patch
 
 Version: 7.1.5
-Status: Deployable Patch
-Depends On: V7.1 Stable
-Type: Incremental Governance Layer
+Status: Carried forward into V7.2 Stable
+Depends On: V7.1 Stable or later ARMOR stable releases
+Type: Incremental Governance Layer retained as the V7.2 write-quality layer
 Target Runtime: trusted agent runtime
 
 ------
 
 # 0. Patch Positioning
 
-This patch does NOT replace V7.1.
+This patch originally extended V7.1 and is carried forward into V7.2 Stable.
 
 It does NOT redefine the Vault structure.
 
@@ -18,7 +18,7 @@ It does NOT replace the existing Class A / B / C / R permission model.
 
 It only adds a governance layer before writing, promoting, or retrieving memory.
 
-V7.1 defines:
+The ARMOR stable architecture defines:
 
 - Where information should live
 - Which folders have which authority
@@ -37,9 +37,9 @@ Core rule:
 
 ------
 
-# 1. Keep Existing V7.1 Permission Classes
+# 1. Keep Existing ARMOR Permission Classes
 
-The agent runtime MUST keep using the V7.1 class model.
+The agent runtime MUST keep using the ARMOR class model.
 
 ## Class A — Authority Zone
 
@@ -260,7 +260,7 @@ Forbidden:
 
 ------
 
-# 5. Mapping: V7.1 Classes + V7.1.5 Confidence
+# 5. Mapping: ARMOR Classes + V7.1.5 Confidence
 
 | Confidence | Class A               | Class B     | Class C        | Class R            |
 | ---------- | --------------------- | ----------- | -------------- | ------------------ |
@@ -277,7 +277,7 @@ Class C is the default destination when uncertain.
 
 # 6. Authority Conflict Resolution
 
-Use V7.1 authority first.
+Use V7.2 authority first.
 
 Authority order:
 
@@ -322,7 +322,7 @@ If product spec in Facts says 24V, but old Rule says 12V:
 
 Brand and Business are NOT new top-level authority classes.
 
-They remain part of V7.1’s fact and rule system.
+They remain part of V7.2’s fact and rule system.
 
 Recommended positioning:
 
@@ -349,7 +349,7 @@ When this patch says “working knowledge,” it means:
 - 04-Research/01-Reviewed
 - 05-Projects
 
-Do not create a separate Knowledge directory unless the V7.1 architecture is formally revised.
+Do not create a separate Knowledge directory unless the V7.2 architecture is formally revised.
 
 ------
 
@@ -493,7 +493,7 @@ Before writing memory, the agent runtime must ask internally:
 
 1. Is this worth remembering?
 2. Is it confirmed, researched, inferred, or guessed?
-3. Which V7.1 class does it belong to?
+3. Which V7.2 class does it belong to?
 4. Is this a Fact?
 5. If yes, has SSOT been searched?
 6. Is this a Rule/Core change?
@@ -512,7 +512,7 @@ If unsure:
 
 # 14. Final Governance Principle
 
-V7.1 protects structure.
+V7.2 protects structure.
 
 V7.1.5 protects truth quality.
 

@@ -6,7 +6,7 @@ ARMOR Enterprise AI Workspace is the enterprise branch of AI Agent Memory Archit
 
 ARMOR is not tied to a specific company or agent product. Any organization can adapt the structure, source-of-truth map, schemas, and review workflow to its own business domains.
 
-**Current release:** V7.1 Stable + V7.1.5 Governance Patch
+**Current release:** V7.2 Stable
 
 ### Who It Is For
 
@@ -74,9 +74,9 @@ ARMOR separates fast work from authoritative memory.
 | **C** | Drafts, Inbox, Logs, Review Queues | Yes | No |
 | **R** | Records and evidence | Append only | No |
 
-### V7.1.5 Governance Patch
+### Governance Layer
 
-The governance patch adds write-quality gates before information can become memory.
+ARMOR V7.2 carries forward the V7.1.5 governance patch as its write-quality layer before information can become memory.
 
 | Confidence Label | Source Pattern | Allowed Destination |
 | --- | --- | --- |
@@ -163,8 +163,8 @@ See [Agent Runtime Adaptation Guide](agent_runtime_adaptation_guide.md) for the 
 
 | Document | Description |
 | --- | --- |
-| [V7.1 Stable](V7_1_Stable.md) | Full enterprise architecture specification |
-| [V7.1.5 Governance Patch](V7_1_5_Governance_Patch.md) | Source confidence, write-quality gates, fact creation rules |
+| [V7.2 Stable](V7_2_Stable.md) | Full enterprise architecture specification |
+| [V7.1.5 Governance Patch](V7_1_5_Governance_Patch.md) | Governance layer carried forward into V7.2: source confidence, write-quality gates, fact creation rules |
 | [Prompt Intake Router](Prompt_Intake_Router.md) | First-layer intent router for ambiguous or high-risk prompts |
 | [Memory Write Router](Memory_Write_Router.md) | Mandatory routing rules for user-requested permanent memory |
 | [Root-Cause Fix Protocol](Root_Cause_Fix_Protocol.md) | Mandatory protocol for fixing errors at their source layer |

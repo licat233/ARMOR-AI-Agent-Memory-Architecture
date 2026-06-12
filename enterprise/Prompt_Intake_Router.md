@@ -5,7 +5,7 @@
 Version: 1.0
 Status: Stable
 Applies To: trusted agent runtimes, ARMOR Enterprise AI Workspace
-Depends On: V7.1 Stable + Memory Write Router + Root-Cause Fix Protocol + Runtime Memory Policy
+Depends On: V7.2 Stable + Memory Write Router + Root-Cause Fix Protocol + Runtime Memory Policy
 
 ---
 

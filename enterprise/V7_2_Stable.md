@@ -1,15 +1,15 @@
-# ARMOR AI Workspace Architecture V7.1 Stable
+# ARMOR AI Workspace Architecture V7.2 Stable
 
 ## Version
 
-Version: V7.1 Stable
+Version: V7.2 Stable
 System: ARMOR AI Workspace
 Primary Runtime / Protocol: Trusted agent runtime
 Knowledge Runtime: Trusted agent runtime with direct Vault file access
 Knowledge System: Obsidian Vault
 Purpose: Long-term, stable, auditable, controllable AI workspace memory architecture
 Status: Stable architecture for one-time deployment and continuous long-term use
-Primary Upgrade from V7: Architecture stability principle, low-maintenance operations, Capture Track / Authority Track, conservative retrieval, automatic lifecycle rules, review-by-exception
+Primary Upgrade from V7.1: product-neutral enterprise positioning, simplified default installation, trusted-runtime adaptation, Codex integration, English-only agent-facing specifications, and V7.1.5 governance carried forward as the standard write-quality layer
 
 ---
 
@@ -106,7 +106,7 @@ Enterprise memory architecture must solve problems at the source layer, not accu
 
 Ambiguity must be resolved before persistence. the agent runtime must not spend excessive reasoning tokens guessing high-risk user intent when a concise clarification question would reduce risk.
 
-V7.1 Stable is designed around five principles:
+V7.2 Stable is designed around five principles:
 
 ```text
 One-time deployment
@@ -414,7 +414,7 @@ Agent output is not truth until reviewed or explicitly confirmed.
 
 Role: Optional Knowledge Operations Owner
 
-In V7.1 Stable, this role should be minimized.
+In V7.2 Stable, this role should be minimized.
 
 Responsibilities, if assigned:
 
@@ -856,7 +856,7 @@ Archive can be used only for:
 
 # 8. Capture Track and Authority Track
 
-V7.1 Stable uses a two-track operating model.
+V7.2 Stable uses a two-track operating model.
 
 ## 8.1 Capture Track
 
@@ -1982,7 +1982,7 @@ Recommended files:
   Security-Review.md
 ```
 
-V7.1 Stable uses review by exception.
+V7.2 Stable uses review by exception.
 
 Queues should not become large manual obligations.
 
@@ -3341,7 +3341,7 @@ Excluded from default retrieval.
 
 # 39. Automatic Lifecycle Rules
 
-V7.1 Stable reduces maintenance through automatic lifecycle rules.
+V7.2 Stable reduces maintenance through automatic lifecycle rules.
 
 ## 39.1 Drafts
 
@@ -3406,7 +3406,7 @@ Records do not automatically promote to Facts.
 
 # 40. Review and Audit
 
-V7.1 Stable uses low-frequency, high-impact review.
+V7.2 Stable uses low-frequency, high-impact review.
 
 ## 40.1 Review by Exception
 
@@ -3998,7 +3998,7 @@ Recovery:
 
 # 51. Operating Cadence
 
-V7.1 Stable minimizes operational burden.
+V7.2 Stable minimizes operational burden.
 
 ## 51.1 Daily
 
@@ -4053,7 +4053,7 @@ Check:
 
 # 52. Migration / Deployment Plan
 
-V7.1 Stable is intended for one-time deployment.
+V7.2 Stable is intended for one-time deployment.
 
 ## 52.1 Initial Deployment
 
