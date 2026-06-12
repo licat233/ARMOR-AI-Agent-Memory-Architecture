@@ -19,7 +19,7 @@ How do I align an existing Vault with the latest architecture without leaving st
 Current target:
 
 ```text
-AI Agent Memory Architecture v1.2.1
+AI Agent Memory Architecture v1.2.2
 ARMOR Enterprise V7.2 Stable
 PAMA Personal V5.3 Stable
 ```
@@ -47,7 +47,7 @@ Please read and execute AGENT_UPDATE.md from this repository:
 https://github.com/licat233/AI-Agent-Memory-Architecture
 
 Help me update my existing AI Agent Memory Architecture Vault.
-Target architecture: AI Agent Memory Architecture v1.2.1.
+Target architecture: AI Agent Memory Architecture v1.2.2.
 Default branch: ARMOR Enterprise V7.2 Stable unless I explicitly say PAMA Personal.
 Target Vault path: <paste your Vault or Markdown directory path here>
 
@@ -184,7 +184,7 @@ Preserve Vault-local policies that are still valid, but update their references 
 
 Active indexes should point to the current architecture.
 
-For ARMOR v1.2.1 / V7.2, prefer:
+For ARMOR v1.2.2 / V7.2, prefer:
 
 ```text
 80-Indexes/Architecture-Index.md
@@ -313,7 +313,7 @@ Run these checks:
 
 ## Version-Specific Cleanup Notes
 
-### v1.2.1 / ARMOR Enterprise V7.2 Stable
+### v1.2.2 / ARMOR Enterprise V7.2 Stable
 
 Current active replacements:
 
@@ -324,7 +324,7 @@ Current active replacements:
 | `00-Core/Profile-Skills-Architecture.md` | Runtime-local Hermes documentation, not ARMOR Core | Archive or move outside active Core |
 | `80-Indexes/V7-1-Index.md` | `80-Indexes/Architecture-Index.md` | Archive old active index |
 | Claudian or Obsidian UI executor plugin support | Direct trusted runtime file access | Archive old execution guides |
-| `AI Agent Memory Architecture v1.1.0` or `v1.2.0` as current version | `AI Agent Memory Architecture v1.2.1` | Update active version markers |
+| `AI Agent Memory Architecture v1.1.0`, `v1.2.0`, or `v1.2.1` as current version | `AI Agent Memory Architecture v1.2.2` | Update active version markers |
 | `PAMA Personal V5.2` as current version | `PAMA Personal V5.3 Stable` | Update active version markers |
 
 Expected active ARMOR entry points:
