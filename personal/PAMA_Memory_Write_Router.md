@@ -1,11 +1,10 @@
 # PAMA Memory Write Router
 
 > Mandatory routing rules for user-requested permanent memory in PAMA Personal AI Memory Architecture.
-> PAMA 个人 AI 记忆架构中，用户明确要求“记住”时的强制写入路由规则。
 
 Version: 1.0
 Status: Stable
-Applies To: Hermes, Claude Code, Cline, OpenHands, AI Assistants
+Applies To: trusted agent runtimes and AI assistants
 Depends On: PAMA V5.1 Stable + PAMA Constitution v1.0 + PAMA Deployment Spec v1.0
 
 ---
@@ -49,13 +48,13 @@ This router must activate when the user uses phrases such as:
 - save this preference
 - keep this as a rule
 - remember this going forward
-- 记住这个
-- 记住这件事
-- 保存到记忆
-- 更新你的记忆
-- 以后按照这个规则
-- 以后都这样做
-- 这是我的长期偏好
+- remember this
+- remember that
+- add this to memory
+- update your memory
+- use this rule going forward
+- do this from now on
+- this is my durable preference
 
 Equivalent intent matters more than exact wording.
 
@@ -133,7 +132,7 @@ Allowed runtime memory content:
 User:
 
 ```text
-记住：我更喜欢直接、具体、少铺垫的技术建议。
+Remember: I prefer direct, specific technical advice with minimal preamble.
 ```
 
 Assistant should classify:
@@ -154,7 +153,7 @@ If this preference is repeatedly confirmed, it may be promoted through `07-Revie
 User:
 
 ```text
-记住：我决定暂时不把 Supermemory 接入个人正式记忆架构。
+Remember: I decided not to integrate Supermemory into the formal personal memory architecture for now.
 ```
 
 Assistant should classify:
@@ -171,7 +170,7 @@ runtime_memory: short pointer only
 User:
 
 ```text
-记住：我可能在高压力时会过度切换工具。
+Remember: I may switch tools too much under high stress.
 ```
 
 Assistant should classify:
@@ -189,7 +188,7 @@ runtime_memory: short pointer only
 User:
 
 ```text
-记住：今天我完成了 PAMA 个人记忆路由器的设计。
+Remember: today I completed the design of the PAMA personal memory router.
 ```
 
 Assistant should classify:

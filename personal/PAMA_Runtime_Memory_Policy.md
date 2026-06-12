@@ -1,11 +1,10 @@
 # PAMA Runtime Memory Policy
 
 > Personal policy for keeping runtime memory temporary, low-authority, and unable to patch broken source layers.
-> PAMA 个人 AI 记忆架构中，运行时 memory 必须保持临时、低权威，并且不得用于修补错误源头。
 
 Version: 1.0
 Status: Stable
-Applies To: Hermes, Claude Code, Cline, OpenHands, AI Assistants
+Applies To: trusted agent runtimes and AI assistants
 Depends On: PAMA V5.1 Stable + PAMA Memory Write Router + PAMA Root-Cause Fix Protocol
 
 ---

@@ -33,13 +33,13 @@ Runtime Memory Policy
 
 Purpose:
 
-This document defines how Hermes must physically deploy, operate, maintain, and evolve a PAMA-based memory system.
+This document defines how a trusted agent runtime must physically deploy, operate, maintain, and evolve a PAMA-based memory system.
 
 ------
 
 # 1. Deployment Objectives
 
-Hermes must build a system that is:
+The agent runtime must build a system that is:
 
 - Stable
 - Low-maintenance
@@ -113,15 +113,15 @@ No additional folders should be created without user approval.
 
 # 3. Default Memory Routing
 
-Hermes must determine destination before writing.
+The agent runtime must determine destination before writing.
 
-Before routing memory, fixes, or persistent changes, Hermes must pass user prompts through `00-Core/PAMA-Prompt-Intake-Router.md` to classify intent, risk, and persistence level.
+Before routing memory, fixes, or persistent changes, the agent runtime must pass user prompts through `00-Core/PAMA-Prompt-Intake-Router.md` to classify intent, risk, and persistence level.
 
-When the user explicitly asks Hermes to "remember" something, Hermes must treat that request as a Memory Write Router event, not as a default runtime memory write.
+When the user explicitly asks the assistant to "remember" something, the agent runtime must treat that request as a Memory Write Router event, not as a default runtime memory write.
 
 Runtime memory is temporary cache only. User-requested permanent memory must be classified and routed to the Vault through `00-Core/PAMA-Memory-Write-Router.md`.
 
-When the user reports an error or asks Hermes to fix a mistake, Hermes must not treat the correction as a memory write. It must activate `00-Core/PAMA-Root-Cause-Fix-Protocol.md`.
+When the user reports an error or asks the assistant to fix a mistake, the agent runtime must not treat the correction as a memory write. It must activate `00-Core/PAMA-Root-Cause-Fix-Protocol.md`.
 
 Runtime memory restrictions are governed by `00-Core/PAMA-Runtime-Memory-Policy.md`.
 
@@ -139,7 +139,7 @@ Store lower.
 
 Never store higher.
 
-If Hermes cannot confidently classify a user-requested memory, the fallback is:
+If the agent runtime cannot confidently classify a user-requested memory, the fallback is:
 
 ```text
 08-Working-Memory/Memory-Candidates/
@@ -154,20 +154,20 @@ Fix requests follow a separate protocol:
 ```text
 User reports error
 ↓
-Hermes identifies source layer
+Agent runtime identifies source layer
 ↓
-Hermes edits source or creates review item
+Agent runtime edits source or creates review item
 ↓
-Hermes removes conflicting memory if memory caused the error
+Agent runtime removes conflicting memory if memory caused the error
 ↓
-Hermes writes repair log
+Agent runtime writes repair log
 ↓
-Hermes verifies behavior
+Agent runtime verifies behavior
 ```
 
 Do not patch broken instructions with memory. Fix the broken instruction.
 
-If the source of an error is editable, Hermes must edit the source. If it is not editable, Hermes must create a review item or fix note. Memory is not an acceptable substitute.
+If the source of an error is editable, the agent runtime must edit the source. If it is not editable, the agent runtime must create a review item or fix note. Memory is not an acceptable substitute.
 
 ------
 
@@ -437,7 +437,7 @@ All hypotheses are temporary.
 
 Before writing:
 
-Hermes must ask:
+The agent runtime must ask:
 
 1. Is this reality?
 2. Is this interpretation?
@@ -450,7 +450,7 @@ If uncertain:
 
 Store in Working Memory.
 
-If the user says "remember", "记住", "保存到记忆", "以后按照这个规则", or an equivalent phrase:
+If the user says "remember", "save to memory", "use this rule going forward", or an equivalent phrase:
 
 1. Activate `00-Core/PAMA-Memory-Write-Router.md`.
 2. Do not store the full content in runtime memory.
@@ -458,7 +458,7 @@ If the user says "remember", "记住", "保存到记忆", "以后按照这个规
 4. Use `08-Working-Memory/Memory-Candidates/` as the fallback when classification is unclear.
 5. Store only a short pointer in runtime memory if needed.
 
-If the user reports an error, says "fix this", "这里错了", "修复这个问题", or an equivalent phrase:
+If the user reports an error, says "fix this", "this is wrong", "repair this issue", or an equivalent phrase:
 
 1. Activate `00-Core/PAMA-Root-Cause-Fix-Protocol.md`.
 2. Identify the source layer of the error.
@@ -656,7 +656,7 @@ Higher priority wins.
 
 # 21. Deployment Checklist
 
-After deployment Hermes must verify:
+After deployment the agent runtime must verify:
 
 ✓ Directory structure created
 

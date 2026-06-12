@@ -1,7 +1,6 @@
 # ARMOR Runtime Memory Policy
 
 > Enterprise policy for keeping runtime memory low-authority, temporary, and unable to patch broken source layers.
-> ARMOR 企业级 AI 工作空间中，运行时 memory 必须保持低权威、临时性，并且不得用于修补错误源头。
 
 Version: 1.0
 Status: Stable

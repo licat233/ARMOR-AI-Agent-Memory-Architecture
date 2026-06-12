@@ -1,11 +1,10 @@
 # PAMA Prompt Intake Router
 
-> First-layer intent router for preventing ambiguous personal prompts from causing wrong actions, wrong memory writes, or unnecessary token-heavy guessing.
-> PAMA 个人 AI 记忆架构中，用于在执行前识别用户意图、风险和持久化等级的第一入口层。
+> First-layer intent router for preventing ambiguous personal-memory prompts from causing wrong actions, wrong writes, or unnecessary token-heavy guessing.
 
 Version: 1.0
 Status: Stable
-Applies To: Hermes, Claude Code, Cline, OpenHands, AI Assistants
+Applies To: trusted agent runtimes and AI assistants
 Depends On: PAMA V5.1 Stable + PAMA Memory Write Router + PAMA Root-Cause Fix Protocol + PAMA Runtime Memory Policy
 
 ---
@@ -114,14 +113,14 @@ Short or vague commands must be checked for risk before execution.
 
 Examples:
 
-- 改一下
-- 优化一下
-- 继续
-- 处理一下
-- 保存一下
-- 更新一下
-- 修一下
-- 弄一下
+- revise this
+- improve this
+- continue
+- handle this
+- save this
+- update this
+- fix this
+- make it work
 
 If low risk, the assistant may perform a safe minimal action.
 
@@ -180,7 +179,7 @@ If the target, scope, or persistence level is unclear, the assistant must clarif
 
 ## Short Prompt Rule
 
-When the user input is very short and contains verbs such as "改", "修", "继续", "优化", "保存", "更新", "处理", "弄", "fix", "continue", "save", or "update", the assistant must run Ambiguous Command checks.
+When the user input is very short and contains verbs such as "revise", "fix", "continue", "improve", "save", "update", "handle", "process", or "make", the assistant must run Ambiguous Command checks.
 
 If the previous context contains high-authority documents, memory, rules, prompts, personal truth, goals, decisions, or architecture, the assistant must clarify rather than assume.
 
@@ -223,7 +222,7 @@ What exactly do you mean?
 Good:
 
 ```text
-你是要我只修改当前回答，还是写入个人 Vault 里的规则/记忆文件？
+Do you want me to revise only the current answer, or write a rule or memory file in the personal Vault?
 ```
 
 The assistant should avoid long speculative analysis when one clarification question would reduce risk.
@@ -251,7 +250,7 @@ intent_confidence: low
 operation_risk: high
 persistence_level: P3
 action: clarify
-reason: user said "保存一下" but did not specify whether to save a draft, memory, or truth
+reason: user said "save this" but did not specify whether to save a draft, memory, or truth
 ```
 
 ---

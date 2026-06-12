@@ -1,7 +1,6 @@
 # ARMOR Memory Write Router
 
 > Mandatory routing rules for user-requested permanent memory in ARMOR Enterprise AI Workspace.
-> ARMOR 企业级 AI 工作空间中，用户明确要求“记住”时的强制写入路由规则。
 
 Version: 1.0
 Status: Stable
@@ -47,13 +46,9 @@ This router must activate when the user uses phrases such as:
 - save this rule
 - keep this as a rule
 - remember this going forward
-- 记住这个
-- 记住这件事
-- 保存到记忆
-- 更新你的记忆
-- 以后按照这个规则
-- 以后都这样做
-- 把这个作为规则
+- use this rule going forward
+- make this the standard
+- keep this for future work
 
 Equivalent intent matters more than exact wording.
 
@@ -136,7 +131,7 @@ Allowed runtime memory content:
 User:
 
 ```text
-记住：以后所有公司官网文章都必须先做 SEO 结构规划，再写正文。
+Remember: all company website articles must start with SEO structure planning before drafting the body.
 ```
 
 The agent runtime should classify:
@@ -152,7 +147,7 @@ runtime_memory: short pointer only
 The agent runtime should not reply with only:
 
 ```text
-已保存到 memory。
+Saved to memory.
 ```
 
 ### Architecture Decision
@@ -160,7 +155,7 @@ The agent runtime should not reply with only:
 User:
 
 ```text
-记住：Supermemory 暂不接入正式架构，只作为观察对象。
+Remember: Supermemory is not part of the formal architecture for now; treat it only as an observation target.
 ```
 
 The agent runtime should classify:
@@ -177,7 +172,7 @@ runtime_memory: short pointer only
 User:
 
 ```text
-记住：客户代表来公司拜访并讨论了新项目需求。
+Remember: the customer representative visited the company and discussed requirements for a new project.
 ```
 
 The agent runtime should classify:

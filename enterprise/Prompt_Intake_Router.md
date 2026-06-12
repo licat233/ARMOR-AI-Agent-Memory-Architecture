@@ -1,7 +1,6 @@
 # ARMOR Prompt Intake Router
 
 > First-layer intent router for preventing ambiguous prompts from causing wrong actions, wrong writes, or unnecessary token-heavy guessing.
-> ARMOR 企业级 AI 工作空间中，用于在执行前识别用户意图、风险和持久化等级的第一入口层。
 
 Version: 1.0
 Status: Stable
@@ -114,14 +113,14 @@ Short or vague commands must be checked for risk before execution.
 
 Examples:
 
-- 改一下
-- 优化一下
-- 继续
-- 处理一下
-- 保存一下
-- 更新一下
-- 修一下
-- 弄一下
+- revise this
+- improve this
+- continue
+- handle this
+- save this
+- update this
+- fix this
+- make it work
 
 If low risk, the agent runtime may perform a safe minimal action.
 
@@ -180,7 +179,7 @@ If the target, scope, or persistence level is unclear, the agent runtime must cl
 
 ## Short Prompt Rule
 
-When the user input is very short and contains verbs such as "改", "修", "继续", "优化", "保存", "更新", "处理", "弄", "fix", "continue", "save", or "update", the agent runtime must run Ambiguous Command checks.
+When the user input is very short and contains verbs such as "revise", "fix", "continue", "improve", "save", "update", "handle", "process", or "make", the agent runtime must run Ambiguous Command checks.
 
 If the previous context contains high-authority documents, memory, rules, prompts, or architecture, the agent runtime must clarify rather than assume.
 
@@ -223,7 +222,7 @@ What exactly do you mean?
 Good:
 
 ```text
-你是要我修改当前回答，还是修改 Obsidian 里的规则文件？
+Do you want me to revise the current answer, or update the rule file in the Vault?
 ```
 
 The agent runtime should avoid long speculative analysis when one clarification question would reduce risk.

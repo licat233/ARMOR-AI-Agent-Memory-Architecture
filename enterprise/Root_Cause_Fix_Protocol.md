@@ -1,7 +1,6 @@
 # ARMOR Root-Cause Fix Protocol
 
 > Mandatory protocol for fixing errors at their source layer instead of patching them with memory.
-> ARMOR 企业级 AI 工作空间中，错误必须在源头层级修复，不得用 memory 作为补丁层。
 
 Version: 1.0
 Status: Stable
@@ -38,21 +37,15 @@ store a downstream memory note that overrides the broken source
 
 This protocol must activate when the user says or implies:
 
-- 这里错了
-- 这个规则不对
-- 你这样处理不对
-- 修改这个错误
-- 修复这个问题
-- 不要这样做
-- 这个 prompt 有问题
-- 这个 rule 有问题
-- 这个 system 有问题
-- 这个 memory 有问题
 - fix this
 - this is wrong
 - correct this behavior
 - repair this
 - do not handle it this way
+- this rule is wrong
+- this prompt is wrong
+- this system rule is wrong
+- this memory entry is wrong
 
 Equivalent intent matters more than exact wording.
 

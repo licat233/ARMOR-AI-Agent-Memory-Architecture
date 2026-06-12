@@ -1,27 +1,12 @@
 # PAMA Personal AI Memory Architecture
 
 > Personal Reality, Decision, and Evolution Operating System for AI-assisted long-term memory.
-> 面向个人 AI 助手的现实、决策与认知演化长期记忆操作系统。
-
-[English](#english) | [中文](#中文)
-
----
-
-## English
 
 PAMA is the personal branch of AI Agent Memory Architecture. It is designed for one human user and one or more trusted AI agents working inside a personal Obsidian Vault or Markdown knowledge base.
 
 Its purpose is not to flatter the user or remember every passing thought. Its purpose is to preserve high-fidelity memory about reality, attention, decisions, goals, reviewed lessons, and durable personal truth.
 
 **Current release:** PAMA V5.1 Stable
-
-### Architecture Overview
-
-![PAMA Personal AI Memory Architecture overview](../assets/pama-personal-architecture-overview.svg)
-
-### Mind Map
-
-![PAMA Personal AI Memory Architecture mind map](../assets/pama-personal-memory-mindmap.svg)
 
 ### Mission
 
@@ -63,7 +48,7 @@ Top-level folders are part of the architecture boundary. Add subfolders inside l
 
 ### Agent Execution Layer
 
-PAMA can be operated by any trusted agent runtime with file read/search/write/patch capability, including Hermes. The runtime is an executor, not a personal truth authority.
+PAMA can be operated by any trusted agent runtime with file read/search/write/patch capability, including Hermes, Claude Code, Codex, Opencode, Cline, OpenHands, and custom agents. The runtime is an executor, not a personal truth authority.
 
 Use the runtime to read, search, create working notes, append reality evidence, create decision records, prepare review items, and write completion logs. Do not use the runtime to promote passing thoughts into `05-Truth/`, treat `06-Meta/` as reality, treat `08-Working-Memory/` as durable truth, or override user sovereignty.
 
@@ -71,7 +56,7 @@ Recommended relationship:
 
 ```text
 PAMA defines memory governance.
-Hermes or another trusted runtime executes allowed Vault operations.
+A trusted runtime executes allowed Vault operations.
 The user decides what becomes durable personal truth.
 ```
 
@@ -152,151 +137,3 @@ Before writing or promoting memory, the AI agent should ask:
 ### Ultimate Principle
 
 PAMA should make memory more honest, not merely larger. A good personal AI memory system helps the user see reality more clearly while preserving the user's final authority.
-
----
-
-## 中文
-
-PAMA 是 AI Agent Memory Architecture 的个人版分支。它面向单个个人用户，以及一个或多个受信任的 AI 智能体，运行在个人 Obsidian Vault 或 Markdown 知识库中。
-
-它的目标不是讨好用户，也不是记住每一个转瞬即逝的念头。它的目标是高保真地保存现实、注意力、决策、目标、复盘教训和经验证的个人真理。
-
-**当前版本：** PAMA V5.1 Stable
-
-### 架构总览图
-
-![PAMA 个人 AI 记忆架构总览图](../assets/pama-personal-architecture-overview.svg)
-
-### 架构思维导图
-
-![PAMA 个人 AI 记忆架构思维导图](../assets/pama-personal-memory-mindmap.svg)
-
-### 使命
-
-PAMA 帮助 AI 助手对抗常见的人类认知失误：
-
-- 与证据冲突的自我美化叙事。
-- 口头优先级与真实注意力不一致。
-- 短期冲动覆盖长期方向。
-- 信息茧房、确认偏误和认知闭合。
-- 过早晋升弱信号造成的虚假确定性。
-
-### 核心原则
-
-| 原则 | 含义 |
-| --- | --- |
-| **现实优先于叙事** | 当用户信念与证据冲突时，证据获胜。 |
-| **行为胜过宣告** | 真实注意力和行为比口头目标更可靠地揭示优先级。 |
-| **真理是昂贵的** | 长期真理应保持少量、已验证、难晋升。 |
-| **不确定则向低权层保存** | 不确定材料应先进入工作记忆或元假设层。 |
-| **用户主权** | 系统可以挑战、质询和建议，但最终决定权属于用户。 |
-
-### 个人 Vault 标准结构
-
-```text
-Vault/
-├── 00-Core/                  # PAMA 宪法、稳定架构、部署规则
-├── 01-Reality/               # 客观事件、指标、结果、有证据支撑的日志
-├── 02-Attention/             # 时间与精力审计；注意力揭示真实优先级
-├── 03-Decisions/             # 决策记录、反馈、经验教训
-├── 04-Goals/                 # 长期方向与短期战术目标
-├── 05-Truth/                 # 已验证原则、长期偏好、个人 SSOT
-├── 06-Meta/                  # 假设、解释、推断、带衰减机制的想法
-├── 07-Reviews/               # 周/月/季度复盘与晋升门禁
-├── 08-Working-Memory/        # 高频写入、低权威的临时记忆工作区
-└── 99-Archive/               # 失效、被替代、过期或显式召回的记忆
-```
-
-顶层目录属于架构边界。需要扩展时应在各层内部增加子目录，不应让 AI 智能体在没有用户明确授权的情况下重设计顶层结构。
-
-### 智能体执行层
-
-PAMA 可以由任何具备文件读取/搜索/写入/补丁能力的可信智能体运行时操作，包括 Hermes。运行时是执行器，不是个人真理权威。
-
-可以用运行时读取、搜索、创建工作笔记、追加现实证据、创建决策记录、准备复盘项和写完成日志。不得用运行时把转瞬即逝的想法晋升进 `05-Truth/`，不得把 `06-Meta/` 当现实，不得把 `08-Working-Memory/` 当长期真理，也不得覆盖用户主权。
-
-推荐关系：
-
-```text
-PAMA 定义记忆治理。
-Hermes 或其他可信运行时执行被允许的 Vault 操作。
-用户决定什么成为长期个人真理。
-```
-
-### 层级映射
-
-| 目录 | 认知层级 | 治理角色 | 默认检索 |
-| --- | --- | --- | --- |
-| `00-Core/` | 架构核心 | 宪法、运行规则、部署规范 | 始终高优先级 |
-| `01-Reality/` | 现实观测 | 客观发生了什么，包含证据与指标 | 高优先级 |
-| `02-Attention/` | 注意力审计 | 时间和精力实际流向哪里 | 条件检索，主要用于复盘 |
-| `03-Decisions/` | 决策追踪 | 重大选择、预期结果、后续反馈 | 决策场景高优先级 |
-| `04-Goals/` | 目标管理 | 长期方向与短期策略 | 标准检索 |
-| `05-Truth/` | 真理沉淀 | 已验证原则、长期偏好、个人 SSOT | 最高优先级 |
-| `06-Meta/` | 假设与解释 | 未证实模型、假设、会衰减的想法 | 默认屏蔽 |
-| `07-Reviews/` | 周期复盘 | 晋升、降级、对齐报告 | 条件检索 |
-| `08-Working-Memory/` | 工作记忆 | 临时缓存、不确定笔记、活动上下文 | 当前任务优先 |
-| `99-Archive/` | 冷归档 | 被推翻、过期或替代的记忆 | 仅显式召回 |
-
-### 核心文档
-
-| 文档 | 作用 |
-| --- | --- |
-| [PAMA Constitution v1.0](PAMA%20Constitution%20v1.0.md) | 最高章程；定义用户主权，以及 AI 挑战虚假叙事的权力 |
-| [PAMA V5.1 Stable](PAMA%20V5.1%20Stable.md) | 个人记忆完整架构与层级模型 |
-| [PAMA Deployment Spec v1.0](PAMA-Deployment-Spec-v1.0.md.md) | Markdown / Obsidian 落地规则、元数据和置信度字段 |
-| [PAMA Prompt Intake Router](PAMA_Prompt_Intake_Router.md) | 用于模糊或高风险 prompt 的第一入口意图路由器 |
-| [PAMA Memory Write Router](PAMA_Memory_Write_Router.md) | 用户明确要求长期记忆时的强制写入路由规则 |
-| [PAMA Root-Cause Fix Protocol](PAMA_Root_Cause_Fix_Protocol.md) | 错误必须在源头层级修复的强制协议 |
-| [PAMA Runtime Memory Policy](PAMA_Runtime_Memory_Policy.md) | 运行时 memory 必须保持临时和低权威的个人策略 |
-
-治理优先级：
-
-```text
-Constitution > PAMA Stable Architecture > Deployment Spec > Prompt Intake Router / Memory Write Router / Root-Cause Fix Protocol / Runtime Memory Policy > Runtime behavior
-```
-
-### 记忆晋升流水线
-
-```text
-会话
-Layer 0：瞬时上下文
-        |
-        v
-08-Working-Memory
-Layer 1：快速缓存、低置信度、默认不确定
-        |
-        v
-07-Reviews
-证据检查、注意力审计、决策反馈、置信度复核
-        |
-        v
-01-Reality / 03-Decisions / 05-Truth
-只有证据足以支撑权威时，才晋升为长期记忆
-```
-
-### 智能体写入前内省
-
-写入或晋升记忆前，AI 智能体应自查：
-
-- 这是客观现实、用户解释、临时想法，还是长期真理？
-- 有什么证据支撑它？
-- 它是否仍然不确定，因此应向低权层保存？
-- 当前对话结束后它是否仍然重要？
-- 它是否会改变未来决策或行为？
-- 是否已有权威文件应被更新，而不是新建平行记忆？
-- 它是否应等待周度或月度复盘？
-
-### 快速开始
-
-1. 创建上方标准 Vault 结构。
-2. 将宪法、稳定架构和部署规范放入 `00-Core/`。
-3. 将 AI 助手的长期记忆路径指向该 Vault。
-4. 使用 `08-Working-Memory/` 保存不确定、活动中或临时记忆。
-5. 使用 `01-Reality/` 保存有证据支撑的事件和结果。
-6. 使用 `07-Reviews/` 作为进入 `05-Truth/` 的晋升门禁。
-7. 保持 `05-Truth/` 少量、稀有、经过严格验证。
-
-### 终极原则
-
-PAMA 应让记忆更诚实，而不只是更庞大。优秀的个人 AI 记忆系统会帮助用户更清楚地看见现实，同时保留用户的最终主权。
