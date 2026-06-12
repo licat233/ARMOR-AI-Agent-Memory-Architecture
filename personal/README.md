@@ -6,9 +6,9 @@ PAMA is the personal branch of AI Agent Memory Architecture. It is designed for 
 
 Its purpose is not to flatter the user or remember every passing thought. Its purpose is to preserve high-fidelity memory about reality, attention, decisions, goals, reviewed lessons, and durable personal truth.
 
-**Current release:** PAMA V5.2 Stable
+**Current release:** PAMA V5.3 Stable
 
-V5.2 keeps the V5.1 personal memory model and updates the operating layer for product-neutral trusted agent runtimes, stronger runtime-memory boundaries, and clearer prompt/write/fix routing.
+V5.3 keeps the V5.2 personal memory model and adds PAMA-specific multi-agent shared Vault governance, including agent namespaces, shared-agent conflict handling, user-sovereignty safeguards, and stricter protection against treating another agent's working notes as personal truth.
 
 ### Mission
 
@@ -82,7 +82,7 @@ The user decides what becomes durable personal truth.
 | Document | Role |
 | --- | --- |
 | [PAMA Constitution v1.0](PAMA%20Constitution%20v1.0.md) | Supreme charter; defines user sovereignty and the AI's right to challenge false narratives |
-| [PAMA V5.2 Stable](PAMA%20V5.2%20Stable.md) | Full personal memory architecture and layer model |
+| [PAMA V5.3 Stable](PAMA%20V5.3%20Stable.md) | Full personal memory architecture and layer model |
 | [PAMA Deployment Spec v1.0](PAMA-Deployment-Spec-v1.0.md.md) | Physical Markdown/Obsidian implementation rules, metadata, confidence fields |
 | [PAMA Prompt Intake Router](PAMA_Prompt_Intake_Router.md) | First-layer intent router for ambiguous or high-risk prompts |
 | [PAMA Memory Write Router](PAMA_Memory_Write_Router.md) | Mandatory routing rules for user-requested permanent memory |

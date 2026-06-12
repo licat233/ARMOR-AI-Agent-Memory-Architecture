@@ -1,6 +1,6 @@
 # PAMA Deployment Spec v1.0
 
-## Implementation Specification For PAMA V5.2 Stable
+## Implementation Specification For PAMA V5.3 Stable
 
 Version: 1.0
 Status: Stable

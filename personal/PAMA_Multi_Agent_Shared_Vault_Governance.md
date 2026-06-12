@@ -4,8 +4,8 @@
 
 Version: 1.0
 Status: Stable
-Applies To: PAMA V5.2 Stable, trusted agent runtimes, AI assistants, Hermes, Claude Code, Codex, Opencode, Cline, OpenHands, custom agents
-Depends On: PAMA V5.2 Stable + PAMA Constitution + PAMA Deployment Spec + PAMA Prompt Intake Router + PAMA Memory Write Router + PAMA Root-Cause Fix Protocol + PAMA Runtime Memory Policy
+Applies To: PAMA V5.3 Stable, trusted agent runtimes, AI assistants, Hermes, Claude Code, Codex, Opencode, Cline, OpenHands, custom agents
+Depends On: PAMA V5.3 Stable + PAMA Constitution + PAMA Deployment Spec + PAMA Prompt Intake Router + PAMA Memory Write Router + PAMA Root-Cause Fix Protocol + PAMA Runtime Memory Policy
 
 ---
 

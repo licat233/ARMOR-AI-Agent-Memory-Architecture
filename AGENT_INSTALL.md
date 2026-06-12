@@ -210,7 +210,7 @@ The log should include:
 
 ```yaml
 architecture: ARMOR
-project_version: v1.1.0
+project_version: v1.2.0
 version: V7.2 Stable
 installed_at: YYYY-MM-DD
 source_repository: AI-Agent-Memory-Architecture
@@ -255,7 +255,7 @@ Only use these if the user explicitly asks.
 
 Install PAMA instead of ARMOR when the user explicitly asks for personal memory, personal reality tracking, personal decisions, goals, or attention review.
 
-Use the personal files under `personal/` and create the PAMA directory structure described in `personal/README.md` and `personal/PAMA V5.2 Stable.md`.
+Use the personal files under `personal/` and create the PAMA directory structure described in `personal/README.md` and `personal/PAMA V5.3 Stable.md`.
 
 For PAMA multi-agent deployments, also copy:
 

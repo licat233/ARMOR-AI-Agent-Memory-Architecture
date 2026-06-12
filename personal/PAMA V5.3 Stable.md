@@ -1,12 +1,12 @@
-# PAMA V5.2 Stable
+# PAMA V5.3 Stable
 
 ## Personal AI Memory Architecture
 
-Version: 5.2 Stable
+Version: 5.3 Stable
 Status: Production Ready
 Target: Personal AI Agent Systems
 Designed For: trusted agent runtimes and AI assistants with direct Vault file access
-Primary Upgrade from V5.1: product-neutral trusted-runtime support, English-only agent-facing specifications, runtime-memory boundaries, prompt intake routing, memory write routing, and root-cause fix protocol alignment
+Primary Upgrade from V5.2: PAMA-specific multi-agent shared Vault governance, agent namespaces, shared-agent conflict handling, user-sovereignty safeguards, and explicit protection against treating another agent's working notes, hypotheses, review drafts, candidates, logs, or runtime cache as authoritative personal memory
 
 ------
 

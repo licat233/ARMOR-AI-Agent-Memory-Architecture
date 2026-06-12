@@ -5,7 +5,7 @@
 Version: 1.0
 Status: Stable
 Applies To: trusted agent runtimes and AI assistants
-Depends On: PAMA V5.2 Stable + PAMA Memory Write Router + PAMA Root-Cause Fix Protocol + PAMA Runtime Memory Policy
+Depends On: PAMA V5.3 Stable + PAMA Memory Write Router + PAMA Root-Cause Fix Protocol + PAMA Runtime Memory Policy
 
 ---
 

@@ -5,7 +5,7 @@
 Version: 1.0
 Status: Stable
 Applies To: trusted agent runtimes and AI assistants
-Depends On: PAMA V5.2 Stable + PAMA Constitution v1.0 + PAMA Memory Write Router
+Depends On: PAMA V5.3 Stable + PAMA Constitution v1.0 + PAMA Memory Write Router
 
 ---
 

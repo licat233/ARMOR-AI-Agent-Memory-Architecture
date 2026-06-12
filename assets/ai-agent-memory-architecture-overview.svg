@@ -34,7 +34,7 @@
 
   <text x="60" y="62" class="title">AI Agent Memory Architecture</text>
   <text x="60" y="92" class="text">Governed, auditable, source-backed memory for AI agents</text>
-  <text x="60" y="116" class="small">v1.1.0 · ARMOR Enterprise V7.2 Stable · PAMA Personal V5.2 Stable</text>
+  <text x="60" y="116" class="small">v1.2.0 · ARMOR Enterprise V7.2 Stable · PAMA Personal V5.3 Stable</text>
 
   <rect x="60" y="130" width="250" height="150" rx="18" class="panel"/>
   <text x="90" y="170" class="h2">AI Agent Runtime</text>
