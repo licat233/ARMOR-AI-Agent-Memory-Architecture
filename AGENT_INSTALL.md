@@ -210,7 +210,7 @@ The log should include:
 
 ```yaml
 architecture: ARMOR
-project_version: v1.2.0
+project_version: v1.2.1
 version: V7.2 Stable
 installed_at: YYYY-MM-DD
 source_repository: AI-Agent-Memory-Architecture
