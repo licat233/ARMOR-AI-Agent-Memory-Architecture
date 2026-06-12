@@ -257,6 +257,26 @@ Install PAMA instead of ARMOR when the user explicitly asks for personal memory,
 
 Use the personal files under `personal/` and create the PAMA directory structure described in `personal/README.md` and `personal/PAMA V5.2 Stable.md`.
 
+For PAMA multi-agent deployments, also copy:
+
+| Source | Destination |
+| --- | --- |
+| `personal/PAMA_Multi_Agent_Shared_Vault_Governance.md` | `00-Core/PAMA-Multi-Agent-Shared-Vault-Governance.md` |
+
+Create starter namespaces when useful:
+
+```text
+08-Working-Memory/{agent-name}/
+08-Working-Memory/Memory-Candidates/{agent-name}/
+08-Working-Memory/Fix-Candidates/{agent-name}/
+08-Working-Memory/Logs/{agent-name}/
+07-Reviews/{agent-name}/
+07-Reviews/Promotion-Candidates/
+07-Reviews/Conflict-Reviews/
+```
+
+PAMA shared Vault deployments must preserve user sovereignty. Agents must not directly promote material into `05-Truth/`, rewrite goals, or change major decisions without explicit user approval or a review decision.
+
 ### Both
 
 If the user asks for both enterprise and personal memory, recommend separate Vault roots:

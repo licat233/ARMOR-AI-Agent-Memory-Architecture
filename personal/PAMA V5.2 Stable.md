@@ -595,6 +595,8 @@ Before storing:
 10. If yes, did I route it through the PAMA Memory Write Router instead of runtime memory?
 11. Did the user report an error or ask me to fix a mistake?
 12. If yes, did I route it through the PAMA Root-Cause Fix Protocol instead of creating a memory patch?
+13. Is this Vault shared with other agents?
+14. If yes, did I follow PAMA Multi-Agent Shared Vault Governance and use my agent namespace?
 
 When uncertain:
 
@@ -615,6 +617,13 @@ Runtime memory:
 - Must not store durable truths, goals, decisions, or long-term preferences as authority.
 - Must not compensate for broken prompts, rules, documents, or source files.
 - Is governed by the PAMA Runtime Memory Policy.
+
+Shared agent operation:
+
+- Is governed by PAMA Multi-Agent Shared Vault Governance.
+- Must preserve user sovereignty.
+- Must use agent-specific working, candidate, log, or review namespaces where applicable.
+- Must not treat another agent's working note, hypothesis, review draft, candidate, log, or runtime cache as authoritative personal memory.
 
 ------
 

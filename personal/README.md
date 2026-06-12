@@ -88,11 +88,12 @@ The user decides what becomes durable personal truth.
 | [PAMA Memory Write Router](PAMA_Memory_Write_Router.md) | Mandatory routing rules for user-requested permanent memory |
 | [PAMA Root-Cause Fix Protocol](PAMA_Root_Cause_Fix_Protocol.md) | Mandatory protocol for fixing errors at their source layer |
 | [PAMA Runtime Memory Policy](PAMA_Runtime_Memory_Policy.md) | Personal policy for keeping runtime memory temporary and low-authority |
+| [PAMA Multi-Agent Shared Vault Governance](PAMA_Multi_Agent_Shared_Vault_Governance.md) | Governance policy for multiple trusted agents sharing one PAMA Vault |
 
 Governance priority:
 
 ```text
-Constitution > PAMA Stable Architecture > Deployment Spec > Prompt Intake Router / Memory Write Router / Root-Cause Fix Protocol / Runtime Memory Policy > Runtime behavior
+Constitution > PAMA Stable Architecture > Deployment Spec > Prompt Intake Router / Memory Write Router / Root-Cause Fix Protocol / Runtime Memory Policy / Multi-Agent Shared Vault Governance > Runtime behavior
 ```
 
 ### Memory Promotion Pipeline
@@ -135,6 +136,7 @@ Before writing or promoting memory, the AI agent should ask:
 5. Use `01-Reality/` for evidence-backed events and outcomes.
 6. Use `07-Reviews/` as the promotion gate into `05-Truth/`.
 7. Keep `05-Truth/` small, rare, and heavily verified.
+8. In shared-agent deployments, use `PAMA_Multi_Agent_Shared_Vault_Governance.md` and agent-specific namespaces.
 
 ### Ultimate Principle
 

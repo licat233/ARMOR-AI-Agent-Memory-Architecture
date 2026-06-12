@@ -148,6 +148,7 @@ Create missing Vault folders, copy missing core documents, preserve existing fil
 | [PAMA Memory Write Router](personal/PAMA_Memory_Write_Router.md) | Mandatory routing rules for user-requested permanent memory |
 | [PAMA Root-Cause Fix Protocol](personal/PAMA_Root_Cause_Fix_Protocol.md) | Mandatory protocol for fixing errors at their source layer |
 | [PAMA Runtime Memory Policy](personal/PAMA_Runtime_Memory_Policy.md) | Personal policy for keeping runtime memory temporary and low-authority |
+| [PAMA Multi-Agent Shared Vault Governance](personal/PAMA_Multi_Agent_Shared_Vault_Governance.md) | How multiple trusted agents can safely share one PAMA Vault |
 
 ---
 
@@ -292,3 +293,4 @@ https://github.com/licat233/AI-Agent-Memory-Architecture
 | [PAMA Memory Write Router](personal/PAMA_Memory_Write_Router.md) | 用户明确要求长期记忆时的强制写入路由规则 |
 | [PAMA Root-Cause Fix Protocol](personal/PAMA_Root_Cause_Fix_Protocol.md) | 错误必须在源头层级修复的强制协议 |
 | [PAMA Runtime Memory Policy](personal/PAMA_Runtime_Memory_Policy.md) | 运行时 memory 必须保持临时和低权威的个人策略 |
+| [PAMA 多智能体共享 Vault 治理](personal/PAMA_Multi_Agent_Shared_Vault_Governance.md) | 多个可信 agent 如何安全共享一个 PAMA Vault |
