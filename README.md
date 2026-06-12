@@ -24,9 +24,15 @@ The goal is not to remember everything. The goal is to preserve only memory that
 
 Runtime note: This project has no dependency on UI-side Obsidian executor plugins. Trusted agent runtimes such as Hermes, Claude Code, Codex, Opencode, Cline, OpenHands, and custom agents can operate the Vault directly when they follow the routers, permission rules, retrieval policy, and proposal workflow.
 
-### Visual Overview
+### Architecture Diagrams
 
-![AI Agent Memory Architecture overview](assets/ai-agent-memory-architecture-overview.svg)
+#### ARMOR Enterprise V7.2 Stable
+
+![ARMOR Enterprise V7.2 Stable architecture overview](assets/armor-enterprise-v7-2-overview.svg)
+
+#### PAMA Personal V5.3 Stable
+
+![PAMA Personal V5.3 Stable architecture overview](assets/pama-personal-v5-3-overview.svg)
 
 ### Branch Overview
 
@@ -169,9 +175,15 @@ AI Agent Memory Architecture 是一套基于 Markdown / Obsidian Vault 的 AI �
 
 运行时说明：本项目不依赖 Obsidian UI 侧执行插件。Hermes、Claude Code、Codex、Opencode、Cline、OpenHands 及自定义智能体等受信任运行时只要遵循路由器、权限规则、检索策略和提案工作流，即可直接操作 Vault。
 
-### 总体架构图
+### 架构图
 
-![AI Agent Memory Architecture 架构总览图](assets/ai-agent-memory-architecture-overview.svg)
+#### ARMOR Enterprise V7.2 Stable
+
+![ARMOR Enterprise V7.2 Stable 架构图](assets/armor-enterprise-v7-2-overview.svg)
+
+#### PAMA Personal V5.3 Stable
+
+![PAMA Personal V5.3 Stable 架构图](assets/pama-personal-v5-3-overview.svg)
 
 ### 分支概览
 
