@@ -7,7 +7,7 @@ Read this first when you need to understand, install, update, operate, or audit 
 Current release alignment:
 
 ```text
-AI Agent Memory Architecture v1.2.2
+AI Agent Memory Architecture v1.2.4
 ARMOR Enterprise V7.2 Stable
 PAMA Personal V5.3 Stable
 ```
@@ -436,7 +436,7 @@ Preserve historical evidence.
 
 ## 15. Common Retired Active Files
 
-For v1.2.2 / ARMOR V7.2, these old active files or concepts should not remain active:
+For v1.2.4 / ARMOR V7.2 and PAMA V5.3, these old active files or concepts should not remain active:
 
 | Retired Active File or Concept | Current Replacement | Action |
 | --- | --- | --- |

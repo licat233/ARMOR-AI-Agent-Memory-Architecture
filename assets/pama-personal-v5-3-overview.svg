@@ -32,7 +32,7 @@
 
   <text x="60" y="58" class="title">PAMA Personal V5.3 Stable</text>
   <text x="60" y="88" class="subtitle">Personal reality, decision, and evolution memory for trusted AI assistants</text>
-  <text x="60" y="112" class="small">AI Agent Memory Architecture v1.2.0</text>
+  <text x="60" y="112" class="small">AI Agent Memory Architecture v1.2.4</text>
 
   <rect x="60" y="145" width="255" height="128" rx="14" class="panel"/>
   <text x="88" y="184" class="h2">Trusted Agents</text>

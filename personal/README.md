@@ -89,6 +89,8 @@ The user decides what becomes durable personal truth.
 | [PAMA Root-Cause Fix Protocol](PAMA_Root_Cause_Fix_Protocol.md) | Mandatory protocol for fixing errors at their source layer |
 | [PAMA Runtime Memory Policy](PAMA_Runtime_Memory_Policy.md) | Personal policy for keeping runtime memory temporary and low-authority |
 | [PAMA Multi-Agent Shared Vault Governance](PAMA_Multi_Agent_Shared_Vault_Governance.md) | Governance policy for multiple trusted agents sharing one PAMA Vault |
+| [PAMA Personal Execution Workflow](Personal_Execution_Workflow.md) | Optional low-authority execution templates for complex personal tasks, goals, and reviews |
+| [Agent Personal Execution Prompt](Agent_Personal_Execution_Prompt.md) | Copy-ready prompt snippets for configuring agents to use personal execution templates |
 
 Governance priority:
 
@@ -136,7 +138,8 @@ Before writing or promoting memory, the AI agent should ask:
 5. Use `01-Reality/` for evidence-backed events and outcomes.
 6. Use `07-Reviews/` as the promotion gate into `05-Truth/`.
 7. Keep `05-Truth/` small, rare, and heavily verified.
-8. In shared-agent deployments, use `PAMA_Multi_Agent_Shared_Vault_Governance.md` and agent-specific namespaces.
+8. For complex personal tasks, optionally use the lightweight execution templates under `08-Working-Memory/Templates/Personal-Execution/`.
+9. In shared-agent deployments, use `PAMA_Multi_Agent_Shared_Vault_Governance.md` and agent-specific namespaces.
 
 ### Ultimate Principle
 

@@ -143,6 +143,33 @@ If missing, create these small placeholder files:
 
 Each placeholder should state that it must follow ARMOR V7.2 and the governance patch.
 
+### 5.4 Copy Optional Project Execution Templates
+
+Copy these repository templates into the target Vault if missing:
+
+| Source | Destination |
+| --- | --- |
+| `enterprise/Project_Execution_Workflow.md` | `70-Schemas/Project-Execution/Project-Execution-Workflow.md` |
+| `enterprise/Agent_Project_Execution_Prompt.md` | `70-Schemas/Project-Execution/Agent-Project-Execution-Prompt.md` |
+| `enterprise/templates/project_execution/task_plan.md` | `70-Schemas/Project-Execution/task_plan.md` |
+| `enterprise/templates/project_execution/findings.md` | `70-Schemas/Project-Execution/findings.md` |
+| `enterprise/templates/project_execution/progress.md` | `70-Schemas/Project-Execution/progress.md` |
+| `enterprise/templates/project_execution/closeout.md` | `70-Schemas/Project-Execution/closeout.md` |
+
+These templates are optional execution aids for complex project work. They do not create a new authority layer and must not bypass the Memory Write Router, Root-Cause Fix Protocol, or permission model.
+
+Recommended use inside a Vault:
+
+```text
+05-Projects/<project-name>/Execution/YYYY-MM-DD-<task-slug>/
+  task_plan.md
+  findings.md
+  progress.md
+  closeout.md
+```
+
+Execution files are low-authority working materials. Candidate long-term memory found during execution must be routed through the normal ARMOR workflow before it can become current truth.
+
 ---
 
 ## 6. Runtime Integration
@@ -210,7 +237,7 @@ The log should include:
 
 ```yaml
 architecture: ARMOR
-project_version: v1.2.2
+project_version: v1.2.4
 version: V7.2 Stable
 installed_at: YYYY-MM-DD
 source_repository: AI-Agent-Memory-Architecture
@@ -234,6 +261,7 @@ Before reporting completion, verify:
 - The target Vault exists.
 - Required ARMOR top-level directories exist.
 - Core architecture documents were copied or preserved.
+- Optional project execution templates were copied or preserved.
 - Existing user files were not overwritten silently.
 - `93-Proposals/` exists.
 - `06-Records/` exists.
@@ -262,6 +290,31 @@ For PAMA multi-agent deployments, also copy:
 | Source | Destination |
 | --- | --- |
 | `personal/PAMA_Multi_Agent_Shared_Vault_Governance.md` | `00-Core/PAMA-Multi-Agent-Shared-Vault-Governance.md` |
+
+Copy optional PAMA personal execution templates if missing:
+
+| Source | Destination |
+| --- | --- |
+| `personal/Personal_Execution_Workflow.md` | `08-Working-Memory/Templates/Personal-Execution/Personal-Execution-Workflow.md` |
+| `personal/Agent_Personal_Execution_Prompt.md` | `08-Working-Memory/Templates/Personal-Execution/Agent-Personal-Execution-Prompt.md` |
+| `personal/templates/personal_execution/task_plan.md` | `08-Working-Memory/Templates/Personal-Execution/task_plan.md` |
+| `personal/templates/personal_execution/findings.md` | `08-Working-Memory/Templates/Personal-Execution/findings.md` |
+| `personal/templates/personal_execution/progress.md` | `08-Working-Memory/Templates/Personal-Execution/progress.md` |
+| `personal/templates/personal_execution/closeout.md` | `08-Working-Memory/Templates/Personal-Execution/closeout.md` |
+
+These templates are optional execution aids for complex personal tasks, goals, and reviews. They do not create a new authority layer and must not bypass the PAMA Memory Write Router, Root-Cause Fix Protocol, review gates, or user approval.
+
+Recommended use inside a PAMA Vault:
+
+```text
+04-Goals/<goal-name>/Execution/YYYY-MM-DD-<task-slug>/
+  task_plan.md
+  findings.md
+  progress.md
+  closeout.md
+
+08-Working-Memory/Execution/YYYY-MM-DD-<task-slug>/  # fallback when no goal is clear
+```
 
 Create starter namespaces when useful:
 

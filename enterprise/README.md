@@ -138,6 +138,16 @@ Human review approves authority-changing proposals.
 
 See [Agent Runtime Adaptation Guide](agent_runtime_adaptation_guide.md) for the ARMOR-native handoff locations, permission matrix, executor protocol, and execution log template.
 
+For complex project work, ARMOR also provides an optional lightweight project execution workflow. It uses `task_plan.md`, `findings.md`, `progress.md`, and `closeout.md` inside a project execution folder, but keeps those files low-authority and routes any candidate long-term memory through the standard ARMOR routers.
+
+Recommended location:
+
+```text
+05-Projects/<project-name>/Execution/YYYY-MM-DD-<task-slug>/
+```
+
+See [Project Execution Workflow](Project_Execution_Workflow.md) for the template-level convention.
+
 ### Lifecycle Rules
 
 | Content | Stale After | Archive or Expire After |
@@ -156,7 +166,7 @@ See [Agent Runtime Adaptation Guide](agent_runtime_adaptation_guide.md) for the 
 2. Set up core files such as `Core-Memory.md`, `Agent-Operating-Protocol.md`, `Source-of-Truth-Map.md`, `Permission-Policy.md`, `Retrieval-Rules.md`, `Prompt-Intake-Router.md`, `Memory-Write-Router.md`, `Root-Cause-Fix-Protocol.md`, `Runtime-Memory-Policy.md`, `Lifecycle-Policy.md`, `Governance-Patch-V715.md`, and `Multi-Agent-Shared-Vault-Governance.md`.
 3. Configure the AI agent's long-term memory path to this vault.
 4. Keep SQLite, embeddings, and runtime indexes as runtime-only infrastructure. They must not become the durable source of business truth.
-5. Create templates for records, proposals, rules, research, and reviewed insights under `70-Schemas/`.
+5. Create templates for records, proposals, rules, research, reviewed insights, and optional project execution files under `70-Schemas/`.
 6. Let agents capture into low-authority layers and require proposals for authority-changing edits.
 
 ### Documents
@@ -171,6 +181,8 @@ See [Agent Runtime Adaptation Guide](agent_runtime_adaptation_guide.md) for the 
 | [Runtime Memory Policy](Runtime_Memory_Policy.md) | Enterprise policy for keeping runtime memory low-authority and temporary |
 | [Agent Runtime Adaptation Guide](agent_runtime_adaptation_guide.md) | Practical guide for using any trusted agent runtime as an ARMOR executor |
 | [Multi-Agent Shared Vault Governance](multi_agent_shared_vault_governance.md) | Governance policy for multiple trusted agents sharing one ARMOR Vault |
+| [Project Execution Workflow](Project_Execution_Workflow.md) | Optional low-authority task execution templates for complex project work |
+| [Agent Project Execution Prompt](Agent_Project_Execution_Prompt.md) | Copy-ready prompt snippets for configuring agents to use project execution templates |
 
 ### Ultimate Principle
 

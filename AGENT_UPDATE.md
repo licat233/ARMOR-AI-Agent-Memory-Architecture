@@ -19,7 +19,7 @@ How do I align an existing Vault with the latest architecture without leaving st
 Current target:
 
 ```text
-AI Agent Memory Architecture v1.2.2
+AI Agent Memory Architecture v1.2.4
 ARMOR Enterprise V7.2 Stable
 PAMA Personal V5.3 Stable
 ```
@@ -47,7 +47,7 @@ Please read and execute AGENT_UPDATE.md from this repository:
 https://github.com/licat233/AI-Agent-Memory-Architecture
 
 Help me update my existing AI Agent Memory Architecture Vault.
-Target architecture: AI Agent Memory Architecture v1.2.2.
+Target architecture: AI Agent Memory Architecture v1.2.4.
 Default branch: ARMOR Enterprise V7.2 Stable unless I explicitly say PAMA Personal.
 Target Vault path: <paste your Vault or Markdown directory path here>
 
@@ -95,6 +95,8 @@ personal/PAMA_Prompt_Intake_Router.md
 personal/PAMA_Memory_Write_Router.md
 personal/PAMA_Root_Cause_Fix_Protocol.md
 personal/PAMA_Runtime_Memory_Policy.md
+personal/Personal_Execution_Workflow.md
+personal/Agent_Personal_Execution_Prompt.md
 ```
 
 ## Update Workflow
@@ -184,7 +186,7 @@ Preserve Vault-local policies that are still valid, but update their references 
 
 Active indexes should point to the current architecture.
 
-For ARMOR v1.2.2 / V7.2, prefer:
+For ARMOR v1.2.4 / V7.2, prefer:
 
 ```text
 80-Indexes/Architecture-Index.md
@@ -200,7 +202,35 @@ Archive old active indexes such as:
 
 Do not leave old version indexes in active `80-Indexes/` unless they are clearly marked `status: historical` and excluded from default retrieval.
 
-### 5. Clean Active References
+### 5. Sync Optional Project Execution Templates
+
+For ARMOR, copy the optional project execution templates if they are missing:
+
+```text
+70-Schemas/Project-Execution/Project-Execution-Workflow.md
+70-Schemas/Project-Execution/Agent-Project-Execution-Prompt.md
+70-Schemas/Project-Execution/task_plan.md
+70-Schemas/Project-Execution/findings.md
+70-Schemas/Project-Execution/progress.md
+70-Schemas/Project-Execution/closeout.md
+```
+
+These files are low-authority execution templates only. They must not be treated as Core policy, Facts, Rules, or a replacement for the ARMOR routers.
+
+For PAMA, copy the optional personal execution templates if they are missing:
+
+```text
+08-Working-Memory/Templates/Personal-Execution/Personal-Execution-Workflow.md
+08-Working-Memory/Templates/Personal-Execution/Agent-Personal-Execution-Prompt.md
+08-Working-Memory/Templates/Personal-Execution/task_plan.md
+08-Working-Memory/Templates/Personal-Execution/findings.md
+08-Working-Memory/Templates/Personal-Execution/progress.md
+08-Working-Memory/Templates/Personal-Execution/closeout.md
+```
+
+These files are low-authority execution templates only. They must not be treated as Reality, Decisions, Goals source of truth, Truth, Core policy, or a replacement for PAMA routers and reviews.
+
+### 6. Clean Active References
 
 Search only active truth and navigation layers first:
 
@@ -243,7 +273,7 @@ Classify each hit:
 | Decision Record | Preserve, optionally add a superseded note |
 | Archive | Preserve |
 
-### 6. Mark Superseded Proposals
+### 7. Mark Superseded Proposals
 
 If a pending proposal references retired active files, do not silently execute it.
 
@@ -260,7 +290,7 @@ Retained as historical migration context only. Do not execute old target paths.
 Current active entry points are: <list current files>.
 ```
 
-### 7. Preserve Historical Evidence
+### 8. Preserve Historical Evidence
 
 Do not rewrite these just because they mention old tools or versions:
 
@@ -276,7 +306,7 @@ Old terms in these locations are evidence of what happened at the time.
 
 Only add a superseded note when a historical file is likely to be mistaken for current instructions.
 
-### 8. Write an Update Log
+### 9. Write an Update Log
 
 For ARMOR shared Vaults, use the agent namespace:
 
@@ -296,7 +326,7 @@ The update log should include:
 - validation results
 - remaining known historical references
 
-### 9. Validate
+### 10. Validate
 
 Run these checks:
 
@@ -308,12 +338,13 @@ Run these checks:
 5. Logs, records, and archives were not rewritten to erase history.
 6. Agent namespaces exist when the Vault is shared by multiple agents.
 7. Pending proposals do not target retired active files.
-8. Update log exists.
+8. Optional project execution templates exist or were intentionally skipped.
+9. Update log exists.
 ```
 
 ## Version-Specific Cleanup Notes
 
-### v1.2.2 / ARMOR Enterprise V7.2 Stable
+### v1.2.4 / ARMOR Enterprise V7.2 Stable + PAMA Personal V5.3 Stable
 
 Current active replacements:
 
@@ -324,7 +355,7 @@ Current active replacements:
 | `00-Core/Profile-Skills-Architecture.md` | Runtime-local Hermes documentation, not ARMOR Core | Archive or move outside active Core |
 | `80-Indexes/V7-1-Index.md` | `80-Indexes/Architecture-Index.md` | Archive old active index |
 | Claudian or Obsidian UI executor plugin support | Direct trusted runtime file access | Archive old execution guides |
-| `AI Agent Memory Architecture v1.1.0`, `v1.2.0`, or `v1.2.1` as current version | `AI Agent Memory Architecture v1.2.2` | Update active version markers |
+| `AI Agent Memory Architecture v1.1.0`, `v1.2.0`, `v1.2.1`, `v1.2.2`, or `v1.2.3` as current version | `AI Agent Memory Architecture v1.2.4` | Update active version markers |
 | `PAMA Personal V5.2` as current version | `PAMA Personal V5.3 Stable` | Update active version markers |
 
 Expected active ARMOR entry points:
